@@ -1,9 +1,7 @@
 vapp = new function(){
     var vapp = this,
-        feeds = {},
         defaultFeeds = { 'mine' : { title: 'Моё видео', tabSource: 'mine' }}
-        currentFeed = 'mine',
-        appId = null;
+        defaultFeed = 'mine';
 
     /**
      * initialize for vapp application
@@ -13,9 +11,9 @@ vapp = new function(){
     vapp.init = function(opts){
         opts = opts || {};
 
-        vapp.currentFeed = currentFeed = opts.currentFeed || currentFeed;
-        vapp.feeds = feeds = opts.feeds || defaultFeeds;
-        vapp.apiId = apiId = opts.apiId || apiId;
+        vapp.currentFeed = opts.currentFeed || defaultFeed;
+        vapp.feeds = opts.feeds || defaultFeeds;
+        vapp.apiId = opts.apiId || apiId;
 
         vapp.nodes = {
             'body' : $('body'),
@@ -33,55 +31,9 @@ vapp = new function(){
             return false;
         }
 
-        vapp.resetFeed();
+        vapp.feed.reset();
         vapp.initBinds();
         vapp.vkInit(vapp.vkCheck);
-    };
-
-    vapp.changeFeed = function(feed){
-        if ( typeof feed != 'string') return false;
-        if ( !feeds[feed] ) return false;
-
-        vapp.setCurrentFeed(feed);
-    };
-
-    vapp.getCurrentFeed = function(){
-        return currentFeed;
-    };
-
-    vapp.setCurrentFeed = function(feed){
-        currentFeed = feed;
-
-        return currentFeed;
-    };
-
-    vapp.loadFeed = function(){
-        if ( !vapp.inited ) { vapp.vkInit( vapp.loadFeed ) }
-
-        vapp.loadFeed[currentFeed]();
-    };
-
-    vapp.loadFeed.mine = function(){
-        console.log('mine');
-
-        VK.Api.call('video.get', { owner_id: vapp.session.mid }, function(r){
-            console.log(r)
-        })
-    };
-
-    vapp.loadFeed.friends = function(){
-        console.log('friends');
-    };
-
-    vapp.loadFeed.search = function(){
-        console.log('search');
-    };
-
-    vapp.resetFeed = function(){
-        vapp.vids = [];
-        vapp.vidsIdsLoaded = [];
-        vapp.feedOffset = 0;
-        vapp.feedLimit = 50;
     };
 
     vapp.videoSupported = function(){
@@ -109,7 +61,7 @@ vapp = new function(){
             if ( r.session ){
                 vapp.session = r.session;
                 vapp.renderer.tabs();
-                vapp.loadFeed();
+                vapp.feed.load();
             } else {
                 vapp.renderer.notLoggined();
             }
@@ -117,7 +69,7 @@ vapp = new function(){
     };
 
     vapp.vkInit = function(callback){
-        VK.init({ apiId: apiId });
+        VK.init({ apiId: vapp.apiId });
 
         vapp.inited = true;
 
@@ -147,33 +99,80 @@ vapp = new function(){
     }
 }
 
+vapp.feed = new function(){
+    var feed = this;
 
-vapp.renderer = function(page, data){
-    if ( this[page] ) return this[page](data);
-};
+    feed.load = function(){
+        if ( !vapp.inited ) { vapp.vkInit( vapp.feed.load ) }
 
-vapp.renderer.welcome = function(){
-    vapp.nodes.page.html(vapp.getTpl('vapp-welcome-page'));
-};
+        feed.load[vapp.currentFeed]();
+    };
 
-vapp.renderer.tabs = function(){
-    var html = '';
+    feed.load.mine = function(){
+        console.log('mine');
 
-    for ( var i in vapp.feeds ) {
-        html += vapp.getTpl('vapp-navigation-item').supplant(
-            $.extend( {class: i == vapp.currentFeed ? 'active' : '' }, vapp.feeds[i] )
-        );
-    }
+        VK.Api.call('video.get', { owner_id: vapp.session.mid }, function(r){
+            console.log(r)
+        })
+    };
 
-    vapp.nodes.navigation.html(html);
-};
+    feed.load.friends = function(){
+        console.log('friends');
+    };
 
-vapp.renderer.notLoggined = function(){
-    vapp.nodes.page.html(vapp.getTpl('vapp-not-logined-page'));
-};
+    feed.load.search = function(){
+        console.log('search');
+    };
 
-vapp.renderer.videoNotSupported = function(){
-    vapp.nodes.page.html(vapp.getTpl('vapp-not-supported-page'));
+    feed.change = function(feedSource, event){
+        if ( typeof feedSource != 'string') return false;
+        if ( !vapp.feeds[feedSource] ) return false;
+
+        feed.setCurrent(feedSource);
+
+        cancelEvent(event);
+    };
+
+    feed.setCurrent = function(feedSource){
+        vapp.currentFeed = feedSource;
+
+        return vapp.currentFeed;
+    };
+
+    feed.reset = function(){
+        vapp.vids = [];
+        vapp.vidsIdsLoaded = [];
+        vapp.feedOffset = 0;
+        vapp.feedLimit = 50;
+    };
+}
+
+vapp.renderer = new function(){
+    var renderer = this;
+
+    renderer.welcome = function(){
+        vapp.nodes.page.html(vapp.getTpl('vapp-welcome-page'));
+    };
+
+    renderer.tabs = function(){
+        var html = '';
+
+        for ( var i in vapp.feeds ) {
+            html += vapp.getTpl('vapp-navigation-item').supplant(
+                $.extend( {class: i == vapp.currentFeed ? 'active' : '' }, vapp.feeds[i] )
+            );
+        }
+
+        vapp.nodes.navigation.html(html);
+    };
+
+    renderer.notLoggined = function(){
+        vapp.nodes.page.html(vapp.getTpl('vapp-not-logined-page'));
+    };
+
+    renderer.videoNotSupported = function(){
+        vapp.nodes.page.html(vapp.getTpl('vapp-not-supported-page'));
+    };
 };
 
 vapp.Player = function(){}
@@ -205,6 +204,14 @@ vapp.Player.prototype = new function(){
 function indexOf(arr, value, from) { for (var i = from || 0, l = (arr || []).length; i < l; i++) { if (arr[i] == value) return i; } return -1; };
 function inArray(value, arr) { return indexOf(arr, value) != -1; };
 function ge(el) { return (typeof el == 'string' || typeof el == 'number') ? document.getElementById(el) : el; };
+function sp(e){ e.stopPropagation ? e.stopPropagation() : e.cancelBubble = true; }
+function pd(e){ e.preventDefault ? e.preventDefault() : e.returnValue = false; }
+function cancelEvent(e) {
+    e = e || window.event || {};
+    e = e.originalEvent || e;
+    sp(e);
+    pd(e);
+}
 function objLength(obj) {
     if (typeof obj != 'object') return 0;
 
