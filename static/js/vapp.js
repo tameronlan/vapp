@@ -22,7 +22,15 @@ vapp = new function(){
             'window' : $('window'),
             'heap' : $('#node-heap'),
             'page' : $('#vapp-page'),
-            'navigation' : $('#vapp-header_nav'),
+            'navigation' : $('#vapp-header_nav')
+        }
+
+        vapp.renderer.welcome();
+
+        if( !vapp.videoSupported() ) {
+            vapp.renderer.videoNotSupported();
+
+            return false;
         }
 
         vapp.resetFeed();
@@ -49,6 +57,20 @@ vapp = new function(){
 
     vapp.loadFeed = function(){
         if ( !vapp.inited ) { vapp.vkInit( vapp.loadFeed ) }
+
+        vapp.loadFeed[currentFeed]();
+    };
+
+    vapp.loadFeed.mine = function(){
+
+    };
+
+    vapp.loadFeed.friends = function(){
+
+    };
+
+    vapp.loadFeed.search = function(){
+
     };
 
     vapp.resetFeed = function(){
@@ -58,14 +80,33 @@ vapp = new function(){
         vapp.feedLimit = 50;
     };
 
+    vapp.videoSupported = function(){
+        var testEl = document.createElement( "video" ),
+            _support = false;
+
+        try {
+            if ( _support = !!testEl.canPlayType ) {
+                _support = new Boolean(_support);
+                _support.ogg = testEl.canPlayType('video/ogg; codecs="theora"').replace(/^no$/,'');
+                _support.h264 = testEl.canPlayType('video/mp4; codecs="avc1.42E01E"').replace(/^no$/,'');
+                _support.webm = testEl.canPlayType('video/webm; codecs="vp8, vorbis"').replace(/^no$/,'');
+                _support.vp9 = testEl.canPlayType('video/webm; codecs="vp9"').replace(/^no$/,'');
+                _support.hls = testEl.canPlayType('application/x-mpegURL; codecs="avc1.42E01E"').replace(/^no$/,'');
+            }
+        } catch(e){}
+
+        return _support;
+    };
+
     vapp.vkCheck = function(){
         if ( !vapp.inited ) { vapp.vkInit( vapp.vkCheck ) }
 
-        VK.Auth.getLoginStatus(function( response ){
-            if ( response.status ){
-
+        VK.Auth.getLoginStatus(function( r ){
+            if ( r.session ){
+                vapp.session = r.session;
+                vapp.loadFeed();
             } else {
-
+                vapp.renderer.notLoggined();
             }
         })
     };
@@ -104,11 +145,17 @@ vapp.renderer = function(page, data){
 };
 
 vapp.renderer.welcome = function(){
-
+    console.log(vapp.nodes.page)
+    vapp.nodes.page.html(vapp.getTpl('vapp-welcome-page'));
 };
 
 vapp.renderer.notLoggined = function(){
+    console.log(vapp.nodes.page)
+    vapp.nodes.page.html(vapp.getTpl('vapp-not-logined-page'));
+};
 
+vapp.renderer.videoNotSupported = function(){
+    vapp.nodes.page.html(vapp.getTpl('vapp-not-supported-page'));
 };
 
 vapp.Player = function(){}

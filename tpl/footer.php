@@ -10,13 +10,16 @@
             apiId: <?= VK_APP_ID?>,
             feeds: {
                 'mine' : {
-                    title: 'Моё видео'
+                    title: 'Моё видео',
+                    tabSource: 'mine'
                 },
                 'friends' : {
-                    title: 'Видео друзей'
+                    title: 'Видео друзей',
+                    tabSource: 'friends'
                 },
                 'search' : {
-                    title: 'Поиск'
+                    title: 'Поиск',
+                    tabSource: 'search'
                 }
             },
             currentFeed: 'mine'
