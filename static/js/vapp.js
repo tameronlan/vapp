@@ -13,9 +13,9 @@ vapp = new function(){
     vapp.init = function(opts){
         opts = opts || {};
 
-        currentFeed = opts.currentFeed || currentFeed;
-        feeds = opts.feeds || defaultFeeds;
-        apiId = opts.apiId || apiId;
+        vapp.currentFeed = currentFeed = opts.currentFeed || currentFeed;
+        vapp.feeds = feeds = opts.feeds || defaultFeeds;
+        vapp.apiId = apiId = opts.apiId || apiId;
 
         vapp.nodes = {
             'body' : $('body'),
@@ -63,6 +63,10 @@ vapp = new function(){
 
     vapp.loadFeed.mine = function(){
         console.log('mine');
+
+        VK.Api.call('video.get', { owner_id: vapp.session.mid }, function(r){
+            console.log(r)
+        })
     };
 
     vapp.loadFeed.friends = function(){
@@ -82,20 +86,20 @@ vapp = new function(){
 
     vapp.videoSupported = function(){
         var testEl = document.createElement( "video" ),
-            _support = false;
+            support = false;
 
         try {
-            if ( _support = !!testEl.canPlayType ) {
-                _support = new Boolean(_support);
-                _support.ogg = testEl.canPlayType('video/ogg; codecs="theora"').replace(/^no$/,'');
-                _support.h264 = testEl.canPlayType('video/mp4; codecs="avc1.42E01E"').replace(/^no$/,'');
-                _support.webm = testEl.canPlayType('video/webm; codecs="vp8, vorbis"').replace(/^no$/,'');
-                _support.vp9 = testEl.canPlayType('video/webm; codecs="vp9"').replace(/^no$/,'');
-                _support.hls = testEl.canPlayType('application/x-mpegURL; codecs="avc1.42E01E"').replace(/^no$/,'');
+            if ( support = !!testEl.canPlayType ) {
+                support = new Boolean(support);
+                support.ogg = testEl.canPlayType('video/ogg; codecs="theora"').replace(/^no$/,'');
+                support.h264 = testEl.canPlayType('video/mp4; codecs="avc1.42E01E"').replace(/^no$/,'');
+                support.webm = testEl.canPlayType('video/webm; codecs="vp8, vorbis"').replace(/^no$/,'');
+                support.vp9 = testEl.canPlayType('video/webm; codecs="vp9"').replace(/^no$/,'');
+                support.hls = testEl.canPlayType('application/x-mpegURL; codecs="avc1.42E01E"').replace(/^no$/,'');
             }
         } catch(e){}
 
-        return _support;
+        return support;
     };
 
     vapp.vkCheck = function(){
@@ -104,6 +108,7 @@ vapp = new function(){
         VK.Auth.getLoginStatus(function( r ){
             if ( r.session ){
                 vapp.session = r.session;
+                vapp.renderer.tabs();
                 vapp.loadFeed();
             } else {
                 vapp.renderer.notLoggined();
@@ -136,7 +141,9 @@ vapp = new function(){
         _onResize();
 
         vapp.nodes.body.bind('resize', _onResize);
-        vapp.nodes.body.bind('mousemove', _onMove);
+        vapp.nodes.body.bind('mousemove', function(event){
+            _onMove(event);
+        });
     }
 }
 
@@ -147,6 +154,18 @@ vapp.renderer = function(page, data){
 
 vapp.renderer.welcome = function(){
     vapp.nodes.page.html(vapp.getTpl('vapp-welcome-page'));
+};
+
+vapp.renderer.tabs = function(){
+    var html = '';
+
+    for ( var i in vapp.feeds ) {
+        html += vapp.getTpl('vapp-navigation-item').supplant(
+            $.extend( {class: i == vapp.currentFeed ? 'active' : '' }, vapp.feeds[i] )
+        );
+    }
+
+    vapp.nodes.navigation.html(html);
 };
 
 vapp.renderer.notLoggined = function(){

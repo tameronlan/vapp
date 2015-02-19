@@ -23,7 +23,28 @@
 </script>
 
 <script type="text/template" id="vapp-navigation-item">
-    <a class="vapp-header_link unselectable fl-r {class}" href="/?tab={tabName}" onclick="vapp.changeField('{tabName}');">{title}</a>
+    <a class="vapp-header_link unselectable fl-r {class}" href="/?tab={tabSource}" onclick="vapp.changeField('{tabSource}');">{title}</a>
+</script>
+
+<script type="text/javascript">
+    vapp.init({
+        apiId: <?= VK_APP_ID?>,
+        feeds: {
+            'search' : {
+                title: 'Поиск',
+                tabSource: 'search'
+            },
+            'friends' : {
+                title: 'Видео друзей',
+                tabSource: 'friends'
+            },
+            'mine' : {
+                title: 'Мои видео',
+                tabSource: 'mine'
+            }
+        },
+        currentFeed: 'mine'
+    });
 </script>
 
 <?php require_once 'footer.php'; ?>

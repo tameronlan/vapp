@@ -18,11 +18,7 @@
     <div id="vapp-wrapper">
         <div id="vapp-header" class="nclear">
             <div class="vapp-content">
-                <div id="vapp-header_nav">
-<!--                    <a class="vapp-header_link unselectable fl-r" href="/?tab=search" onclick="vapp.changeField('search');">Поиск</a>-->
-<!--                    <a class="vapp-header_link unselectable fl-r" href="/?tab=friends" onclick="vapp.changeField('friends');">Мои друзья</a>-->
-<!--                    <a class="vapp-header_link unselectable active fl-r" href="/?tab=mine" onclick="vapp.changeField('mine');">Мои видео</a>-->
-                </div>
+                <div id="vapp-header_nav"></div>
 
                 <div class="vapp-logo unselectable fl-l ">
                     Video Application
