@@ -1,0 +1,72 @@
+<?php require_once 'header.php'; ?>
+
+<div class="content-inner">
+    <i class="content-left" style="height: 493px;"></i>
+    <div class="screens-block">
+        <h1 class="screens-title">Express Player &mdash; <span class="orange">Screenshots</span></h1>
+    </div>
+</div>
+<div class="screens-wrap">
+    <div class="screens-inner" id="screen-container">
+        <div rel="Installation process and first start of Express Player" class="screens-inner-item" style="background-image: url(../../static/img/thumbnails/b_1.jpg)"></div>
+        <div rel="first start of Express Player" class="screens-inner-item" style="background-image: url(../../static/img/thumbnails/b_2.jpg)"></div>
+        <div rel="Watch" class="screens-inner-item" style="background-image: url(../../static/img/thumbnails/b_3.jpg)"></div>
+        <div rel="End of all" class="screens-inner-item" style="background-image: url(../../static/img/thumbnails/b_4.jpg)"></div>
+        <div rel="Subs" class="screens-inner-item" style="background-image: url(../../static/img/thumbnails/b_5.jpg)"></div>
+        <div rel="Comments" class="screens-inner-item" style="background-image: url(../../static/img/thumbnails/b_6.jpg)"></div>
+    </div>
+    <div class="screens-arrows-wrap screens-arrows-left" id="arrows-left" onclick="slider.prev()">
+        <div class="screens-arrows"></div>
+    </div>
+    <div class="screens-arrows-wrap screens-arrows-right" id="arrows-right" onclick="slider.next()">
+        <div class="screens-arrows"></div>
+    </div>
+</div>
+<div class="screens-bottom">
+    <div id="screens-title">Installation process and first start of Express Player</div>
+    <div id="screens-nums"></div>
+</div>
+<script type="text/javascript">
+var slider = {
+    container: $('#screen-container'),
+    left: $('#arrows-left'),
+    right: $('#arrows-right'),
+    width_image: 658,
+    current_image: 2,
+    nums_wrap: $("#screens-nums"),
+    items_inner: $(".screens-inner-item"),
+    title_wrap : $("#screens-title"),
+
+    init: function(){
+        slider.items_inner_count = slider.items_inner.length;
+        slider.show(slider.current_image);
+    },
+    prev: function(){
+        if(slider.current_image <= 1){
+            slider.current_image = slider.items_inner_count;
+        } else {
+            slider.current_image -= 1;
+        }
+
+        slider.show(slider.current_image);
+    },
+    next: function(){
+        if(slider.current_image >= slider.items_inner_count){
+            slider.current_image = 1;
+        } else {
+            slider.current_image += 1;
+        }
+
+        slider.show(slider.current_image);
+    },
+    show: function(num){
+        slider.nums_wrap.html(num + "/" + (slider.items_inner_count));
+        slider.title_wrap.html( $(slider.items_inner[ num  - 1]).attr("rel") );
+        slider.container.stop().animate({
+            "marginLeft": - (num - 1) * 658 + 152
+        }, 500);
+    }
+};
+slider.init();
+</script>
+<?php require_once 'footer.php'; ?>
