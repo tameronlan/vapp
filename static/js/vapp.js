@@ -31,9 +31,9 @@ vapp = new function(){
             return false;
         }
 
-        vapp.feed.reset();
         vapp.initBinds();
-        vapp.vkInit(vapp.vkCheck);
+        vapp.feed.reset();
+        vapp.vk.init(vapp.vk.check);
     };
 
     vapp.videoSupported = function(){
@@ -52,28 +52,6 @@ vapp = new function(){
         } catch(e){}
 
         return support;
-    };
-
-    vapp.vkCheck = function(){
-        if ( !vapp.inited ) { vapp.vkInit( vapp.vkCheck ) }
-
-        VK.Auth.getLoginStatus(function( r ){
-            if ( r.session ){
-                vapp.session = r.session;
-                vapp.renderer.tabs();
-                vapp.feed.load();
-            } else {
-                vapp.renderer.notLoggined();
-            }
-        })
-    };
-
-    vapp.vkInit = function(callback){
-        VK.init({ apiId: vapp.apiId });
-
-        vapp.inited = true;
-
-        if ( callback ) callback();
     };
 
     function _onResize(){
@@ -99,11 +77,51 @@ vapp = new function(){
     }
 }
 
+vapp.vk = new function(){
+    var vk = this;
+
+    vk.init = function(callback){
+        VK.init({ apiId: vapp.apiId });
+
+        vk.inited = true;
+
+        if ( callback ) callback();
+    };
+
+    vk.check = function(){
+        if ( !vk.inited ) { vk.nit( vk.check ) }
+
+        VK.Auth.getLoginStatus(function( r ){
+            if ( r.session ){
+                vapp.session = r.session;
+                vapp.renderer.tabs();
+                vapp.feed.load();
+            } else {
+                vapp.renderer.notLoggined();
+            }
+        })
+    };
+
+    vk.login = function(){
+        if ( !vk.inited ) { vk.nit( vk.check ) }
+
+        VK.Auth.login(function( r ){
+            if ( r.session ){
+                vapp.session = r.session;
+                vapp.renderer.tabs();
+                vapp.feed.load();
+            } else {
+                vapp.renderer.notLoggined();
+            }
+        })
+    };
+};
+
 vapp.feed = new function(){
     var feed = this;
 
     feed.load = function(){
-        if ( !vapp.inited ) { vapp.vkInit( vapp.feed.load ) }
+        if ( !vapp.vk.inited ) { vapp.vk.init( vapp.feed.load ) }
 
         feed.load[vapp.currentFeed]();
     };
@@ -145,7 +163,7 @@ vapp.feed = new function(){
         vapp.feedOffset = 0;
         vapp.feedLimit = 50;
     };
-}
+};
 
 vapp.renderer = new function(){
     var renderer = this;
@@ -175,7 +193,7 @@ vapp.renderer = new function(){
     };
 };
 
-vapp.Player = function(){}
+vapp.Player = function(){};
 
 vapp.Player.prototype = new function(){
     var plProto = this;

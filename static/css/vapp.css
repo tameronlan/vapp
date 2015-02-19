@@ -48,6 +48,10 @@ label, input[type=submit] { cursor: pointer; }
 
 .vapp-content { max-width: 1280px; margin: 0 auto; }
 
+.btn { display: inline-block; background: #41658c; font-size: 13px; line-height: 20px; border-radius: 2px; }
+.btn:hover { background: #527eae; }
+.btn:active { background: dar(#41658c, 10%); }
+
 /* helpers */
 .h { display: none; }
 

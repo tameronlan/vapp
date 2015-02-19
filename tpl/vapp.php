@@ -11,8 +11,13 @@
 </script>
 
 <script type="text/template" id="vapp-not-logined-page">
-    <div class="vapp-container-logined">
-        Приложение использует видео с сайта vk.com, поэтому необходимо авторизоваться на этом сайте и подтвердить разрешения для приложения
+    <div class="vapp-container-logined ta-c">
+        <div>
+            Приложение использует видео с сайта vk.com, поэтому необходимо авторизоваться на этом сайте и подтвердить разрешения для приложения
+        </div>
+        <div>
+            <span class="btn" onclick="vapp.vk.login()">Войти через вконтакте</span>
+        </div>
     </div>
 </script>
 

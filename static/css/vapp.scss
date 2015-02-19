@@ -66,6 +66,22 @@ label,input[type=submit]{cursor:pointer}
     margin: 0 auto;
 }
 
+.btn{
+    display: inline-block;
+    background: #41658c;
+    font-size: 13px;
+    line-height: 20px;
+    border-radius: 2px;
+
+    &:hover{
+        background: lighten(#41658c, 10%) ;
+    }
+
+    &:active{
+        background: darken(#41658c, 10%) ;
+    }
+}
+
 /* helpers */
 .h{display:none;}
 .o_h{overflow:hidden !important;}
