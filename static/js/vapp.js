@@ -136,6 +136,10 @@ vapp.feed = new function(){
 
     feed.load.friends = function(){
         console.log('friends');
+
+        VK.Api.call('friends.get', { fields: 'name,photo_100' }, function(r){
+            console.log(r)
+        })
     };
 
     feed.load.search = function(){
@@ -147,6 +151,7 @@ vapp.feed = new function(){
         if ( !vapp.feeds[feedSource] ) return false;
 
         feed.setCurrent(feedSource);
+        feed.load();
 
         cancelEvent(event);
     };
@@ -163,6 +168,17 @@ vapp.feed = new function(){
         vapp.feedOffset = 0;
         vapp.feedLimit = 50;
     };
+};
+
+vapp.locks = {};
+vapp.lock = {
+    checkLock: function(type){
+        return vapp.locks.hasOwnProperty(type) ? !!vapp.locks[type] : false;
+    },
+    setLock: function(type, value){
+        vapp.locks[type] = !!value;
+        return vapp.locks[type];
+    }
 };
 
 vapp.renderer = new function(){
