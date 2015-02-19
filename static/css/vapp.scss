@@ -70,8 +70,11 @@ label,input[type=submit]{cursor:pointer}
     display: inline-block;
     background: #41658c;
     font-size: 13px;
-    line-height: 20px;
+    line-height: 30px;
     border-radius: 2px;
+    padding: 0 10px;
+    color: #fff;
+    cursor: pointer;
 
     &:hover{
         background: lighten(#41658c, 10%) ;
@@ -104,8 +107,8 @@ label,input[type=submit]{cursor:pointer}
 .fl-r{ float: right; }
 
 .ta-l{ text-align: left; }
-.ta-r{ text-align: left; }
-.ta-c{ text-align: left; }
+.ta-r{ text-align: right; }
+.ta-c{ text-align: center; }
 
 .unselectable { -moz-user-select: none; -khtml-user-select: none; user-select: none; -webkit-user-select: none; -o-user-select: none; -ms-user-select: none; }
 .selectable { -moz-user-select: initial; -khtml-user-select: initial; user-select: initial; -webkit-user-select: initial; -o-user-select: initial; -ms-user-select: initial; }

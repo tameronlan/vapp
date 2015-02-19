@@ -12,7 +12,7 @@
 
 <script type="text/template" id="vapp-not-logined-page">
     <div class="vapp-container-logined ta-c">
-        <div>
+        <div style="margin: 0 0 20px;">
             Приложение использует видео с сайта vk.com, поэтому необходимо авторизоваться на этом сайте и подтвердить разрешения для приложения
         </div>
         <div>
