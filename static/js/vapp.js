@@ -19,7 +19,7 @@ vapp = new function(){
 
         vapp.nodes = {
             'body' : $('body'),
-            'window' : $('window'),
+            'window' : $(window),
             'heap' : $('#node-heap'),
             'page' : $('#vapp-page'),
             'navigation' : $('#vapp-header_nav')
@@ -62,15 +62,15 @@ vapp = new function(){
     };
 
     vapp.loadFeed.mine = function(){
-
+        console.log('mine');
     };
 
     vapp.loadFeed.friends = function(){
-
+        console.log('friends');
     };
 
     vapp.loadFeed.search = function(){
-
+        console.log('search');
     };
 
     vapp.resetFeed = function(){
@@ -129,13 +129,14 @@ vapp = new function(){
 
         vapp.mouseX = event.pageX;
         vapp.mouseY = event.pageY;
+
     }
 
     vapp.initBinds = function(){
         _onResize();
 
         vapp.nodes.body.bind('resize', _onResize);
-        vapp.nodes.body.bind('move', _onMove);
+        vapp.nodes.body.bind('mousemove', _onMove);
     }
 }
 
@@ -145,12 +146,10 @@ vapp.renderer = function(page, data){
 };
 
 vapp.renderer.welcome = function(){
-    console.log(vapp.nodes.page)
     vapp.nodes.page.html(vapp.getTpl('vapp-welcome-page'));
 };
 
 vapp.renderer.notLoggined = function(){
-    console.log(vapp.nodes.page)
     vapp.nodes.page.html(vapp.getTpl('vapp-not-logined-page'));
 };
 
