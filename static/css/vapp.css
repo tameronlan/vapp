@@ -44,6 +44,8 @@ label, input[type=submit] { cursor: pointer; }
 .vapp-header_link:hover { background: #51759B; }
 .vapp-header_link:active, .vapp-header_link.active { background: #4B6D94; }
 
+#vapp-content { padding: 70px 0 0; }
+
 .vapp-content { max-width: 1280px; margin: 0 auto; }
 
 /* helpers */

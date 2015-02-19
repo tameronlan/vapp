@@ -1,13 +1,9 @@
 vapp = new function(){
     var vapp = this,
-        feedVideos = ['mine', 'friends', 'search'],
-        currentFeed = feedVideos[0],
+        feeds = {},
+        defaultFeeds = { 'mine' : { title: 'Моё видео', tabSource: 'mine' }}
+        currentFeed = 'mine',
         appId = null;
-
-    vapp.vids = [];
-    vapp.vidsIdsLoaded = [];
-    vapp.feedOffset = 0;
-    vapp.feedLimit = 50;
 
     /**
      * initialize for vapp application
@@ -17,17 +13,26 @@ vapp = new function(){
     vapp.init = function(opts){
         opts = opts || {};
 
-        currentFeed = opts.feed || currentFeed;
-        appId = opts.appId || appId;
+        currentFeed = opts.currentFeed || currentFeed;
+        feeds = opts.feeds || defaultFeeds;
+        apiId = opts.apiId || apiId;
 
+        vapp.nodes = {
+            'body' : $('body'),
+            'window' : $('window'),
+            'heap' : $('#node-heap'),
+            'page' : $('#vapp-page'),
+            'navigation' : $('#vapp-header_nav'),
+        }
+
+        vapp.resetFeed();
         vapp.initBinds();
-        vapp.vkInit();
-        vapp.vkCheck();
+        vapp.vkInit(vapp.vkCheck);
     };
 
     vapp.changeFeed = function(feed){
         if ( typeof feed != 'string') return false;
-        if ( !inArray( feed , feedVideos ) ) return false;
+        if ( !feeds[feed] ) return false;
 
         vapp.setCurrentFeed(feed);
     };
@@ -46,20 +51,36 @@ vapp = new function(){
         if ( !vapp.inited ) { vapp.vkInit( vapp.loadFeed ) }
     };
 
+    vapp.resetFeed = function(){
+        vapp.vids = [];
+        vapp.vidsIdsLoaded = [];
+        vapp.feedOffset = 0;
+        vapp.feedLimit = 50;
+    };
+
     vapp.vkCheck = function(){
         if ( !vapp.inited ) { vapp.vkInit( vapp.vkCheck ) }
 
+        VK.Auth.getLoginStatus(function( response ){
+            if ( response.status ){
+
+            } else {
+
+            }
+        })
     };
 
     vapp.vkInit = function(callback){
         VK.init({ apiId: apiId });
 
+        vapp.inited = true;
+
         if ( callback ) callback();
     };
 
     function _onResize(){
-        vapp.windowHeight = $(window).height();
-        vapp.windowWidth = $(window).width();
+        vapp.windowHeight = vapp.nodes.window.height();
+        vapp.windowWidth = vapp.nodes.window.width();
     }
 
     function _onMove(event){
@@ -71,10 +92,24 @@ vapp = new function(){
 
     vapp.initBinds = function(){
         _onResize();
-        $('body').bind('resize', _onResize);
-        $('body').bind('move', _onMove);
+
+        vapp.nodes.body.bind('resize', _onResize);
+        vapp.nodes.body.bind('move', _onMove);
     }
 }
+
+
+vapp.renderer = function(page, data){
+    if ( this[page] ) return this[page](data);
+};
+
+vapp.renderer.welcome = function(){
+
+};
+
+vapp.renderer.notLoggined = function(){
+
+};
 
 vapp.Player = function(){}
 
@@ -100,7 +135,7 @@ vapp.Player.prototype = new function(){
     plProto.end = function(){
 
     };
-}
+};
 
 function indexOf(arr, value, from) { for (var i = from || 0, l = (arr || []).length; i < l; i++) { if (arr[i] == value) return i; } return -1; };
 function inArray(value, arr) { return indexOf(arr, value) != -1; };
@@ -114,7 +149,7 @@ function objLength(obj) {
 
     return length;
 };
-service.getByField = function(arr, field, val) {
+function getByField(arr, field, val) {
     if (!arr || !field || !val) return false;
 
     for(var key in arr) if ( arr.hasOwnProperty(key) ) {
@@ -132,7 +167,7 @@ String.prototype.supplant = function(o) {
         }
     );
 };
-// get templates
+// templates cache
 vapp.tplsCache = {};
 /**
  * search tpl in dom

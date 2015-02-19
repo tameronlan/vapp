@@ -15,15 +15,17 @@
 	<link rel="stylesheet" href="/static/css/vapp.css" type="text/css" media="screen" />
 </head>
 <body>
-<div id="vapp-container">
-    <div id="vapp-header" class="nclear">
-        <div class="vapp-content">
-            <a class="vapp-header_link unselectable fl-r" href="/?tab=search" onclick="vapp.changeField('search');">Поиск</a>
-            <a class="vapp-header_link unselectable fl-r" href="/?tab=friends" onclick="vapp.changeField('friends');">Мои друзья</a>
-            <a class="vapp-header_link unselectable active fl-r" href="/?tab=mine" onclick="vapp.changeField('mine');">Мои видео</a>
+    <div id="vapp-wrapper">
+        <div id="vapp-header" class="nclear">
+            <div class="vapp-content">
+                <div id="vapp-header_nav">
+<!--                    <a class="vapp-header_link unselectable fl-r" href="/?tab=search" onclick="vapp.changeField('search');">Поиск</a>-->
+<!--                    <a class="vapp-header_link unselectable fl-r" href="/?tab=friends" onclick="vapp.changeField('friends');">Мои друзья</a>-->
+<!--                    <a class="vapp-header_link unselectable active fl-r" href="/?tab=mine" onclick="vapp.changeField('mine');">Мои видео</a>-->
+                </div>
 
-            <div class="vapp-logo unselectable fl-l ">
-                Video Application
+                <div class="vapp-logo unselectable fl-l ">
+                    Video Application
+                </div>
             </div>
         </div>
-    </div>
