@@ -59,10 +59,10 @@
     vapp.init({
         apiId: <?= VK_APP_ID?>,
         feeds: {
-            'search' : {
-                title: 'Поиск',
-                tabSource: 'search'
-            },
+//            'search' : {
+//                title: 'Поиск',
+//                tabSource: 'search'
+//            },
             'friends' : {
                 title: 'Видео друзей',
                 tabSource: 'friends'
