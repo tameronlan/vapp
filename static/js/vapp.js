@@ -19,6 +19,7 @@ vapp = new function(){
             'body' : $('body'),
             'window' : $(window),
             'heap' : $('#node-heap'),
+            'wrapper' : $('#vapp-wrapper'),
             'page' : $('#vapp-page'),
             'navigation' : $('#vapp-header_nav')
         }
@@ -127,6 +128,8 @@ vapp.vk = new function(){
 vapp.feed = new function(){
     var feed = this;
 
+    feed.cacheVideo = {};
+
     feed.load = function(){
         if ( !vapp.vk.inited ) { vapp.vk.init( vapp.feed.load ) }
 
@@ -234,9 +237,9 @@ vapp.renderer = new function(){
         var html = '';
 
         for ( var i in videos ){
-            console.log(videos[i]);
-
             if ( typeof videos[i] == 'object' ) {
+                vapp.feed.cacheVideo[videos[i].vid] = videos[i];
+
                 html += vapp.getTpl('vapp-video-item').supplant(videos[i]);
             }
         }
@@ -267,31 +270,184 @@ vapp.renderer = new function(){
     };
 };
 
-vapp.Player = function(){};
+vapp.player= new function(){
+    var player = this;
 
-vapp.Player.prototype = new function(){
-    var plProto = this;
+    player.open = function(vid){
+        var currentVideo = vapp.feed.cacheVideo[vid],
+            dump_html = '';
 
-    plProto.pause = function(){
+        for(var i in currentVideo) {
+            dump_html += '<br>' + i + ': ' + currentVideo[i];
+        }
 
-    };
-
-    plProto.play = function(){
-
-    };
-
-    plProto.mute = function(){
-
-    };
-
-    plProto.setVolume = function(){
-
-    };
-
-    plProto.end = function(){
-
-    };
+        popup.open(dump_html);
+    }
 };
+
+/**
+ * Event Machine
+ * 22.03.2013
+ *
+ * new Eventer();
+ */
+
+var eventer = function (opts) {
+    $.extend(this, {
+        eventPrefix: '__em_'
+    }, opts);
+};
+
+(function (proto) {
+
+    proto.on = function (type, fn) {
+        var self = this;
+        $(this).on(self.eventPrefix + type, function (e, data) {
+            fn.call(self, { type: e.type }, data);
+        });
+        return this;
+    };
+
+    proto.emit = function (type, data) {
+        $(this).triggerHandler(this.eventPrefix + type, data);
+        return this;
+    };
+
+    proto.off = function (type) {
+        $(this).off(this.eventPrefix + type);
+        return this;
+    };
+
+})(eventer.prototype);
+
+var eventBus = new eventer(); //additional for subscribe and emit global events
+
+/* popup */
+var popup = function () {};
+
+(function (pop, _proto) {
+    pop.stack = [];
+
+    $.extend(pop, new eventer());
+
+    pop.props = {
+        width: 400,
+        showTop: true,
+        onlyContent: true
+    };
+
+    pop.on('close', function (event, data) {
+        if (pop.stack.length == 0) {
+            vapp.nodes.wrapper.removeClass('fixed');
+            $(window).scrollTop(-vapp.nodes.wrapper.css('top').replace('px', ''));
+            vapp.nodes.wrapper.css('top', 0);
+        } else {
+            pop.enableFirst();
+        }
+    });
+
+    pop.on('open', function (event, data) {
+        vapp.nodes.wrapper.css('top', -$(window).scrollTop()).addClass('fixed');
+
+        if ( pop.stack.length ){
+            pop.enableFirst();
+        }
+    });
+
+    pop.enableFirst = function(){
+        var _stackLength = pop.stack.length;
+
+        for(var i in pop.stack){
+            pop.stack[i].$box[(i == _stackLength - 1 ? 'remove' : 'add' ) + 'Class']('invisible');
+        }
+    }
+
+    pop.open = function (html, opts) {
+        var _ex = new pop(opts);
+
+        _ex.html = html;
+        _ex.index = pop.stack.length;
+        pop.stack.push(_ex);
+        _ex.props = $.extend({}, pop.props, opts);
+
+        _ex.open();
+        pop.emit('open');
+        return _ex;
+    };
+
+    pop.close = function (index) {
+        if (typeof(index) === 'undefined') index = pop.stack.length - 1;
+        if (pop.stack[index]) pop.stack[index].close();
+        pop.emit('close');
+    };
+
+    pop.closeAll = function () {
+        for (var i in pop.stack) {
+            pop.stack[i].$wrapper.remove()
+        }
+        pop.stack = [];
+    };
+
+    _proto.open = function () {
+        var context = this;
+
+        context.render();
+        context.$header.html(context.props.title);
+        context.$content.html(context.html);
+        context.$box.css({
+            'maxWidth': context.props.width
+        });
+        context.align();
+
+        if (context.props.onOpen) context.props.onOpen(context);
+
+    };
+
+    _proto.align = function () {
+        var context = this;
+
+        context.$box.css({'margin-top': (context.$wrapper.height() - context.$box.height()) / 2 })
+            .addClass('opened');
+    };
+
+    _proto.close = function () {
+        var context = this;
+        context.$box.css({'marginTop': 0}).addClass('closed');
+
+        setTimeout(function () {
+            context.$wrapper.remove();
+            pop.stack.splice(context.index, 1);
+
+            for (var i in pop.stack) {
+                pop.stack[i].index = i;
+            }
+
+            pop.emit('close');
+
+            if (context.props.onClose) context.props.onClose(context);
+        }, 300);
+    };
+
+    _proto.render = function () {
+        var context = this;
+
+        context.$wrapper = $('<div>', {'id': 'popup-wrap-' + context.index, 'class': 'popup-wrap'}).click(function () {
+            popup.close();
+        });
+        context.$box = $('<div>', {'class': 'popup-box'}).appendTo(context.$wrapper).click(function (event) {
+            event.stopPropagation();
+        });
+        context.$header = $('<div>', {'class': 'popup-header'}).appendTo(context.$box);
+        context.$closer = $('<div>', {'class': 'popup-close'}).appendTo(context.$box).click(function(){
+            popup.close();
+        });
+        context.$content = $('<div>', {'class': 'popup-content'}).appendTo(context.$box);
+
+        context.$wrapper.css({'z-index': 1000 + context.index});
+
+        vapp.nodes.heap.append(context.$wrapper);
+    };
+}(popup, popup.prototype));
 
 function indexOf(arr, value, from) { for (var i = from || 0, l = (arr || []).length; i < l; i++) { if (arr[i] == value) return i; } return -1; };
 function inArray(value, arr) { return indexOf(arr, value) != -1; };

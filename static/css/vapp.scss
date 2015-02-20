@@ -25,6 +25,14 @@ body{
     overflow-y: scroll;
 }
 
+#vapp-wrapper.fixed{
+    left: 0;
+    padding: 0 19px 0 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+
 #vapp-header{
     height: 50px;
     position: fixed;
@@ -126,6 +134,92 @@ body{
         display: block;
         width: 100%;
     }
+}
+
+.popup-wrap{
+    background-color: rgba(255, 255,255,.9) ;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    position: absolute;
+    min-height: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    -ms-perspective: 1000px;
+    perspective: 1000px;
+
+    z-index: 3;
+}
+.popup-video{
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    z-index: 1000;
+    text-align: left;
+    margin: 0;
+}
+.popup-box{
+    margin: 0 auto;
+    display: block;
+    z-index: 1000;
+    text-align: left;
+
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+
+    -webkit-transform: translateY(10);
+    -moz-transform: translateY(10);
+    -ms-transform: translateY(10);
+    transform: translateY(10);
+
+    opacity: 0;
+}
+.popup-box.opened{
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+
+    opacity: 1;
+}
+.popup-box.closed{
+    -webkit-transform: translateY(-10);
+    -moz-transform: translateY(-10);
+    -ms-transform: translateY(-10);
+    transform: translateY(-10);
+
+    opacity: 0;
+}
+.popup-box.invisible{
+    height: 0;
+    overflow: hidden;
+}
+.popup-header{
+    text-align: center;
+    position: relative;
+}
+.popup-close:hover{opacity: .8;}
+.popup-close{
+    display: block;
+    position: absolute;
+    top: 42px;
+    right: 53px;
+    width: 38px;
+    height: 36px;
+    cursor: pointer;
+    background: url(../img/sp.png) -579px -300px;
+}
+.popup-content{
+    padding: 40px 16px;
+    background: #fff;
+    background: rgba(255,255,255,.8);
+    box-shadow: 2px 2px 20px rgba(0,0,0,.3);
 }
 
 @media(max-width:720px){

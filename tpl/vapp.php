@@ -47,7 +47,7 @@
 </script>
 
 <script type="text/template" id="vapp-video-item">
-    <div class="vapp-video_item" data-id="{vid}" id="vapp-friend_item_{vid}">
+    <div class="vapp-video_item" data-id="{vid}" id="vapp-friend_item_{vid}" onclick="vapp.player.open({vid});">
         <div class="vapp-video_item_img">
             <img src="{image_medium}"/>
         </div>
@@ -60,23 +60,25 @@
 </script>
 
 <script type="text/javascript">
-    vapp.init({
-        apiId: <?= VK_APP_ID?>,
-        feeds: {
+    $(function(){
+        vapp.init({
+            apiId: <?= VK_APP_ID?>,
+            feeds: {
 //            'search' : {
 //                title: 'Поиск',
 //                tabSource: 'search'
 //            },
-            'friends' : {
-                title: 'Видео друзей',
-                tabSource: 'friends'
+                'friends' : {
+                    title: 'Видео друзей',
+                    tabSource: 'friends'
+                },
+                'mine' : {
+                    title: 'Мои видео',
+                    tabSource: 'mine'
+                }
             },
-            'mine' : {
-                title: 'Мои видео',
-                tabSource: 'mine'
-            }
-        },
-        currentFeed: 'mine'
+            currentFeed: 'mine'
+        });
     });
 </script>
 
