@@ -38,7 +38,7 @@ label, input[type=submit] { cursor: pointer; }
 
 body { overflow-y: scroll; }
 
-#vapp-wrapper.fixed { left: 0; padding: 0 19px 0 0; position: fixed; right: 0; top: 0; }
+#vapp-wrapper.fixed { left: 0; position: fixed; right: 0; top: 0; }
 
 #vapp-header { height: 50px; position: fixed; left: 0; top: 0; right: 0; background: #567ca4; }
 

@@ -277,6 +277,8 @@ vapp.player= new function(){
         var currentVideo = vapp.feed.cacheVideo[vid],
             dump_html = '';
 
+        console.log(currentVideo)
+
         for(var i in currentVideo) {
             dump_html += '<br>' + i + ': ' + currentVideo[i];
         }
