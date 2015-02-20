@@ -39,14 +39,18 @@
 
 <script type="text/template" id="vapp-friend-item">
     <div class="vapp-friend_item" data-id="{uid}" id="vapp-friend_item_{uid}">
-        <div class="vapp-friend_item_img" style="background: url({photo_100})"></div>
+        <div class="vapp-friend_item_img">
+            <img src="{photo_100}"/>
+        </div>
         <div class="vapp-friend_item_name">{first_name}</div>
     </div>
 </script>
 
 <script type="text/template" id="vapp-video-item">
     <div class="vapp-video_item" data-id="{vid}" id="vapp-friend_item_{vid}">
-        <div class="vapp-video_item_img" style="background: url({image_medium})"></div>
+        <div class="vapp-video_item_img">
+            <img src="{image_medium}"/>
+        </div>
         <div class="vapp-video_item_name">{title}</div>
     </div>
 </script>

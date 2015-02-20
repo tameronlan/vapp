@@ -1,5 +1,6 @@
 @import "compass/css3/animation";
 @import "compass/css3/transition";
+
 *{border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;margin:0;padding:0}
 html,body{height:100%;position:relative;color:#343538;font-family:Lucida Grande, Arial, tahoma, verdana, sans-serif; font-size: 12px; line-height: 1.167;}
 ul{list-style:none}
@@ -19,6 +20,10 @@ small{font-size:85%}
 strong,th{font-weight:700}
 textarea{overflow:auto;font-family:Arial, Helvetica, sans-serif}
 label,input[type=submit]{cursor:pointer}
+
+body{
+    overflow-y: scroll;
+}
 
 #vapp-header{
     height: 50px;
@@ -92,12 +97,16 @@ label,input[type=submit]{cursor:pointer}
     margin: 0 2% 20px;
 
     .vapp-friend_item_img{
-        width: 100px;
-        height: 100px;
+        max-width: 100px;
         background-position: center center;
         background-repeat: no-repeat;
-        border-radius: 50%;
         margin: 0 0 20px;
+    }
+
+    img{
+        display: block;
+        width: 100%;
+        border-radius: 50%;
     }
 }
 
@@ -108,11 +117,35 @@ label,input[type=submit]{cursor:pointer}
     margin: 0 2% 20px;
 
     .vapp-video_item_img{
-        width: 320px;
-        height: 240px;
         background-position: center center;
         background-repeat: no-repeat;
         margin: 0 0 20px;
+    }
+
+    img{
+        display: block;
+        width: 100%;
+    }
+}
+
+@media(max-width:720px){
+    .vapp-logo{
+        width: 0;
+        padding-right: 0;
+        overflow: hidden;
+    }
+
+    .vapp-header_link{
+        padding: 0 15px;
+    }
+
+    #vapp-header{
+        position: static;
+    }
+
+    #vapp-content{
+        padding: 10px 0 0;
+
     }
 }
 

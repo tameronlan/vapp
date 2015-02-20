@@ -18,10 +18,10 @@
     <div id="vapp-wrapper">
         <div id="vapp-header" class="nclear">
             <div class="vapp-content">
-                <div id="vapp-header_nav"></div>
-
                 <div class="vapp-logo unselectable fl-l ">
                     Video Application
                 </div>
+
+                <div id="vapp-header_nav"></div>
             </div>
         </div>
