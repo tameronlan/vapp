@@ -89,13 +89,20 @@ vapp.vk = new function(){
     };
 
     vk.check = function(){
-        if ( !vk.inited ) { vk.nit( vk.check ) }
+        if ( !vk.inited ) { vk.init( vk.check ) }
 
         VK.Auth.getLoginStatus(function( r ){
             if ( r.session ){
                 vapp.session = r.session;
-                vapp.renderer.tabs();
-                vapp.feed.load();
+
+                VK.Api.call('account.getAppPermissions', { user_id: vapp.session.mid }, function(r){
+                    if ( r.response == 22 ) {
+                        vapp.renderer.tabs();
+                        vapp.feed.load();
+                    } else {
+                        vapp.renderer.noRights();
+                    }
+                })
             } else {
                 vapp.renderer.notLoggined();
             }
@@ -103,7 +110,7 @@ vapp.vk = new function(){
     };
 
     vk.login = function(){
-        if ( !vk.inited ) { vk.nit( vk.check ) }
+        if ( !vk.inited ) { vk.init( vk.login ) }
 
         VK.Auth.login(function( r ){
             if ( r.session ){
@@ -113,7 +120,7 @@ vapp.vk = new function(){
             } else {
                 vapp.renderer.notLoggined();
             }
-        }, 'friends,video,photos');
+        }, 22);
     };
 };
 
@@ -127,8 +134,6 @@ vapp.feed = new function(){
     };
 
     feed.load.mine = function(){
-        console.log('mine');
-
         VK.Api.call('video.get', { owner_id: vapp.session.mid }, function(r){
             if ( r.error ){
                if ( r.error.error_code == 15 ){
@@ -141,8 +146,6 @@ vapp.feed = new function(){
     };
 
     feed.load.friends = function(){
-        console.log('friends');
-
         if ( feed.friendId ){
             VK.Api.call('video.get', { owner_id: feed.friendId }, function(r){
                 if ( r.error ){
@@ -178,6 +181,9 @@ vapp.feed = new function(){
 
     feed.setCurrent = function(feedSource){
         vapp.currentFeed = feedSource;
+
+        $('.vapp-header_link').removeClass('active');
+        $('#vapp-header_link_' + feedSource).addClass('active');
 
         return vapp.currentFeed;
     };
@@ -225,7 +231,17 @@ vapp.renderer = new function(){
     };
 
     renderer.videos = function(videos){
-        vapp.nodes.page.html(videos);
+        var html = '';
+
+        for ( var i in videos ){
+            console.log(videos[i]);
+
+            if ( typeof videos[i] == 'object' ) {
+                html += vapp.getTpl('vapp-video-item').supplant(videos[i]);
+            }
+        }
+
+        vapp.nodes.page.html(html);
     };
 
     renderer.friends = function(friends){
@@ -240,6 +256,10 @@ vapp.renderer = new function(){
 
     renderer.notLoggined = function(){
         vapp.nodes.page.html(vapp.getTpl('vapp-not-logined-page'));
+    };
+
+    renderer.noRights = function(){
+        vapp.nodes.page.html(vapp.getTpl('vapp-not-rights-page'));
     };
 
     renderer.videoNotSupported = function(){

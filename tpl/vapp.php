@@ -20,6 +20,16 @@
         </div>
     </div>
 </script>
+<script type="text/template" id="vapp-not-rights-page">
+    <div class="vapp-container-logined ta-c">
+        <div style="margin: 0 0 20px;">
+            Приложению необходимо получить разрешения к видео контенту
+        </div>
+        <div>
+            <span class="btn" onclick="vapp.vk.login()">Дать разрешения вконтакте</span>
+        </div>
+    </div>
+</script>
 
 <script type="text/template" id="vapp-not-supported-page">
     <div class="vapp-container-supported">
@@ -34,8 +44,15 @@
     </div>
 </script>
 
+<script type="text/template" id="vapp-video-item">
+    <div class="vapp-video_item" data-id="{vid}" id="vapp-friend_item_{vid}">
+        <div class="vapp-video_item_img" style="background: url({image_medium})"></div>
+        <div class="vapp-video_item_name">{title}</div>
+    </div>
+</script>
+
 <script type="text/template" id="vapp-navigation-item">
-    <a class="vapp-header_link unselectable fl-r {class}" href="/?tab={tabSource}" onclick="vapp.feed.change('{tabSource}', event);">{title}</a>
+    <a class="vapp-header_link unselectable fl-r {class}" id="vapp-header_link_{tabSource}" href="/?tab={tabSource}" onclick="vapp.feed.change('{tabSource}', event);">{title}</a>
 </script>
 
 <script type="text/javascript">
