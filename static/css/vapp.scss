@@ -85,6 +85,22 @@ label,input[type=submit]{cursor:pointer}
     }
 }
 
+.vapp-friend_item{
+    display: inline-block;
+    vertical-align: middle;
+    width: 20%;
+    margin: 0 2% 20px;
+
+    .vapp-friend_item_img{
+        width: 100px;
+        height: 100px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        border-radius: 50%;
+        margin: 0 0 20px;
+    }
+}
+
 /* helpers */
 .h{display:none;}
 .o_h{overflow:hidden !important;}

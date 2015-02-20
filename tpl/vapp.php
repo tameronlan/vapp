@@ -27,6 +27,13 @@
     </div>
 </script>
 
+<script type="text/template" id="vapp-friend-item">
+    <div class="vapp-friend_item" data-id="{uid}" id="vapp-friend_item_{uid}">
+        <div class="vapp-friend_item_img" style="background: url({photo_100})"></div>
+        <div class="vapp-friend_item_name">{first_name}</div>
+    </div>
+</script>
+
 <script type="text/template" id="vapp-navigation-item">
     <a class="vapp-header_link unselectable fl-r {class}" href="/?tab={tabSource}" onclick="vapp.feed.change('{tabSource}', event);">{title}</a>
 </script>

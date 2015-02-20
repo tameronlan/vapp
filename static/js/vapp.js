@@ -113,7 +113,7 @@ vapp.vk = new function(){
             } else {
                 vapp.renderer.notLoggined();
             }
-        })
+        }, 'friends,video,photos');
     };
 };
 
@@ -130,16 +130,34 @@ vapp.feed = new function(){
         console.log('mine');
 
         VK.Api.call('video.get', { owner_id: vapp.session.mid }, function(r){
-            console.log(r)
+            if ( r.error ){
+               if ( r.error.error_code == 15 ){
+                   vapp.renderer.error(r.error.error_msg);
+               }
+            } else {
+                vapp.renderer.videos(r.response);
+            }
         })
     };
 
     feed.load.friends = function(){
         console.log('friends');
 
-        VK.Api.call('friends.get', { fields: 'name,photo_100' }, function(r){
-            console.log(r)
-        })
+        if ( feed.friendId ){
+            VK.Api.call('video.get', { owner_id: feed.friendId }, function(r){
+                if ( r.error ){
+                    if ( r.error.error_code == 15 ){
+                        vapp.renderer.error(r.error.error_msg);
+                    }
+                } else {
+                    vapp.renderer.videos(r.response);
+                }
+            })
+        } else {
+            VK.Api.call('friends.get', { fields: 'name,photo_100' }, function(r){
+                vapp.renderer.friends(r.response);
+            })
+        }
     };
 
     feed.load.search = function(){
@@ -149,6 +167,8 @@ vapp.feed = new function(){
     feed.change = function(feedSource, event){
         if ( typeof feedSource != 'string') return false;
         if ( !vapp.feeds[feedSource] ) return false;
+
+        if ( feedSource != 'friends' ) feed.friendId = null;
 
         feed.setCurrent(feedSource);
         feed.load();
@@ -198,6 +218,24 @@ vapp.renderer = new function(){
         }
 
         vapp.nodes.navigation.html(html);
+    };
+
+    renderer.error = function(errorMSG){
+        vapp.nodes.page.html(errorMSG);
+    };
+
+    renderer.videos = function(videos){
+        vapp.nodes.page.html(videos);
+    };
+
+    renderer.friends = function(friends){
+        var html = '';
+
+        for ( var i in friends ){
+            html += vapp.getTpl('vapp-friend-item').supplant(friends[i]);
+        }
+
+        vapp.nodes.page.html(html);
     };
 
     renderer.notLoggined = function(){
