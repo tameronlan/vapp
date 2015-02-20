@@ -275,15 +275,21 @@ vapp.player= new function(){
 
     player.open = function(vid){
         var currentVideo = vapp.feed.cacheVideo[vid],
+            html = '',
             dump_html = '';
-
-        console.log(currentVideo)
 
         for(var i in currentVideo) {
             dump_html += '<br>' + i + ': ' + currentVideo[i];
         }
 
-        popup.open(dump_html);
+        if(currentVideo.files.eternal){
+            html += '<iframe src="' +currentVideo.files.eternal+ '"></iframe>'
+        } else {
+            console.log(currentVideo.files)
+            html += '<video src="' +currentVideo.files.mp4_240+ '" width="480" height="270" poster="poster.gif" controls></video>'
+        }
+
+        popup.open(html, {width: 600});
     }
 };
 
