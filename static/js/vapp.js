@@ -459,7 +459,7 @@ var popup = function () {};
         context.$header = $('<div>', {'class': 'popup-header'}).appendTo(context.$box);
         context.$closer = $('<div>', {'class': 'popup-close'}).appendTo(context.$box).click(function(){
             popup.close();
-        }).append('<i class="icon-cancel-1"></i>');
+        }).append('<i class="icon-cancel"></i>');
         context.$content = $('<div>', {'class': 'popup-content'}).appendTo(context.$box);
 
         context.$wrapper.css({'z-index': 1000 + context.index});

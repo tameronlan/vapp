@@ -81,7 +81,8 @@ body { overflow-y: scroll; }
 
 .popup-header { text-align: center; position: relative; }
 
-.popup-close { display: block; position: absolute; top: 50px; right: 50px; cursor: pointer; z-index: 5; font-size: 40px; color: #fff; }
+.popup-close { display: block; position: absolute; top: 20px; right: 20px; cursor: pointer; z-index: 5; font-size: 30px; height: 40px; width: 40px; line-height: 40px; text-align: center; color: #fff; background: #000; -moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20); opacity: 0.2; -moz-transition: opacity 0.2s linear; -o-transition: opacity 0.2s linear; -webkit-transition: opacity 0.2s linear; transition: opacity 0.2s linear; }
+.popup-close:hover { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60); opacity: 0.6; }
 
 .popup-content { padding: 40px 16px; background: #fff; background: rgba(255, 255, 255, 0.8); box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3); }
 
