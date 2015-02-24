@@ -1,38 +1,40 @@
 <?php require_once 'header.php'; ?>
 
-<div id="vapp-content">
-    <div class="vapp-content" id="vapp-page"></div>
+<div id="vapp-middle">
+    <div class="vapp-content ta-c" id="vapp-page"></div>
 </div>
 
 <script type="text/template" id="vapp-welcome-page">
-    <div class="vapp-container vapp-container_welcome">
-        Доброго времени суток, приложение загружается.
+    <div class="vapp-container">
+        <div class="vapp-container_top">
+            Доброго времени суток, приложение загружается.
+        </div>
     </div>
 </script>
 
 <script type="text/template" id="vapp-not-logined-page">
-    <div class="vapp-container-logined ta-c">
-        <div style="margin: 0 0 20px;">
-            Приложение использует видео с сайта vk.com, поэтому необходимо авторизоваться на этом сайте и подтвердить разрешения для приложения
+    <div class="vapp-box">
+        <div class="vapp-box_top">
+            Приложение использует видео с сайта <a href="http://vk.com/" target="_blank">vk.com</a>, поэтому необходимо авторизоваться на этом сайте и подтвердить разрешения для приложения
         </div>
-        <div>
+        <div class="vapp-box_bottom">
             <span class="btn" onclick="vapp.vk.login()">Войти через вконтакте</span>
         </div>
     </div>
 </script>
 <script type="text/template" id="vapp-not-rights-page">
-    <div class="vapp-container-logined ta-c">
-        <div style="margin: 0 0 20px;">
+    <div class="vapp-box">
+        <div class="vapp-box_top">
             Приложению необходимо получить разрешения к видео контенту
         </div>
-        <div>
+        <div class="vapp-box_bottom">
             <span class="btn" onclick="vapp.vk.login()">Предоставить разрешения</span>
         </div>
     </div>
 </script>
 
 <script type="text/template" id="vapp-not-supported-page">
-    <div class="vapp-container-supported">
+    <div class="vapp-box">
         Ваш браузер не поддерживает технологию с помощью которой воспроизводится видео в приложении
     </div>
 </script>

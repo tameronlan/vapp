@@ -36,7 +36,7 @@ textarea { overflow: auto; font-family: Arial, Helvetica, sans-serif; }
 
 label, input[type=submit] { cursor: pointer; }
 
-body { overflow-y: scroll; }
+body { overflow-y: scroll; background: #f0f2f5; }
 
 #vapp-wrapper.fixed { left: 0; position: fixed; right: 0; top: 0; }
 
@@ -48,7 +48,7 @@ body { overflow-y: scroll; }
 .vapp-header_link:hover { background: #51759B; }
 .vapp-header_link:active, .vapp-header_link.active { background: #4B6D94; }
 
-#vapp-content { padding: 70px 0 0; }
+#vapp-middle { padding: 70px 0 0; }
 
 .vapp-content { max-width: 1280px; margin: 0 auto; }
 
@@ -56,13 +56,17 @@ body { overflow-y: scroll; }
 .btn:hover { background: #527eae; }
 .btn:active { background: #314c69; }
 
-.vapp-friend_item { display: inline-block; vertical-align: top; width: 20%; margin: 0 2% 20px; }
-.vapp-friend_item .vapp-friend_item_img { max-width: 100px; background-position: center center; background-repeat: no-repeat; margin: 0 0 20px; }
+.vapp-friend_item { display: inline-block; vertical-align: top; width: 20%; margin: 0 2% 30px; }
+.vapp-friend_item .vapp-friend_item_img { max-width: 100px; background-position: center center; background-repeat: no-repeat; margin: 0 auto 10px; }
 .vapp-friend_item img { display: block; width: 100%; border-radius: 50%; }
 
 .vapp-video_item { display: inline-block; vertical-align: top; width: 20%; margin: 0 2% 30px; }
 .vapp-video_item .vapp-video_item_img { background-position: center center; background-repeat: no-repeat; margin: 0 0 10px; cursor: pointer; }
 .vapp-video_item img { display: block; width: 100%; }
+
+.vapp-box { padding: 30px; font-size: 13px; line-height: 1.4em; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); display: inline-block; max-width: 700px; background: #fff; }
+.vapp-box .vapp-box_top { margin: 0 0 30px; }
+.vapp-box .vapp-box_bottom { margin: 0 -30px -30px; padding: 20px 30px; background: #f5f7fa; text-align: right; box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.2) inset; }
 
 .popup-wrap { background-color: rgba(255, 255, 255, 0.9); background-position: center center; background-repeat: no-repeat; background-size: cover; text-align: center; position: absolute; min-height: 100%; left: 0; top: 0; right: 0; -webkit-perspective: 1000px; -moz-perspective: 1000px; -ms-perspective: 1000px; perspective: 1000px; z-index: 3; }
 
@@ -89,7 +93,7 @@ body { overflow-y: scroll; }
 @media (max-width: 720px) { .vapp-logo { width: 0; padding-right: 0; overflow: hidden; }
   .vapp-header_link { padding: 0 15px; }
   #vapp-header { position: static; }
-  #vapp-content { padding: 10px 0 0; } }
+  #vapp-middle { padding: 10px 0 0; } }
 /* helpers */
 .h { display: none; }
 
