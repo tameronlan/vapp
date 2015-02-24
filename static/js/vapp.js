@@ -282,7 +282,7 @@ vapp.player= new function(){
             dump_html += '<br>' + i + ': ' + currentVideo[i];
         }
 
-        popup.open('загрузка видео', {
+        popup.open('<div class="ta-c"><div style="margin: 0 0 20px;">Загрузка видео</div><img src="/static/i/loader.gif"/></div>', {
             width: 9999,
             myClass: 'video-popup',
             onOpen: function(context){

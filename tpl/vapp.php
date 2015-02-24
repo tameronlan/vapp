@@ -5,10 +5,11 @@
 </div>
 
 <script type="text/template" id="vapp-welcome-page">
-    <div class="vapp-container">
-        <div class="vapp-container_top">
+    <div class="vapp-box">
+        <div class="vapp-box_top">
             Доброго времени суток, приложение загружается.
         </div>
+        <img src="/static/i/loader.gif"/>
     </div>
 </script>
 
