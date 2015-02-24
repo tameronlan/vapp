@@ -26,7 +26,7 @@
             Приложению необходимо получить разрешения к видео контенту
         </div>
         <div>
-            <span class="btn" onclick="vapp.vk.login()">Дать разрешения вконтакте</span>
+            <span class="btn" onclick="vapp.vk.login()">Предоставить разрешения</span>
         </div>
     </div>
 </script>
@@ -42,7 +42,7 @@
         <div class="vapp-friend_item_img">
             <img src="{photo_100}"/>
         </div>
-        <div class="vapp-friend_item_name">{first_name}</div>
+        <div class="vapp-friend_item_name ellipsis">{first_name}</div>
     </div>
 </script>
 
@@ -51,7 +51,7 @@
         <div class="vapp-video_item_img">
             <img src="{image_medium}"/>
         </div>
-        <div class="vapp-video_item_name">{title}</div>
+        <div class="vapp-video_item_name ellipsis">{title}</div>
     </div>
 </script>
 
@@ -64,10 +64,6 @@
         vapp.init({
             apiId: <?= VK_APP_ID?>,
             feeds: {
-//            'search' : {
-//                title: 'Поиск',
-//                tabSource: 'search'
-//            },
                 'friends' : {
                     title: 'Видео друзей',
                     tabSource: 'friends'

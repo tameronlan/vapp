@@ -282,22 +282,20 @@ vapp.player= new function(){
             dump_html += '<br>' + i + ': ' + currentVideo[i];
         }
 
-        console.log(dump_html);
-
         popup.open('загрузка видео', {
             width: 9999,
             myClass: 'video-popup',
             onOpen: function(context){
 
                 if(currentVideo.files.external){
-                    html += '<iframe src="' +currentVideo.files.external+ '?vk_puid37=2&vk_puid38=5" width="' + context.$box.width() + '" height="' + context.$box.height() + '" type="text/html" frameborder="0" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" scrolling="no" preventhide="1"></iframe>'
+                    html += '<iframe src="' + currentVideo.player+ '" width="' + context.$box.width() + '" height="' + context.$box.height() + '" type="text/html" frameborder="0" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" scrolling="no" preventhide="1"></iframe>'
                 } else {
                     html += '<video controls src="' +currentVideo.files.mp4_240+ '" width="' + context.$content.width() + '" height="' + context.$content.height() + '" poster="'+currentVideo.image_medium+'"></video>'
                 }
 
                 context.$content.html(html);
 
-                console.log(context);
+                console.log(context, currentVideo);
             }
         });
     }

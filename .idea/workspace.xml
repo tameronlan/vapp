@@ -6,32 +6,33 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/vapp.css.map" afterPath="$PROJECT_DIR$/static/css/vapp.css.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/vapp.css" afterPath="$PROJECT_DIR$/static/css/vapp.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/vapp.js" afterPath="$PROJECT_DIR$/static/js/vapp.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/vapp.php" afterPath="$PROJECT_DIR$/tpl/vapp.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/vapp.scss" afterPath="$PROJECT_DIR$/static/css/vapp.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="vapp.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424769423870" ignored="false" />
     <file path="/vapp.js" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424770420878" ignored="false" />
-    <file path="/vapp.php" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424447145642" ignored="false" />
+    <file path="/vapp.php" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424773434295" ignored="false" />
     <file path="/dummy.xml" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424430474884" ignored="false" />
-    <file path="/vapp.scss" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424770981959" ignored="false" />
+    <file path="/vapp.scss" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424771304572" ignored="false" />
     <file path="/footer.php" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424357074901" ignored="false" />
     <file path="/header.php" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424770351517" ignored="false" />
     <file path="E:/fotostrana/img/static/app/people/people.scss" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424421237526" ignored="false" />
     <file path="E:/fotostrana/fotostrana/Base/config_local.override.php" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424421237526" ignored="false" />
     <file path="E:/fotostrana/fotostrana/App/Events/Cards/Controller/Index.php" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424421237526" ignored="false" />
     <file path="E:/fotostrana/fotostrana/App/Events/Cards/Service/Stickers.php" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424421237526" ignored="false" />
-    <file path="E:/fotostrana/fotostrana/Base/config.php" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424768602997" ignored="false" />
+    <file path="E:/fotostrana/fotostrana/Base/config.php" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424772709738" ignored="false" />
     <file path="E:/fotostrana/fotostrana/App/Events/Cards/Service/Tabs.php" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424421237526" ignored="false" />
     <file path="E:/fotostrana/fotostrana/App/Giftroom/Templates/gift/tabs/feb23.phtml" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424768555495" ignored="false" />
     <file path="/feb23.phtml" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424431162861" ignored="false" />
-    <file path="E:/fotostrana/fotostrana/App/Giftroom/Templates/gift/tabs/love2015.phtml" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424768602997" ignored="false" />
+    <file path="E:/fotostrana/fotostrana/App/Giftroom/Templates/gift/tabs/love2015.phtml" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424772709738" ignored="false" />
     <file path="E:/fotostrana/fotostrana/App/Giftroom/Service/Gift.php" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424428209107" ignored="false" />
     <file path="E:/fotostrana/fotostrana/Base/Service/Static.php" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424768602997" ignored="false" />
     <file path="E:/fotostrana/fotostrana/App/Gifts/Service/Base.php" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424768602997" ignored="false" />
     <file path="E:/fotostrana/fotostrana/App/Gifts/Service/Tabs/Feb23.php" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424768602997" ignored="false" />
     <file path="E:/fotostrana/fotostrana/App/Gifts/Service/Tabs/Base.php" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424768602997" ignored="false" />
+    <file path="E:/fotostrana/img/static/app/rating/rating.css" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424772709738" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,116 +55,28 @@
       <file leaf-file-name="vapp.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/js/vapp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="461" column="40" selection-start="12692" selection-end="12692" vertical-scroll-proportion="-21.84">
+            <state line="297" column="51" selection-start="8470" selection-end="8470" vertical-scroll-proportion="-124.44">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/fontello/config.json">
+      <file leaf-file-name="vapp.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tpl/vapp.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fontello-ie7.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/fontello/css/fontello-ie7.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="28" column="79" selection-start="1065" selection-end="1065" vertical-scroll-proportion="0.53664035">
               <folding>
-                <marker date="1424769861344" expanded="true" signature="290:357" placeholder="{...}" />
-                <marker date="1424769861344" expanded="true" signature="395:462" placeholder="{...}" />
-                <marker date="1424769861344" expanded="true" signature="499:566" placeholder="{...}" />
-                <marker date="1424769861344" expanded="true" signature="607:674" placeholder="{...}" />
-                <marker date="1424769861344" expanded="true" signature="715:782" placeholder="{...}" />
-                <marker date="1424769861344" expanded="true" signature="821:888" placeholder="{...}" />
-                <marker date="1424769861344" expanded="true" signature="930:997" placeholder="{...}" />
-                <marker date="1424769861344" expanded="true" signature="1047:1114" placeholder="{...}" />
-                <marker date="1424769861344" expanded="true" signature="1163:1230" placeholder="{...}" />
-                <marker date="1424769861344" expanded="true" signature="1273:1340" placeholder="{...}" />
-                <marker date="1424769861344" expanded="true" signature="1382:1449" placeholder="{...}" />
-                <marker date="1424769861344" expanded="true" signature="1489:1556" placeholder="{...}" />
-                <marker date="1424769861344" expanded="true" signature="1598:1665" placeholder="{...}" />
-                <marker date="1424769861344" expanded="true" signature="1712:1779" placeholder="{...}" />
-                <marker date="1424769861344" expanded="true" signature="1828:1895" placeholder="{...}" />
-                <marker date="1424769861344" expanded="true" signature="1933:2000" placeholder="{...}" />
-                <marker date="1424769861344" expanded="true" signature="2040:2107" placeholder="{...}" />
-                <marker date="1424769861344" expanded="true" signature="2141:2208" placeholder="{...}" />
-                <marker date="1424769861344" expanded="true" signature="2245:2312" placeholder="{...}" />
-                <marker date="1424769861344" expanded="true" signature="2348:2415" placeholder="{...}" />
-                <marker date="1424769861344" expanded="true" signature="2457:2524" placeholder="{...}" />
-                <marker date="1424769861344" expanded="true" signature="2562:2629" placeholder="{...}" />
-                <marker date="1424769861344" expanded="true" signature="2672:2739" placeholder="{...}" />
-                <marker date="1424769861344" expanded="true" signature="2780:2847" placeholder="{...}" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#script#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#script#2;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tpl/header.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="48" selection-start="1094" selection-end="1094" vertical-scroll-proportion="-17.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fontello.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/fontello/css/fontello.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="55" selection-start="1930" selection-end="1930" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="icns.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tpl/icns.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="243" column="6" selection-start="3833" selection-end="3833" vertical-scroll-proportion="-18.961538">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LICENSE.txt" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/fontello/LICENSE.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="0" selection-start="755" selection-end="755" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.txt" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/fontello/README.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="functions.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/functions.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="12" selection-start="808" selection-end="808" vertical-scroll-proportion="-17.76923">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="vapp.scss" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="vapp.scss" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/css/vapp.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="246" column="42" selection-start="5154" selection-end="5154" vertical-scroll-proportion="0.5158817">
+            <state line="133" column="8" selection-start="2864" selection-end="2864" vertical-scroll-proportion="-16.6">
               <folding />
             </state>
           </provider>
@@ -189,7 +102,6 @@
       <list>
         <option value="$PROJECT_DIR$/tpl/error.php" />
         <option value="$PROJECT_DIR$/tpl/footer.php" />
-        <option value="$PROJECT_DIR$/tpl/vapp.php" />
         <option value="$PROJECT_DIR$/static/fontello/css/fontello-codes.css" />
         <option value="$PROJECT_DIR$/static/fontello/demo.html" />
         <option value="$PROJECT_DIR$/functions.php" />
@@ -201,8 +113,9 @@
         <option value="$PROJECT_DIR$/static/fontello/font/fontello.svg" />
         <option value="$PROJECT_DIR$/tpl/icns.html" />
         <option value="$PROJECT_DIR$/tpl/header.php" />
-        <option value="$PROJECT_DIR$/static/js/vapp.js" />
         <option value="$PROJECT_DIR$/static/css/vapp.scss" />
+        <option value="$PROJECT_DIR$/static/js/vapp.js" />
+        <option value="$PROJECT_DIR$/tpl/vapp.php" />
       </list>
     </option>
   </component>
@@ -520,26 +433,14 @@
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavascriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/HTML5.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2147" column="0" selection-start="37848" selection-end="37848" vertical-scroll-proportion="0.47634763" />
+        <state line="2147" column="0" selection-start="37848" selection-end="37848" vertical-scroll-proportion="0.47634763">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/css/vapp.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="123" column="0" selection-start="5875" selection-end="5875" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/vapp.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="22" selection-start="21" selection-end="22" vertical-scroll-proportion="-0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="12" selection-start="808" selection-end="808" vertical-scroll-proportion="-17.76923">
           <folding />
         </state>
       </provider>
@@ -568,20 +469,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/icns.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="243" column="6" selection-start="3833" selection-end="3833" vertical-scroll-proportion="-18.961538">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="48" selection-start="1094" selection-end="1094" vertical-scroll-proportion="-17.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/fontello/css/fontello.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="58" column="55" selection-start="1930" selection-end="1930" vertical-scroll-proportion="0.0">
@@ -589,9 +476,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/vapp.js">
+    <entry file="file://$PROJECT_DIR$/functions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="461" column="40" selection-start="12692" selection-end="12692" vertical-scroll-proportion="-21.84">
+        <state line="33" column="12" selection-start="808" selection-end="808" vertical-scroll-proportion="0.5208568">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/vapp.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="133" column="8" selection-start="2864" selection-end="2864" vertical-scroll-proportion="-16.6">
           <folding />
         </state>
       </provider>
@@ -603,42 +497,66 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/icns.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="243" column="6" selection-start="3833" selection-end="3833" vertical-scroll-proportion="0.5558061">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/static/fontello/css/fontello-ie7.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding>
-            <marker date="1424769861344" expanded="true" signature="290:357" placeholder="{...}" />
-            <marker date="1424769861344" expanded="true" signature="395:462" placeholder="{...}" />
-            <marker date="1424769861344" expanded="true" signature="499:566" placeholder="{...}" />
-            <marker date="1424769861344" expanded="true" signature="607:674" placeholder="{...}" />
-            <marker date="1424769861344" expanded="true" signature="715:782" placeholder="{...}" />
-            <marker date="1424769861344" expanded="true" signature="821:888" placeholder="{...}" />
-            <marker date="1424769861344" expanded="true" signature="930:997" placeholder="{...}" />
-            <marker date="1424769861344" expanded="true" signature="1047:1114" placeholder="{...}" />
-            <marker date="1424769861344" expanded="true" signature="1163:1230" placeholder="{...}" />
-            <marker date="1424769861344" expanded="true" signature="1273:1340" placeholder="{...}" />
-            <marker date="1424769861344" expanded="true" signature="1382:1449" placeholder="{...}" />
-            <marker date="1424769861344" expanded="true" signature="1489:1556" placeholder="{...}" />
-            <marker date="1424769861344" expanded="true" signature="1598:1665" placeholder="{...}" />
-            <marker date="1424769861344" expanded="true" signature="1712:1779" placeholder="{...}" />
-            <marker date="1424769861344" expanded="true" signature="1828:1895" placeholder="{...}" />
-            <marker date="1424769861344" expanded="true" signature="1933:2000" placeholder="{...}" />
-            <marker date="1424769861344" expanded="true" signature="2040:2107" placeholder="{...}" />
-            <marker date="1424769861344" expanded="true" signature="2141:2208" placeholder="{...}" />
-            <marker date="1424769861344" expanded="true" signature="2245:2312" placeholder="{...}" />
-            <marker date="1424769861344" expanded="true" signature="2348:2415" placeholder="{...}" />
-            <marker date="1424769861344" expanded="true" signature="2457:2524" placeholder="{...}" />
-            <marker date="1424769861344" expanded="true" signature="2562:2629" placeholder="{...}" />
-            <marker date="1424769861344" expanded="true" signature="2672:2739" placeholder="{...}" />
-            <marker date="1424769861344" expanded="true" signature="2780:2847" placeholder="{...}" />
+            <marker date="1424769861344" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1424769861344" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1424769861344" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1424769861344" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1424769861344" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1424769861344" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1424769861344" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1424769861344" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1424769861344" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1424769861344" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1424769861344" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1424769861344" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1424769861344" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1424769861344" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1424769861344" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1424769861344" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1424769861344" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1424769861344" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1424769861344" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1424769861344" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1424769861344" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1424769861344" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1424769861344" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1424769861344" expanded="true" signature="-1:-1" placeholder="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/vapp.scss">
+    <entry file="file://$PROJECT_DIR$/tpl/header.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="246" column="42" selection-start="5154" selection-end="5154" vertical-scroll-proportion="0.5158817">
+        <state line="26" column="48" selection-start="1094" selection-end="1094" vertical-scroll-proportion="0.4983089">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/vapp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="297" column="51" selection-start="8470" selection-end="8470" vertical-scroll-proportion="-124.44">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/vapp.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="79" selection-start="1065" selection-end="1065" vertical-scroll-proportion="0.53664035">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#script#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#script#2;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
