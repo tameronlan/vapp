@@ -292,7 +292,7 @@ vapp.player= new function(){
                 if(currentVideo.files.external){
                     html += '<iframe src="' +currentVideo.files.external+ '?vk_puid37=2&vk_puid38=5" width="' + context.$box.width() + '" height="' + context.$box.height() + '" type="text/html" frameborder="0" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" scrolling="no" preventhide="1"></iframe>'
                 } else {
-                    html += '<video src="' +currentVideo.files.mp4_240+ '" width="' + context.$content.width() + '" height="' + context.$content.height() + '" poster="'+currentVideo.image_medium+'"></video>'
+                    html += '<video controls src="' +currentVideo.files.mp4_240+ '" width="' + context.$content.width() + '" height="' + context.$content.height() + '" poster="'+currentVideo.image_medium+'"></video>'
                 }
 
                 context.$content.html(html);
@@ -459,7 +459,7 @@ var popup = function () {};
         context.$header = $('<div>', {'class': 'popup-header'}).appendTo(context.$box);
         context.$closer = $('<div>', {'class': 'popup-close'}).appendTo(context.$box).click(function(){
             popup.close();
-        });
+        }).append('<i class="icon-cancel-1"></i>');
         context.$content = $('<div>', {'class': 'popup-content'}).appendTo(context.$box);
 
         context.$wrapper.css({'z-index': 1000 + context.index});

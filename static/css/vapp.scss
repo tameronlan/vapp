@@ -227,16 +227,15 @@ body{
     text-align: center;
     position: relative;
 }
-.popup-close:hover{opacity: .8;}
 .popup-close{
     display: block;
     position: absolute;
-    top: 42px;
-    right: 53px;
-    width: 38px;
-    height: 36px;
+    top: 50px;
+    right: 50px;
     cursor: pointer;
-    background: url(../img/sp.png) -579px -300px;
+    z-index: 5;
+    font-size: 40px;
+    color: #fff;
 }
 .popup-content{
     padding: 40px 16px;

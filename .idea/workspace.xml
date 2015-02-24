@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="04a1ffc9-634d-43fa-a112-4a16eef8df58" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/.sass-cache/41292e0d9d9e40d851ddf569a13cf0b7ca2dcb62/vapp.scssc" afterPath="$PROJECT_DIR$/static/css/.sass-cache/41292e0d9d9e40d851ddf569a13cf0b7ca2dcb62/vapp.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/functions.php" afterPath="$PROJECT_DIR$/functions.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/header.php" afterPath="$PROJECT_DIR$/tpl/header.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/vapp.css.map" afterPath="$PROJECT_DIR$/static/css/vapp.css.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/vapp.css" afterPath="$PROJECT_DIR$/static/css/vapp.css" />
@@ -13,12 +12,12 @@
     <ignored path="vapp.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424769423870" ignored="false" />
-    <file path="/vapp.js" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424767809767" ignored="false" />
+    <file path="/vapp.js" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424770420878" ignored="false" />
     <file path="/vapp.php" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424447145642" ignored="false" />
     <file path="/dummy.xml" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424430474884" ignored="false" />
-    <file path="/vapp.scss" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424769493494" ignored="false" />
+    <file path="/vapp.scss" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424770275046" ignored="false" />
     <file path="/footer.php" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424357074901" ignored="false" />
-    <file path="/header.php" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424768801300" ignored="false" />
+    <file path="/header.php" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424770351517" ignored="false" />
     <file path="E:/fotostrana/img/static/app/people/people.scss" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424421237526" ignored="false" />
     <file path="E:/fotostrana/fotostrana/Base/config_local.override.php" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424421237526" ignored="false" />
     <file path="E:/fotostrana/fotostrana/App/Events/Cards/Controller/Index.php" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424421237526" ignored="false" />
@@ -52,10 +51,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="vapp.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="vapp.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/js/vapp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="294" column="197" selection-start="8398" selection-end="8398" vertical-scroll-proportion="0.0">
+            <state line="294" column="45" selection-start="8246" selection-end="8246" vertical-scroll-proportion="0.58514285">
               <folding />
             </state>
           </provider>
@@ -107,7 +106,7 @@
       <file leaf-file-name="header.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tpl/header.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="0" selection-start="1108" selection-end="1108" vertical-scroll-proportion="-18.961538">
+            <state line="26" column="48" selection-start="1094" selection-end="1094" vertical-scroll-proportion="-17.0">
               <folding />
             </state>
           </provider>
@@ -122,10 +121,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="icns.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="icns.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tpl/icns.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="219" column="1" selection-start="3273" selection-end="3273" vertical-scroll-proportion="0.09582864">
+            <state line="243" column="6" selection-start="3833" selection-end="3833" vertical-scroll-proportion="-18.961538">
               <folding />
             </state>
           </provider>
@@ -161,6 +160,15 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="vapp.scss" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/css/vapp.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="237" column="16" selection-start="4929" selection-end="4929" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FindManager">
@@ -184,10 +192,7 @@
         <option value="$PROJECT_DIR$/tpl/vapp.php" />
         <option value="$PROJECT_DIR$/static/fontello/css/fontello-codes.css" />
         <option value="$PROJECT_DIR$/static/fontello/demo.html" />
-        <option value="$PROJECT_DIR$/tpl/header.php" />
         <option value="$PROJECT_DIR$/functions.php" />
-        <option value="$PROJECT_DIR$/static/js/vapp.js" />
-        <option value="$PROJECT_DIR$/static/css/vapp.scss" />
         <option value="$PROJECT_DIR$/static/fontello/LICENSE.txt" />
         <option value="$PROJECT_DIR$/static/fontello/README.txt" />
         <option value="$PROJECT_DIR$/static/fontello/config.json" />
@@ -195,6 +200,9 @@
         <option value="$PROJECT_DIR$/static/fontello/css/fontello.css" />
         <option value="$PROJECT_DIR$/static/fontello/font/fontello.svg" />
         <option value="$PROJECT_DIR$/tpl/icns.html" />
+        <option value="$PROJECT_DIR$/static/css/vapp.scss" />
+        <option value="$PROJECT_DIR$/tpl/header.php" />
+        <option value="$PROJECT_DIR$/static/js/vapp.js" />
       </list>
     </option>
   </component>
@@ -529,30 +537,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="0" selection-start="1108" selection-end="1108" vertical-scroll-proportion="-18.961538">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/functions.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="33" column="12" selection-start="808" selection-end="808" vertical-scroll-proportion="-17.76923">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/vapp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="294" column="197" selection-start="8398" selection-end="8398" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/vapp.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="199" column="0" selection-start="4183" selection-end="4183" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -629,7 +616,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tpl/icns.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="219" column="1" selection-start="3273" selection-end="3273" vertical-scroll-proportion="0.09582864">
+        <state line="243" column="6" selection-start="3833" selection-end="3833" vertical-scroll-proportion="-18.961538">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/vapp.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="237" column="16" selection-start="4929" selection-end="4929" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="48" selection-start="1094" selection-end="1094" vertical-scroll-proportion="-17.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/vapp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="294" column="45" selection-start="8246" selection-end="8246" vertical-scroll-proportion="0.58514285">
           <folding />
         </state>
       </provider>
