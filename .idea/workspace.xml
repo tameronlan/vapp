@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="04a1ffc9-634d-43fa-a112-4a16eef8df58" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vapp.iml" afterPath="$PROJECT_DIR$/.idea/vapp.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/.sass-cache/41292e0d9d9e40d851ddf569a13cf0b7ca2dcb62/vapp.scssc" afterPath="$PROJECT_DIR$/static/css/.sass-cache/41292e0d9d9e40d851ddf569a13cf0b7ca2dcb62/vapp.scssc" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/vapp.css.map" afterPath="$PROJECT_DIR$/static/css/vapp.css.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/vapp.css" afterPath="$PROJECT_DIR$/static/css/vapp.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/vapp.php" afterPath="$PROJECT_DIR$/tpl/vapp.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/vapp.scss" afterPath="$PROJECT_DIR$/static/css/vapp.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="vapp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -16,7 +13,7 @@
     <file path="/vapp.js" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424770420878" ignored="false" />
     <file path="/vapp.php" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424774308702" ignored="false" />
     <file path="/dummy.xml" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424773873506" ignored="false" />
-    <file path="/vapp.scss" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424774545837" ignored="false" />
+    <file path="/vapp.scss" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424782076898" ignored="false" />
     <file path="/footer.php" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424357074901" ignored="false" />
     <file path="/header.php" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424770351517" ignored="false" />
     <file path="E:/fotostrana/img/static/app/people/people.scss" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424421237526" ignored="false" />
@@ -34,9 +31,9 @@
     <file path="E:/fotostrana/fotostrana/App/Gifts/Service/Tabs/Feb23.php" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424768602997" ignored="false" />
     <file path="E:/fotostrana/fotostrana/App/Gifts/Service/Tabs/Base.php" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424768602997" ignored="false" />
     <file path="E:/fotostrana/img/static/app/rating/rating.css" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424772709738" ignored="false" />
-    <file path="E:/fotostrana/img/static/app/events/spring/js/spring.js" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424775139119" ignored="false" />
+    <file path="E:/fotostrana/img/static/app/events/spring/js/spring.js" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424781369207" ignored="false" />
     <file path="/spring.js" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424775034245" ignored="false" />
-    <file path="E:/fotostrana/img/static/app/events/spring/css/spring.scss" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424775696789" ignored="false" />
+    <file path="E:/fotostrana/img/static/app/events/spring/css/spring.scss" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424775738166" ignored="false" />
     <file path="/spring.scss" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424775686959" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -78,7 +75,7 @@
       <file leaf-file-name="vapp.scss" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/css/vapp.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="142" column="23" selection-start="3019" selection-end="3019" vertical-scroll-proportion="0.39076576">
+            <state line="73" column="27" selection-start="1857" selection-end="1857" vertical-scroll-proportion="0.3524775">
               <folding />
             </state>
           </provider>
@@ -554,7 +551,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/css/vapp.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="142" column="23" selection-start="3019" selection-end="3019" vertical-scroll-proportion="0.39076576">
+        <state line="73" column="27" selection-start="1857" selection-end="1857" vertical-scroll-proportion="0.3524775">
           <folding />
         </state>
       </provider>
