@@ -72,6 +72,9 @@ body { overflow-y: scroll; }
 
 .popup-box.opened { -webkit-transform: translateY(0); -moz-transform: translateY(0); -ms-transform: translateY(0); transform: translateY(0); opacity: 1; }
 
+.popup-box.video-popup { position: absolute; left: 0; right: 0; top: 0; bottom: 0; margin: 0 !important; max-width: auto !important; overflow: hidden; }
+.popup-box.video-popup .popup-content { position: absolute; left: 0; right: 0; top: 0; bottom: 0; margin: 0 !important; max-width: auto !important; background: #000; padding: 0 !important; overflow: hidden; }
+
 .popup-box.closed { -webkit-transform: translateY(-10); -moz-transform: translateY(-10); -ms-transform: translateY(-10); transform: translateY(-10); opacity: 0; }
 
 .popup-box.invisible { height: 0; overflow: hidden; }

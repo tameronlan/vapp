@@ -12,6 +12,8 @@
     <script type="text/javascript" src="http://vk.com/js/api/openapi.js"></script>
 	<script type="text/javascript" src="/static/js/vapp.js"></script>
 
+    <link rel="stylesheet" href="/static//fontello.css">
+    <!--[if IE 7]><link rel="stylesheet" href="/static/css/fontello-ie7.css"><![endif]-->
 	<link rel="stylesheet" href="/static/css/vapp.css" type="text/css" media="screen" />
 </head>
 <body>

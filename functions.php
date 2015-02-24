@@ -45,6 +45,9 @@ function dispatch() {
         case "index":
             require_once TPLS_PATH.'vapp.php';
             break;
+        case "icns":
+            require_once TPLS_PATH.'icns.html';
+            break;
         default:
             require TPLS_PATH.'error.php';
     }
