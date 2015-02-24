@@ -48,7 +48,7 @@ body { overflow-y: scroll; background: #f0f2f5; }
 .vapp-header_link:hover { background: #51759B; }
 .vapp-header_link:active, .vapp-header_link.active { background: #4B6D94; }
 
-#vapp-middle { padding: 70px 10px 20px; }
+#vapp-middle { padding: 80px 10px 20px; }
 
 .vapp-content { max-width: 1280px; margin: 0 auto; }
 
@@ -89,7 +89,7 @@ body { overflow-y: scroll; background: #f0f2f5; }
 @media (max-width: 720px) { .vapp-logo { width: 0; padding-right: 0; overflow: hidden; }
   .vapp-header_link { padding: 0 15px; }
   #vapp-header { position: static; }
-  #vapp-middle { padding: 10px 20px 20px; } }
+  #vapp-middle { padding: 20px 20px 20px; } }
 /* helpers */
 .h { display: none; }
 

@@ -2,21 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="04a1ffc9-634d-43fa-a112-4a16eef8df58" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/i/loader.gif" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/.sass-cache/41292e0d9d9e40d851ddf569a13cf0b7ca2dcb62/vapp.scssc" afterPath="$PROJECT_DIR$/static/css/.sass-cache/41292e0d9d9e40d851ddf569a13cf0b7ca2dcb62/vapp.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/vapp.css.map" afterPath="$PROJECT_DIR$/static/css/vapp.css.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/vapp.css" afterPath="$PROJECT_DIR$/static/css/vapp.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/vapp.js" afterPath="$PROJECT_DIR$/static/js/vapp.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/vapp.php" afterPath="$PROJECT_DIR$/tpl/vapp.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/vapp.scss" afterPath="$PROJECT_DIR$/static/css/vapp.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="vapp.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424769423870" ignored="false" />
-    <file path="/vapp.js" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424784121676" ignored="false" />
+    <file path="/Dummy.txt" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424785766279" ignored="false" />
+    <file path="/vapp.js" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424795792911" ignored="false" />
     <file path="/vapp.php" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424783834448" ignored="false" />
-    <file path="/dummy.xml" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424773873506" ignored="false" />
+    <file path="/dummy.xml" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424792268743" ignored="false" />
     <file path="/vapp.scss" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424782076898" ignored="false" />
     <file path="/footer.php" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424357074901" ignored="false" />
     <file path="/header.php" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424770351517" ignored="false" />
@@ -35,10 +32,15 @@
     <file path="E:/fotostrana/fotostrana/App/Gifts/Service/Tabs/Feb23.php" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424768602997" ignored="false" />
     <file path="E:/fotostrana/fotostrana/App/Gifts/Service/Tabs/Base.php" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424768602997" ignored="false" />
     <file path="E:/fotostrana/img/static/app/rating/rating.css" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424772709738" ignored="false" />
-    <file path="E:/fotostrana/img/static/app/events/spring/js/spring.js" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424781369207" ignored="false" />
+    <file path="E:/fotostrana/img/static/app/events/spring/js/spring.js" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424792792040" ignored="false" />
     <file path="/spring.js" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424775034245" ignored="false" />
-    <file path="E:/fotostrana/img/static/app/events/spring/css/spring.scss" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424775738166" ignored="false" />
-    <file path="/spring.scss" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424775686959" ignored="false" />
+    <file path="E:/fotostrana/img/static/app/events/spring/css/spring.scss" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424795102891" ignored="false" />
+    <file path="/spring.scss" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424794755651" ignored="false" />
+    <file path="E:/fotostrana/fotostrana/App/Events/Spring/Templates/index.phtml" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424792712121" ignored="false" />
+    <file path="/index.phtml" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424792712121" ignored="false" />
+    <file path="E:/fotostrana/img/static/app/events/spring/css/spring.css" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424795107191" ignored="false" />
+    <file path="E:/fotostrana/fotostrana/App/Events/Spring/Templates/includes/_card.phtml" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424792663617" ignored="false" />
+    <file path="/_card.phtml" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424792585254" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,12 +60,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="vapp.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="vapp.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/js/vapp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="273" column="19" selection-start="7382" selection-end="7382" vertical-scroll-proportion="-4.16">
+            <state line="317" column="26" selection-start="8867" selection-end="8867" vertical-scroll-proportion="0.8688889">
               <folding>
-                <marker date="1424784127165" expanded="true" signature="7686:7703" placeholder="..." />
+                <marker date="1424795798349" expanded="true" signature="7575:7592" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -72,16 +74,16 @@
       <file leaf-file-name="vapp.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tpl/vapp.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="41" selection-start="314" selection-end="356" vertical-scroll-proportion="-7.1923075">
+            <state line="68" column="20" selection-start="2473" selection-end="2473" vertical-scroll-proportion="-19.73077">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vapp.scss" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="vapp.scss" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/css/vapp.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="216" column="18" selection-start="4412" selection-end="4412" vertical-scroll-proportion="0.21846847">
+            <state line="14" column="18" selection-start="750" selection-end="750" vertical-scroll-proportion="-1.36">
               <folding />
             </state>
           </provider>
@@ -119,8 +121,8 @@
         <option value="$PROJECT_DIR$/tpl/icns.html" />
         <option value="$PROJECT_DIR$/tpl/header.php" />
         <option value="$PROJECT_DIR$/tpl/vapp.php" />
-        <option value="$PROJECT_DIR$/static/js/vapp.js" />
         <option value="$PROJECT_DIR$/static/css/vapp.scss" />
+        <option value="$PROJECT_DIR$/static/js/vapp.js" />
       </list>
     </option>
   </component>
@@ -314,8 +316,8 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="options.lastSelected" value="settings" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="PublishConfig">
     <servers>
@@ -340,7 +342,7 @@
   <component name="RunManager">
     <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
       <JSDebuggerConfigurationSettings>
-        <option name="engineId" />
+        <option name="engineId" value="embedded" />
         <option name="fileUrl" />
       </JSDebuggerConfigurationSettings>
       <method />
@@ -362,11 +364,10 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25506938" sideWeight="0.6709265" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25773746" sideWeight="0.6709265" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -375,6 +376,7 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -443,16 +445,12 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/tpl/error.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="6" selection-start="161" selection-end="161" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="6" column="6" selection-start="161" selection-end="161" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tpl/footer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="30" selection-start="77" selection-end="77" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="5" column="30" selection-start="77" selection-end="77" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavascriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/HTML5.js">
@@ -471,26 +469,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/fontello/LICENSE.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="0" selection-start="755" selection-end="755" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="39" column="0" selection-start="755" selection-end="755" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/fontello/README.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
       <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
         <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/fontello/font/fontello.svg">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="7" selection-start="6743" selection-end="6743" vertical-scroll-proportion="0.62333333">
-          <folding />
-        </state>
+        <state line="33" column="7" selection-start="6743" selection-end="6743" vertical-scroll-proportion="0.62333333" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/fontello/css/fontello.css">
@@ -502,84 +494,51 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/functions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="12" selection-start="808" selection-end="808" vertical-scroll-proportion="0.5208568">
-          <folding />
-        </state>
+        <state line="33" column="12" selection-start="808" selection-end="808" vertical-scroll-proportion="0.5208568" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/fontello/config.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tpl/icns.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="243" column="6" selection-start="3833" selection-end="3833" vertical-scroll-proportion="0.5558061">
-          <folding />
-        </state>
+        <state line="243" column="6" selection-start="3833" selection-end="3833" vertical-scroll-proportion="0.5558061" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/fontello/css/fontello-ie7.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1424769861344" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1424769861344" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1424769861344" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1424769861344" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1424769861344" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1424769861344" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1424769861344" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1424769861344" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1424769861344" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1424769861344" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1424769861344" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1424769861344" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1424769861344" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1424769861344" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1424769861344" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1424769861344" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1424769861344" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1424769861344" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1424769861344" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1424769861344" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1424769861344" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1424769861344" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1424769861344" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1424769861344" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tpl/header.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="48" selection-start="1094" selection-end="1094" vertical-scroll-proportion="0.4983089">
+        <state line="26" column="48" selection-start="1094" selection-end="1094" vertical-scroll-proportion="0.4983089" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/vapp.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="18" selection-start="750" selection-end="750" vertical-scroll-proportion="-1.36">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tpl/vapp.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="41" selection-start="314" selection-end="356" vertical-scroll-proportion="-7.1923075">
+        <state line="68" column="20" selection-start="2473" selection-end="2473" vertical-scroll-proportion="-19.73077">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/js/vapp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="273" column="19" selection-start="7382" selection-end="7382" vertical-scroll-proportion="-4.16">
+        <state line="317" column="26" selection-start="8867" selection-end="8867" vertical-scroll-proportion="0.8688889">
           <folding>
-            <marker date="1424784127165" expanded="true" signature="7686:7703" placeholder="..." />
+            <marker date="1424795798349" expanded="true" signature="7575:7592" placeholder="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/vapp.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="216" column="18" selection-start="4412" selection-end="4412" vertical-scroll-proportion="0.21846847">
-          <folding />
         </state>
       </provider>
     </entry>

@@ -270,17 +270,14 @@ vapp.renderer = new function(){
     };
 };
 
-vapp.player= new function(){
+vapp.player = new function(){
     var player = this;
+
+    player.video = null;
 
     player.open = function(vid){
         var currentVideo = vapp.feed.cacheVideo[vid],
-            html = '',
-            dump_html = '';
-
-        for(var i in currentVideo) {
-            dump_html += '<br>' + i + ': ' + currentVideo[i];
-        }
+            html = '';
 
         popup.open('<div class="ta-c"><div style="margin: 0 0 20px;">Загрузка видео</div><img src="/static/i/loader.gif"/></div>', {
             width: 9999,
@@ -290,15 +287,36 @@ vapp.player= new function(){
                 if(currentVideo.files.external){
                     html += '<iframe src="' + currentVideo.player+ '" width="' + context.$box.width() + '" height="' + context.$box.height() + '" type="text/html" frameborder="0" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" scrolling="no" preventhide="1"></iframe>'
                 } else {
-                    html += '<video controls src="' +currentVideo.files.mp4_240+ '" width="' + context.$content.width() + '" height="' + context.$content.height() + '" poster="'+currentVideo.image_medium+'"></video>'
+                    html += '<video id="video-player" controls src="' +currentVideo.files.mp4_240+ '" width="' + context.$content.width() + '" height="' + context.$content.height() + '" poster="'+currentVideo.image_medium+'"></video>'
                 }
 
                 context.$content.html(html);
 
-                console.log(context, currentVideo);
+                player.init();
+            },
+            onClose: function(){
+                player.clear();
             }
         });
-    }
+    };
+
+    player.init = function(){
+        player.video = ge('video-player');
+        player.play();
+    };
+
+    player.clear = function(){
+        player.video = null;
+        player.isExternal = true;
+    };
+
+    player.pause = function(){
+
+    };
+
+    player.play = function(){
+        if ( player.video ) player.video.play();
+    };
 };
 
 /**
