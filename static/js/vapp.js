@@ -348,9 +348,9 @@ vapp.player = new function(){
             onOpen: function(context){
 
                 if(currentVideo.files.external){
-                    html += '<iframe src="' + currentVideo.player+ '" width="' + context.$box.width() + '" height="' + context.$box.height() + '" type="text/html" frameborder="0" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" scrolling="no" preventhide="1"></iframe>'
+                    html += '<iframe id="video-player" src="' + currentVideo.player+ '" width="' + context.$box.width() + '" height="' + context.$box.height() + '" type="text/html" frameborder="0" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" scrolling="no" preventhide="1"></iframe>'
                 } else {
-                    html += '<video id="video-player" src="' +currentVideo.files.mp4_240+ '" width="' + context.$content.width() + '" height="' + context.$content.height() + '" poster="'+currentVideo.image_medium+'"></video>'
+                    html += '<video id="video-player" controls src="' +currentVideo.files.mp4_240+ '" width="' + context.$content.width() + '" height="' + context.$content.height() + '" poster="'+currentVideo.image_medium+'"></video>'
                 }
 
                 context.$content.html(html);
