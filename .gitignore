@@ -1,4 +1,4 @@
 *.idea
 .idea
 .idea/
-img/static/css/.sass-cache
+static/css/.sass-cache
