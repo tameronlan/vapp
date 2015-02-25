@@ -131,7 +131,7 @@ vapp.vk = new function(){
 
         var uid = feedSource == 'mine' ? vapp.session.mid : vapp.feed.friendId;
 
-        vapp.lock.setLock('feed', true); 
+        vapp.lock.setLock('feed', true);
 
         vapp.nodes.scroller_aim.show();
 
