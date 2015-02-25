@@ -134,15 +134,33 @@ vapp.feed = new function(){
         if ( !vapp.vk.inited ) { vapp.vk.init( vapp.feed.load ) }
 
         feed.load[vapp.currentFeed]();
+
+        if ( !feed.scroller ) {
+            feed.scroller = new Scroller({
+                scrollTo: '#vapp-scrolller_aim',
+                onScroll: feed.load
+            })
+        }
     };
 
     feed.load.mine = function(){
-        VK.Api.call('video.get', { owner_id: vapp.session.mid }, function(r){
+        if ( vapp.locks['feed'] ) return false;
+
+        vapp.locks['feed'] = true;
+
+        VK.Api.call('video.get', { offset: vapp.feedOffset, count: +vapp.feedLimit, owner_id: vapp.session.mid }, function(r){
             if ( r.error ){
                if ( r.error.error_code == 15 ){
                    vapp.renderer.error(r.error.error_msg);
                }
             } else {
+                if ( vapp.currentFeed != 'mine' && r.response[0] == 0 ) return;
+
+                if ( !feed.feedOffset ) { vapp.nodes.page.html(''); }
+
+                vapp.feedOffset = vapp.feedOffset + vapp.feedLimit;
+                vapp.locks['feed'] = false;
+
                 vapp.renderer.videos(r.response);
             }
         })
@@ -150,7 +168,7 @@ vapp.feed = new function(){
 
     feed.load.friends = function(){
         if ( feed.friendId ){
-            VK.Api.call('video.get', { owner_id: feed.friendId }, function(r){
+            VK.Api.call('video.get', { owner_id: feed.friendId , offset: vapp.feedOffset, count: vapp.feedLimit}, function(r){
                 if ( r.error ){
                     if ( r.error.error_code == 15 ){
                         vapp.renderer.error(r.error.error_msg);
@@ -173,10 +191,10 @@ vapp.feed = new function(){
     feed.change = function(feedSource, event){
         if ( typeof feedSource != 'string') return false;
         if ( !vapp.feeds[feedSource] ) return false;
-
         if ( feedSource != 'friends' ) feed.friendId = null;
 
         feed.setCurrent(feedSource);
+
         feed.load();
 
         cancelEvent(event);
@@ -195,7 +213,8 @@ vapp.feed = new function(){
         vapp.vids = [];
         vapp.vidsIdsLoaded = [];
         vapp.feedOffset = 0;
-        vapp.feedLimit = 50;
+        vapp.feedLimit = 100;
+
     };
 };
 
@@ -234,9 +253,10 @@ vapp.renderer = new function(){
     };
 
     renderer.videos = function(videos){
-        var html = '';
+        var html = '', _counter = 0;
 
         for ( var i in videos ){
+            _counter ++;
             if ( typeof videos[i] == 'object' ) {
                 vapp.feed.cacheVideo[videos[i].vid] = videos[i];
 
@@ -244,7 +264,9 @@ vapp.renderer = new function(){
             }
         }
 
-        vapp.nodes.page.html(html);
+        vapp.nodes.page.append(html);
+
+        return _counter;
     };
 
     renderer.friends = function(friends){
@@ -302,7 +324,6 @@ vapp.player = new function(){
 
     player.init = function(){
         player.video = ge('video-player');
-        player.play();
     };
 
     player.clear = function(){
@@ -311,7 +332,7 @@ vapp.player = new function(){
     };
 
     player.pause = function(){
-
+        if ( player.video ) player.video.pause();
     };
 
     player.play = function(){
@@ -513,6 +534,59 @@ function getByField(arr, field, val) {
 
     return false;
 };
+
+// scroller for laizy load
+function Scroller(params){
+    var onScroll = {},
+        scrollTo = {},
+        offset = 200,
+        me = {};
+
+    var init = function(params, scope){
+        me = scope;
+        me.uuid = ++Scroller.uuid;
+
+        if(params.selector){
+            me.elem = $(params.selector);
+            me.scrollTop = function(){ return me.elem.scrollTop(); };
+            me.height = function(){ return me.elem.height(); };
+        } else {
+            me.elem = $(window);
+            me.scrollTop = function(){ return $(window).scrollTop(); };
+            me.height = function() { return vapp.windowHeight; };
+        }
+
+        if(params.offset)
+            offset = params.offset;
+
+        if(params.scrollTo){
+            scrollTo = $(params.scrollTo);
+            scrollTo.myScroll = function(){ return scrollTo.offset().top };
+        } else {
+            if(params.selector)
+                scrollTo.myScroll = function(){ return me.elem[0].scrollHeight;};
+            else
+                scrollTo.myScroll = function(){ return document.documentElement.scrollHeight};
+        }
+
+        if(params.onScroll) {
+            onScroll = function() {
+                if( scrollTo.myScroll() - (me.scrollTop() + me.height())  < offset )
+                    params.onScroll(me);
+            };
+            me.elem.bind('scroll.scroller'+me.uuid, function(){
+                if(!window.lockScroller) me.onScrollTimer = setTimeout(onScroll, 0);
+            });
+            $(onScroll);
+        } else {
+            return false;
+        }
+
+        return me;
+    };
+
+    return init(params, this);
+}
 
 // templating
 String.prototype.supplant = function(o) {

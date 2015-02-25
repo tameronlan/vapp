@@ -2,6 +2,7 @@
 
 <div id="vapp-middle">
     <div class="vapp-content ta-c" id="vapp-page"></div>
+    <div id="vapp-scrolller_aim"></div>
 </div>
 
 <script type="text/template" id="vapp-welcome-page">
