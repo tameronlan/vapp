@@ -61,7 +61,7 @@
 </script>
 
 <script type="text/template" id="vapp-navigation-item">
-    <a class="vapp-header_link unselectable fl-r {class}" id="vapp-header_link_{tabSource}" href="/?tab={tabSource}" onclick="vapp.feed.change('{tabSource}', event);">{title}</a>
+    <a class="vapp-header_link unselectable fl-r {class}" id="vapp-header_link_{tabSource}" href="/?tab={tabSource}" onclick="vapp.feed.friendId = null; vapp.feed.change('{tabSource}', event);">{title}</a>
 </script>
 
 <script type="text/javascript">
