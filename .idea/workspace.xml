@@ -63,7 +63,7 @@
       <file leaf-file-name="vapp.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/js/vapp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="317" column="26" selection-start="8867" selection-end="8867" vertical-scroll-proportion="0.8688889">
+            <state line="313" column="0" selection-start="8802" selection-end="8802" vertical-scroll-proportion="0.79333335">
               <folding>
                 <marker date="1424795798349" expanded="true" signature="7575:7592" placeholder="..." />
               </folding>
@@ -535,7 +535,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/js/vapp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="317" column="26" selection-start="8867" selection-end="8867" vertical-scroll-proportion="0.8688889">
+        <state line="313" column="0" selection-start="8802" selection-end="8802" vertical-scroll-proportion="0.79333335">
           <folding>
             <marker date="1424795798349" expanded="true" signature="7575:7592" placeholder="..." />
           </folding>
