@@ -355,7 +355,7 @@ vapp.player = new function(){
 
                 context.$content.html(html);
 
-                player.init();
+                player.init(context);
             },
             onClose: function(){
                 player.clear();
@@ -363,11 +363,18 @@ vapp.player = new function(){
         });
     };
 
-    player.init = function(){
+    player.init = function(popupContext){
         player.video = ge('video-player');
+
+        $(window).bind('resize.video_player', function(){
+            player.video.width = popupContext.$box.width();
+            player.video.height = popupContext.$box.height();
+        });
     };
 
     player.clear = function(){
+        $('body').unbind('resize.video_player');
+
         player.video = null;
         player.isExternal = true;
     };

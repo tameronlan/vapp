@@ -60,7 +60,7 @@ body { overflow-y: scroll; background: #f0f2f5; }
 .vapp-friend_item .vapp-friend_item_img { max-width: 100px; background-position: center center; background-repeat: no-repeat; margin: 0 auto 10px; border-radius: 50%; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) inset; cursor: pointer; }
 .vapp-friend_item .blank-helper { display: block; width: 100%; visibility: hidden; }
 
-.vapp-video_item { display: inline-block; vertical-align: top; width: 29%; margin: 0 2% 30px; }
+.vapp-video_item { display: inline-block; vertical-align: top; width: 29%; margin: 0 1% 30px; }
 .vapp-video_item .vapp-video_item_img { background-position: center center; background-repeat: no-repeat; background-size: cover; background-color: #000; margin: 0 0 10px; cursor: pointer; position: relative; }
 .vapp-video_item .vapp-video_item_img:hover .vapp-video_item_hover { filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false); opacity: 1; }
 .vapp-video_item .vapp-video_item_poster { display: block; width: 100%; }
