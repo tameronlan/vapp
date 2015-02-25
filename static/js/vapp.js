@@ -21,7 +21,8 @@ vapp = new function(){
             'heap' : $('#node-heap'),
             'wrapper' : $('#vapp-wrapper'),
             'page' : $('#vapp-page'),
-            'navigation' : $('#vapp-header_nav')
+            'navigation' : $('#vapp-header_nav'),
+            'scroller_aim' : $('#vapp-scrolller_aim')
         }
 
         vapp.renderer.welcome();
@@ -123,71 +124,71 @@ vapp.vk = new function(){
             }
         }, 22);
     };
+
+    // получение видео от вк
+    vk.getVideos = function(feedSource){
+        if ( vapp.lock.checkLock('feed') ) return;
+
+        var uid = feedSource == 'mine' ? vapp.session.mid : vapp.feed.friendId;
+
+        vapp.lock.setLock('feed', true);
+
+        vapp.nodes.scroller_aim.show();
+
+        VK.Api.call('video.get', { offset: vapp.feed.offset, count: +vapp.feed.limit, owner_id: uid }, function(r){
+            vapp.nodes.scroller_aim.hide();
+
+            if ( r.error ){
+                vapp.renderer.error(r.error.error_msg);
+            } else {
+                if ( vapp.currentFeed != feedSource ) return;
+
+                vapp.feed.offset = vapp.feed.offset + vapp.feed.limit;
+
+                vapp.lock.setLock('feed', false);
+
+                var _counter = vapp.renderer.videos(r.response);
+
+                if ( !_counter && vapp.feed.scroller ) vapp.feed.scroller.destroy()
+            }
+        })
+    };
+
+    // получение друзей из вк
+    vk.getFriends = function(feedSource){
+        if ( vapp.lock.checkLock('feed') ) return;
+
+        vapp.lock.setLock('feed', true);
+
+        vapp.nodes.scroller_aim.show();
+
+        VK.Api.call('friends.get', { offset: vapp.feed.offset, count: +vapp.feed.limit, fields: 'name,photo_100' }, function(r){
+            vapp.nodes.scroller_aim.hide();
+
+            if ( r.error ){
+                vapp.renderer.error(r.error.error_msg);
+            } else {
+                if ( vapp.currentFeed != 'friends' ) return;
+
+                vapp.feed.offset = vapp.feed.offset + vapp.feed.limit;
+
+                vapp.lock.setLock('feed', false);
+
+                var _counter = vapp.renderer.friends(r.response);
+
+                if ( !_counter && vapp.feed.scroller ) vapp.feed.scroller.destroy()
+            }
+        })
+    };
 };
 
 vapp.feed = new function(){
     var feed = this;
 
+    feed.limit = 50;
     feed.cacheVideo = {};
 
-    feed.load = function(){
-        if ( !vapp.vk.inited ) { vapp.vk.init( vapp.feed.load ) }
-
-        feed.load[vapp.currentFeed]();
-
-        if ( !feed.scroller ) {
-            feed.scroller = new Scroller({
-                scrollTo: '#vapp-scrolller_aim',
-                onScroll: feed.load
-            })
-        }
-    };
-
-    feed.load.mine = function(){
-        if ( vapp.locks['feed'] ) return false;
-
-        vapp.locks['feed'] = true;
-
-        VK.Api.call('video.get', { offset: vapp.feedOffset, count: +vapp.feedLimit, owner_id: vapp.session.mid }, function(r){
-            if ( r.error ){
-               if ( r.error.error_code == 15 ){
-                   vapp.renderer.error(r.error.error_msg);
-               }
-            } else {
-                if ( vapp.currentFeed != 'mine' && r.response[0] == 0 ) return;
-
-                if ( !feed.feedOffset ) { vapp.nodes.page.html(''); }
-
-                vapp.feedOffset = vapp.feedOffset + vapp.feedLimit;
-                vapp.locks['feed'] = false;
-
-                vapp.renderer.videos(r.response);
-            }
-        })
-    };
-
-    feed.load.friends = function(){
-        if ( feed.friendId ){
-            VK.Api.call('video.get', { owner_id: feed.friendId , offset: vapp.feedOffset, count: vapp.feedLimit}, function(r){
-                if ( r.error ){
-                    if ( r.error.error_code == 15 ){
-                        vapp.renderer.error(r.error.error_msg);
-                    }
-                } else {
-                    vapp.renderer.videos(r.response);
-                }
-            })
-        } else {
-            VK.Api.call('friends.get', { fields: 'name,photo_100' }, function(r){
-                vapp.renderer.friends(r.response);
-            })
-        }
-    };
-
-    feed.load.search = function(){
-        console.log('search');
-    };
-
+    // смена фида в приложении
     feed.change = function(feedSource, event){
         if ( typeof feedSource != 'string') return false;
         if ( !vapp.feeds[feedSource] ) return false;
@@ -200,21 +201,52 @@ vapp.feed = new function(){
         cancelEvent(event);
     };
 
+    // установка выбранной вкладки
     feed.setCurrent = function(feedSource){
         vapp.currentFeed = feedSource;
 
         $('.vapp-header_link').removeClass('active');
         $('#vapp-header_link_' + feedSource).addClass('active');
-
-        return vapp.currentFeed;
     };
 
-    feed.reset = function(){
-        vapp.vids = [];
-        vapp.vidsIdsLoaded = [];
-        vapp.feedOffset = 0;
-        vapp.feedLimit = 100;
+    // загрузка фида видео, друзей или видео друга
+    feed.load = function(){
+        if ( !vapp.vk.inited ) { vapp.vk.init( vapp.feed.load ) }
 
+        feed.reset();
+
+        feed.load[vapp.currentFeed]();
+
+        feed.scroller = new Scroller({
+            scrollTo: '#vapp-scrolller_aim',
+            onScroll: feed.load[vapp.currentFeed]
+        })
+    };
+
+    // загрузка фида моего видео
+    feed.load.mine = function(){
+        vapp.vk.getVideos('mine');
+    };
+
+    // загрузка фида друзей
+    feed.load.friends = function(){
+        if ( feed.friendId ){
+            vapp.vk.getVideos('friends');
+        } else {
+            vapp.vk.getFriends('friends');
+        }
+    };
+
+    feed.load.search = function(){
+        console.log('search');
+    };
+
+
+    feed.reset = function(){
+        feed.offset = 0;
+        vapp.nodes.page.html('');
+
+        if ( feed.scroller ) feed.scroller.destroy();
     };
 };
 
@@ -256,8 +288,8 @@ vapp.renderer = new function(){
         var html = '', _counter = 0;
 
         for ( var i in videos ){
-            _counter ++;
             if ( typeof videos[i] == 'object' ) {
+                _counter ++;
                 vapp.feed.cacheVideo[videos[i].vid] = videos[i];
 
                 html += vapp.getTpl('vapp-video-item').supplant(videos[i]);
@@ -270,13 +302,17 @@ vapp.renderer = new function(){
     };
 
     renderer.friends = function(friends){
-        var html = '';
+        var html = '', _counter = 0;
 
         for ( var i in friends ){
+            _counter ++;
+
             html += vapp.getTpl('vapp-friend-item').supplant(friends[i]);
         }
 
-        vapp.nodes.page.html(html);
+        vapp.nodes.page.append(html);
+
+        return _counter;
     };
 
     renderer.notLoggined = function(){
@@ -309,7 +345,7 @@ vapp.player = new function(){
                 if(currentVideo.files.external){
                     html += '<iframe src="' + currentVideo.player+ '" width="' + context.$box.width() + '" height="' + context.$box.height() + '" type="text/html" frameborder="0" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" scrolling="no" preventhide="1"></iframe>'
                 } else {
-                    html += '<video id="video-player" controls src="' +currentVideo.files.mp4_240+ '" width="' + context.$content.width() + '" height="' + context.$content.height() + '" poster="'+currentVideo.image_medium+'"></video>'
+                    html += '<video id="video-player" src="' +currentVideo.files.mp4_240+ '" width="' + context.$content.width() + '" height="' + context.$content.height() + '" poster="'+currentVideo.image_medium+'"></video>'
                 }
 
                 context.$content.html(html);
@@ -561,6 +597,12 @@ function Scroller(params){
 
         if(params.scrollTo){
             scrollTo = $(params.scrollTo);
+
+            if ( !scrollTo.length ) {
+                console.log('mistake in selector for aim scroller');
+                return;
+            }
+
             scrollTo.myScroll = function(){ return scrollTo.offset().top };
         } else {
             if(params.selector)
@@ -574,9 +616,11 @@ function Scroller(params){
                 if( scrollTo.myScroll() - (me.scrollTop() + me.height())  < offset )
                     params.onScroll(me);
             };
-            me.elem.bind('scroll.scroller'+me.uuid, function(){
-                if(!window.lockScroller) me.onScrollTimer = setTimeout(onScroll, 0);
+
+            me.elem.bind('scroll.scroller' + me.uuid, function(){
+                me.onScrollTimer = setTimeout(onScroll, 0);
             });
+
             $(onScroll);
         } else {
             return false;
@@ -587,6 +631,15 @@ function Scroller(params){
 
     return init(params, this);
 }
+
+(function(Scroller, proto){
+    Scroller.uuid = 0;
+
+    proto.destroy = function(){
+        clearTimeout(this.onScrollTimer);
+        this.elem.unbind('scroll.scroller'+this.uuid);
+    };
+})(Scroller, Scroller.prototype);
 
 // templating
 String.prototype.supplant = function(o) {

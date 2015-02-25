@@ -2,7 +2,9 @@
 
 <div id="vapp-middle">
     <div class="vapp-content ta-c" id="vapp-page"></div>
-    <div id="vapp-scrolller_aim"></div>
+    <div id="vapp-scrolller_aim" class="h ta-c" >
+        <img src="/static/i/loader.gif"/>
+    </div>
 </div>
 
 <script type="text/template" id="vapp-welcome-page">
@@ -43,9 +45,7 @@
 
 <script type="text/template" id="vapp-friend-item">
     <div class="vapp-friend_item" data-id="{uid}" id="vapp-friend_item_{uid}">
-        <div class="vapp-friend_item_img">
-            <img src="{photo_100}"/>
-        </div>
+        <div class="vapp-friend_item_img" style="background: url({photo_100})"><img src="/static/i/blank.gif" class="blank-helper"/></div>
         <div class="vapp-friend_item_name ellipsis">{first_name}</div>
     </div>
 </script>
@@ -53,7 +53,7 @@
 <script type="text/template" id="vapp-video-item">
     <div class="vapp-video_item" data-id="{vid}" id="vapp-friend_item_{vid}" onclick="vapp.player.open({vid});">
         <div class="vapp-video_item_img">
-            <img src="{image_medium}"/>
+            <img src="{image_medium}" class="vapp-video_item_poster"/>
         </div>
         <div class="vapp-video_item_name ellipsis">{title}</div>
     </div>

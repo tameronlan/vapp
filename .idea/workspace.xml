@@ -2,89 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="04a1ffc9-634d-43fa-a112-4a16eef8df58" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/7e98655abf52709fb0bb61a048c24048124e52ca/_alternating-rows-and-columns.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/e2aa2c0a3699cf92788eb17ae42e0d2a2db079b1/_animation.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/e2aa2c0a3699cf92788eb17ae42e0d2a2db079b1/_background-clip.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/e2aa2c0a3699cf92788eb17ae42e0d2a2db079b1/_background-origin.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/e2aa2c0a3699cf92788eb17ae42e0d2a2db079b1/_background-size.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/51f4f04051a5b1f923cc258f4c1ecd5a9bfcddab/_base.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/e2aa2c0a3699cf92788eb17ae42e0d2a2db079b1/_border-radius.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/7e98655abf52709fb0bb61a048c24048124e52ca/_borders.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/e2aa2c0a3699cf92788eb17ae42e0d2a2db079b1/_box-shadow.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/e2aa2c0a3699cf92788eb17ae42e0d2a2db079b1/_box-sizing.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/e48e5c5a79ae7618c88e3f7c0cede4a2a5b1a8a6/_brightness.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/117229b0f1591e402b8cf9f8943c6f71e6e90fa0/_bullets.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/72f4804cab202a05ba3cf5234aafb3bd8c3e21ba/_clearfix.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/e48e5c5a79ae7618c88e3f7c0cede4a2a5b1a8a6/_contrast.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/e2aa2c0a3699cf92788eb17ae42e0d2a2db079b1/_deprecated-support.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/6be15b8e0b496494b0e967f4e65d2b8182b7e409/_ellipsis.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/e2aa2c0a3699cf92788eb17ae42e0d2a2db079b1/_filter.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/e2aa2c0a3699cf92788eb17ae42e0d2a2db079b1/_flexbox.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/72f4804cab202a05ba3cf5234aafb3bd8c3e21ba/_float.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/e2aa2c0a3699cf92788eb17ae42e0d2a2db079b1/_font-face.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/6be15b8e0b496494b0e967f4e65d2b8182b7e409/_force-wrap.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/67a9c7aa823d4b22ab26492f58ebee52c9a370ef/_general.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/2a621c05ceb24ad070b07c34709e5802c056c422/_grid-background.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/72f4804cab202a05ba3cf5234aafb3bd8c3e21ba/_hacks.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/117229b0f1591e402b8cf9f8943c6f71e6e90fa0/_horizontal-list.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/c5edd501981f0d36836ccf673bb546193f5832c8/_hover-link.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/e2aa2c0a3699cf92788eb17ae42e0d2a2db079b1/_hyphenation.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/e2aa2c0a3699cf92788eb17ae42e0d2a2db079b1/_images.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/117229b0f1591e402b8cf9f8943c6f71e6e90fa0/_inline-block-list.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/e2aa2c0a3699cf92788eb17ae42e0d2a2db079b1/_inline-block.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/117229b0f1591e402b8cf9f8943c6f71e6e90fa0/_inline-list.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/c5edd501981f0d36836ccf673bb546193f5832c8/_link-colors.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/72f4804cab202a05ba3cf5234aafb3bd8c3e21ba/_min.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/e2aa2c0a3699cf92788eb17ae42e0d2a2db079b1/_opacity.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/e2aa2c0a3699cf92788eb17ae42e0d2a2db079b1/_regions.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/6be15b8e0b496494b0e967f4e65d2b8182b7e409/_replacement.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/7e98655abf52709fb0bb61a048c24048124e52ca/_scaffolding.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/51f4f04051a5b1f923cc258f4c1ecd5a9bfcddab/_sprite-img.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/2d8c3d62c5c05d4dfb6632d2d41c915894a4f452/_support.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/72f4804cab202a05ba3cf5234aafb3bd8c3e21ba/_tag-cloud.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/e2aa2c0a3699cf92788eb17ae42e0d2a2db079b1/_text-shadow.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/e2aa2c0a3699cf92788eb17ae42e0d2a2db079b1/_transform.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/e2aa2c0a3699cf92788eb17ae42e0d2a2db079b1/_transition.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/2a154c58506395ed8db8f5e834d41d2ce373f621/_units.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/c5edd501981f0d36836ccf673bb546193f5832c8/_unstyled-link.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/e2aa2c0a3699cf92788eb17ae42e0d2a2db079b1/_user-interface.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/2d8c3d62c5c05d4dfb6632d2d41c915894a4f452/_utilities.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/87e2acd789b1419ad33f2f4f1fe5622026d21bf3/_utilities.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/2a154c58506395ed8db8f5e834d41d2ce373f621/_vertical_rhythm.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/cea2bfb2bf6d46310eac1358add3f8b396cdfb58/vapp.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/e2aa2c0a3699cf92788eb17ae42e0d2a2db079b1/_appearance.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/67a9c7aa823d4b22ab26492f58ebee52c9a370ef/_color.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/e2aa2c0a3699cf92788eb17ae42e0d2a2db079b1/_columns.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/5b72f02efd937ddb1f642341ed7fd8e9ab754a03/_compass.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/2d8c3d62c5c05d4dfb6632d2d41c915894a4f452/_css3.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/2a154c58506395ed8db8f5e834d41d2ce373f621/_links.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/2a154c58506395ed8db8f5e834d41d2ce373f621/_lists.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/6be15b8e0b496494b0e967f4e65d2b8182b7e409/_nowrap.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/72f4804cab202a05ba3cf5234aafb3bd8c3e21ba/_reset.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/67a9c7aa823d4b22ab26492f58ebee52c9a370ef/_sprites.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/67a9c7aa823d4b22ab26492f58ebee52c9a370ef/_tables.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/2a154c58506395ed8db8f5e834d41d2ce373f621/_text.scssc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/.sass-cache/2d8c3d62c5c05d4dfb6632d2d41c915894a4f452/_typography.scssc" />
-      <change type="DELETED" beforePath="D:\vapp\.idea\encodings.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\vapp\.idea\misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\vapp\.idea\modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\vapp\.idea\scopes\scope_settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\vapp\.idea\vapp.iml" afterPath="" />
-      <change type="DELETED" beforePath="D:\vapp\.idea\vcs.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\vapp\.idea\watcherTasks.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/.sass-cache/41292e0d9d9e40d851ddf569a13cf0b7ca2dcb62/vapp.scssc" afterPath="$PROJECT_DIR$/static/css/.sass-cache/41292e0d9d9e40d851ddf569a13cf0b7ca2dcb62/vapp.scssc" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/vapp.css.map" afterPath="$PROJECT_DIR$/static/css/vapp.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/vapp.css" afterPath="$PROJECT_DIR$/static/css/vapp.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/vapp.js" afterPath="$PROJECT_DIR$/static/js/vapp.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/vapp.php" afterPath="$PROJECT_DIR$/tpl/vapp.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/vapp.scss" afterPath="$PROJECT_DIR$/static/css/vapp.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="vapp.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424785766279" ignored="false" />
-    <file path="/vapp.js" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424795792911" ignored="false" />
-    <file path="/vapp.php" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424783834448" ignored="false" />
+    <file path="/vapp.js" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424863852045" ignored="false" />
+    <file path="/vapp.php" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424858128304" ignored="false" />
     <file path="/dummy.xml" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424792268743" ignored="false" />
-    <file path="/vapp.scss" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424782076898" ignored="false" />
+    <file path="/vapp.scss" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424857769148" ignored="false" />
     <file path="/footer.php" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424357074901" ignored="false" />
     <file path="/header.php" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424770351517" ignored="false" />
     <file path="E:/fotostrana/img/static/app/people/people.scss" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424421237526" ignored="false" />
@@ -102,15 +34,19 @@
     <file path="E:/fotostrana/fotostrana/App/Gifts/Service/Tabs/Feb23.php" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424768602997" ignored="false" />
     <file path="E:/fotostrana/fotostrana/App/Gifts/Service/Tabs/Base.php" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424768602997" ignored="false" />
     <file path="E:/fotostrana/img/static/app/rating/rating.css" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424772709738" ignored="false" />
-    <file path="E:/fotostrana/img/static/app/events/spring/js/spring.js" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424792792040" ignored="false" />
-    <file path="/spring.js" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424775034245" ignored="false" />
+    <file path="E:/fotostrana/img/static/app/events/spring/js/spring.js" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424858308268" ignored="false" />
+    <file path="/spring.js" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424854741364" ignored="false" />
     <file path="E:/fotostrana/img/static/app/events/spring/css/spring.scss" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424795102891" ignored="false" />
     <file path="/spring.scss" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424794755651" ignored="false" />
     <file path="E:/fotostrana/fotostrana/App/Events/Spring/Templates/index.phtml" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424792712121" ignored="false" />
     <file path="/index.phtml" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424792712121" ignored="false" />
     <file path="E:/fotostrana/img/static/app/events/spring/css/spring.css" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424795107191" ignored="false" />
-    <file path="E:/fotostrana/fotostrana/App/Events/Spring/Templates/includes/_card.phtml" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424792663617" ignored="false" />
+    <file path="E:/fotostrana/fotostrana/App/Events/Spring/Templates/includes/_card.phtml" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424858056112" ignored="false" />
     <file path="/_card.phtml" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424792585254" ignored="false" />
+    <file path="E:/fotostrana/fotostrana/Base/Mailer/NewTemplates/events/spring/card_sended.phtml" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424860481197" ignored="false" />
+    <file path="E:/fotostrana/fotostrana/App/Pacman/Templates/notifications1/events/spring/card_sended.phtml" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424862556449" ignored="false" />
+    <file path="/card_sended.phtml" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424862488941" ignored="false" />
+    <file path="/a.dummy" changelist="04a1ffc9-634d-43fa-a112-4a16eef8df58" time="1424862387869" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,11 +66,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="vapp.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="vapp.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/js/vapp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="324" column="29" selection-start="9296" selection-end="9296" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="154" column="6" selection-start="4537" selection-end="4537" vertical-scroll-proportion="0.56666666">
+              <folding>
+                <marker date="1424863852579" expanded="true" signature="9163:9180" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -142,16 +80,18 @@
       <file leaf-file-name="vapp.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tpl/vapp.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="20" selection-start="2513" selection-end="2513" vertical-scroll-proportion="-19.73077">
-              <folding />
+            <state line="4" column="46" selection-start="163" selection-end="163" vertical-scroll-proportion="-1.3333334">
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#script#4;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vapp.scss" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="vapp.scss" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/css/vapp.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="0" selection-start="1042" selection-end="1042" vertical-scroll-proportion="0.21058558">
+            <state line="118" column="27" selection-start="2693" selection-end="2693" vertical-scroll-proportion="-11.72">
               <folding />
             </state>
           </provider>
@@ -188,8 +128,8 @@
         <option value="$PROJECT_DIR$/static/fontello/font/fontello.svg" />
         <option value="$PROJECT_DIR$/tpl/icns.html" />
         <option value="$PROJECT_DIR$/tpl/header.php" />
-        <option value="$PROJECT_DIR$/tpl/vapp.php" />
         <option value="$PROJECT_DIR$/static/css/vapp.scss" />
+        <option value="$PROJECT_DIR$/tpl/vapp.php" />
         <option value="$PROJECT_DIR$/static/js/vapp.js" />
       </list>
     </option>
@@ -584,27 +524,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tpl/header.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="48" selection-start="1094" selection-end="1094" vertical-scroll-proportion="0.4983089" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/vapp.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="20" selection-start="2513" selection-end="2513" vertical-scroll-proportion="-19.73077">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/vapp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="324" column="29" selection-start="9296" selection-end="9296" vertical-scroll-proportion="0.0">
+        <state line="26" column="48" selection-start="1094" selection-end="1094" vertical-scroll-proportion="0.4983089">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/css/vapp.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="0" selection-start="1042" selection-end="1042" vertical-scroll-proportion="0.21058558">
+        <state line="118" column="27" selection-start="2693" selection-end="2693" vertical-scroll-proportion="-11.72">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/vapp.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="46" selection-start="163" selection-end="163" vertical-scroll-proportion="-1.3333334">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#script#4;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/vapp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="154" column="6" selection-start="4537" selection-end="4537" vertical-scroll-proportion="0.56666666">
+          <folding>
+            <marker date="1424863852579" expanded="true" signature="9163:9180" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

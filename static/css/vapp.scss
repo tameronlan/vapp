@@ -109,12 +109,14 @@ body{
         background-position: center center;
         background-repeat: no-repeat;
         margin: 0 auto 10px;
+        border-radius: 50%;
+        box-shadow: 0 5px 10px rgba(0,0,0,.2) inset;
     }
 
-    img{
+    .blank-helper{
         display: block;
         width: 100%;
-        border-radius: 50%;
+        visibility: hidden;
     }
 }
 
@@ -131,7 +133,7 @@ body{
         cursor: pointer;
     }
 
-    img{
+    .vapp-video_item_poster{
         display: block;
         width: 100%;
     }
