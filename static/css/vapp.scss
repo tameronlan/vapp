@@ -41,6 +41,7 @@ body{
     top: 0;
     right: 0;
     background: #567ca4;
+    z-index: 10;
 }
 
 .vapp-logo{
@@ -129,13 +130,44 @@ body{
     .vapp-video_item_img{
         background-position: center center;
         background-repeat: no-repeat;
+        background-size: cover;
+        background-color: #000;
         margin: 0 0 10px;
         cursor: pointer;
+        position: relative;
+
+        &:hover{
+            .vapp-video_item_hover{
+                @include opacity(1);
+            }
+        }
     }
 
     .vapp-video_item_poster{
         display: block;
         width: 100%;
+    }
+
+    .vapp-video_item_hover{
+        width: 40px;
+        height: 40px;
+        line-height: 38px;
+        text-align: center;
+        @include border-radius(3px);
+        @include transition(all .2s linear);
+        @include opacity(0);
+        color: #fff;
+        background: #000;
+        background: rgba(#000, .8);
+        font-size: 25px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -20px 0 0 -20px;
+
+        .icon-play{
+            margin: 0 0 0 2px;
+        }
     }
 }
 
@@ -228,8 +260,8 @@ body{
 .popup-close{
     display: block;
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 10px;
+    right: 10px;
     cursor: pointer;
     z-index: 5;
     font-size: 30px;
@@ -237,14 +269,18 @@ body{
     width: 40px;
     line-height: 40px;
     text-align: center;
-    color: #fff;
-    background: #000;
+    color: #000;
+    background: #fff;
     @include border-radius(50%);
     @include opacity(.2);
     @include transition(opacity .2s linear);
 
     &:hover{
         @include opacity(.6);
+    }
+
+    .icon-cancel{
+        margin: 0 0 0 -1px;
     }
 }
 

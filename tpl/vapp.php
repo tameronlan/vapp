@@ -51,9 +51,10 @@
 </script>
 
 <script type="text/template" id="vapp-video-item">
-    <div class="vapp-video_item" data-id="{vid}" id="vapp-friend_item_{vid}" onclick="vapp.player.open({vid});">
-        <div class="vapp-video_item_img">
+    <div class="vapp-video_item" data-id="{vid}" id="vapp-friend_item_{vid}">
+        <div class="vapp-video_item_img" style="background-image: url({image_medium})" onclick="vapp.player.open({vid});">
             <img src="{image_medium}" class="vapp-video_item_poster"/>
+            <div class="vapp-video_item_hover"><div class="icon-play"></div></div>
         </div>
         <div class="vapp-video_item_name ellipsis">{title}</div>
     </div>
