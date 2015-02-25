@@ -44,7 +44,7 @@
 </script>
 
 <script type="text/template" id="vapp-friend-item">
-    <div class="vapp-friend_item" data-id="{uid}" id="vapp-friend_item_{uid}">
+    <div class="vapp-friend_item" data-id="{uid}" id="vapp-friend_item_{uid}" onclick="vapp.feed.choiceFriend({uid}, event)">
         <div class="vapp-friend_item_img" style="background: url({photo_100})"><img src="/static/i/blank.gif" class="blank-helper"/></div>
         <div class="vapp-friend_item_name ellipsis">{first_name}</div>
     </div>

@@ -56,8 +56,8 @@ body { overflow-y: scroll; background: #f0f2f5; }
 .btn:hover { background: #527eae; }
 .btn:active { background: #314c69; }
 
-.vapp-friend_item { display: inline-block; vertical-align: top; width: 20%; margin: 0 2% 30px; }
-.vapp-friend_item .vapp-friend_item_img { max-width: 100px; background-position: center center; background-repeat: no-repeat; margin: 0 auto 10px; border-radius: 50%; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) inset; }
+.vapp-friend_item { display: inline-block; vertical-align: top; width: 30%; margin: 0 1% 30px; max-width: 100px; }
+.vapp-friend_item .vapp-friend_item_img { max-width: 100px; background-position: center center; background-repeat: no-repeat; margin: 0 auto 10px; border-radius: 50%; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) inset; cursor: pointer; }
 .vapp-friend_item .blank-helper { display: block; width: 100%; visibility: hidden; }
 
 .vapp-video_item { display: inline-block; vertical-align: top; width: 20%; margin: 0 2% 30px; }

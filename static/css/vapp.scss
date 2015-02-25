@@ -25,7 +25,7 @@ label,input[type=submit]{cursor:pointer}
 body{
     overflow-y: scroll;
     background: #f0f2f5;
-    
+
 }
 
 #vapp-wrapper.fixed{
@@ -103,8 +103,9 @@ body{
 .vapp-friend_item{
     display: inline-block;
     vertical-align: top;
-    width: 20%;
-    margin: 0 2% 30px;
+    width: 30%;
+    margin: 0 1% 30px;
+    max-width: 100px;
 
     .vapp-friend_item_img{
         max-width: 100px;
@@ -113,6 +114,7 @@ body{
         margin: 0 auto 10px;
         border-radius: 50%;
         box-shadow: 0 5px 10px rgba(0,0,0,.2) inset;
+        cursor: pointer;
     }
 
     .blank-helper{

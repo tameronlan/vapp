@@ -241,6 +241,11 @@ vapp.feed = new function(){
         console.log('search');
     };
 
+    feed.choiceFriend = function(id, ev){
+        feed.friendId = id;
+
+        feed.change('friends', ev);
+    };
 
     feed.reset = function(){
         feed.offset = 0;
