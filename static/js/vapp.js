@@ -346,16 +346,7 @@ vapp.player = new function(){
             width: 9999,
             myClass: 'video-popup',
             onOpen: function(context){
-
-                if(currentVideo.files.external){
-                    html += '<iframe id="video-player" src="' + currentVideo.player+ '" width="' + context.$box.width() + '" height="' + context.$box.height() + '" type="text/html" frameborder="0" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" scrolling="no" preventhide="1"></iframe>'
-                } else {
-                    html += '<video id="video-player" controls src="' +currentVideo.files.mp4_240+ '" width="' + context.$content.width() + '" height="' + context.$content.height() + '" poster="'+currentVideo.image_medium+'"></video>'
-                }
-
-                context.$content.html(html);
-
-                player.init(context);
+                player.init(context, currentVideo);
             },
             onClose: function(){
                 player.clear();
@@ -363,12 +354,69 @@ vapp.player = new function(){
         });
     };
 
-    player.init = function(popupContext){
-        player.video = ge('video-player');
+    player.init = function(popupContext, currentVideo){
+        var html = "";
 
+        if(currentVideo.files.external){
+            popupContext.$content.html( '<iframe id="video-player" src="' + currentVideo.player+ '" width="' + popupContext.$box.width() + '" height="' + popupContext.$box.height() + '" type="text/html" frameborder="0" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" scrolling="no" preventhide="1"></iframe>' );
+
+            player.video = ge('vapp-video');
+        } else {
+            var params = {
+                src: currentVideo.files.mp4_480 ? currentVideo.files.mp4_480 : currentVideo.files.mp4_240,
+                width: popupContext.$content.width(),
+                height: popupContext.$content.height()
+            };
+
+            popupContext.$content.html(vapp.getTpl('vapp-video-player').supplant(params));
+
+            player.video = ge('vapp-video');
+
+            player.initControls(popupContext);
+            player.initBinds(popupContext);
+        }
+    };
+
+    player.initControls = function(){
+        player.controls = {
+            playOverlay: $('.vapp-player_overlay'),
+            playControls: $('.vapp-player_control_play'),
+            playControlGo: $('.vapp-player_control_icn.icon-play'),
+            playControlPause: $('.vapp-player_control_icn.icon-pause'),
+            playControlReload: $('.vapp-player_control_icn.icon-cw'),
+            bufferLine: $('.vapp-player_timing_buffered'),
+            progressLine: $('.vapp-player_timing_progress'),
+            progressTtip: $('.vapp-player_timing_ttip'),
+            duration: $('.vapp-player_timing_duration'),
+            volumeIcnOn: $('.vapp-player_volume_icn.icon-volume'),
+            volumeIcnOff: $('.vapp-player_volume_icn.icon-volume-off'),
+            volumeInner: $('.vapp-player_volume_inner'),
+            fullScreener: $('vapp-player_fullscreener')
+        };
+    };
+
+    player.initBinds = function(popupContext){
         $(window).bind('resize.video_player', function(){
             player.video.width = popupContext.$box.width();
             player.video.height = popupContext.$box.height();
+        });
+
+        player.video.addEventListener("canplay", function() {
+            console.log(player.video.duration, player.video.volume)
+        }, false);
+
+        player.video.addEventListener("play", function() {
+            player.controls.playOverlay.hide();
+            player.controls.playControls[0].class = 'vapp-player_control_play played';
+        });
+
+        player.video.addEventListener("pause", function() {
+            player.controls.playOverlay.show();
+            player.controls.playControls[0].class = 'vapp-player_control_play paused';
+        });
+
+        player.video.addEventListener("end", function() {
+            player.controls.playControls[0].class = 'vapp-player_control_play ended';
         });
     };
 

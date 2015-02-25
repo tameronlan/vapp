@@ -63,9 +63,9 @@ body { overflow-y: scroll; background: #f0f2f5; }
 .vapp-video_item { display: inline-block; vertical-align: top; width: 29%; margin: 0 1% 30px; }
 .vapp-video_item .vapp-video_item_img { background-position: center center; background-repeat: no-repeat; background-size: cover; background-color: #000; margin: 0 0 10px; cursor: pointer; position: relative; }
 .vapp-video_item .vapp-video_item_img:hover .vapp-video_item_hover { filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false); opacity: 1; }
-.vapp-video_item .vapp-video_item_poster { display: block; width: 100%; }
-.vapp-video_item .vapp-video_item_hover { width: 40px; height: 40px; line-height: 38px; text-align: center; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; -moz-transition: all 0.2s linear; -o-transition: all 0.2s linear; -webkit-transition: all 0.2s linear; transition: all 0.2s linear; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0); opacity: 0; color: #fff; background: #000; background: rgba(0, 0, 0, 0.8); font-size: 25px; position: absolute; top: 50%; left: 50%; margin: -20px 0 0 -20px; }
-.vapp-video_item .vapp-video_item_hover .icon-play { margin: 0 0 0 2px; }
+.vapp-video_item .blank-helper { visibility: hidden; display: block; width: 75%; }
+.vapp-video_item .vapp-video_item_hover { width: 40px; height: 40px; line-height: 40px; text-align: center; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; -moz-transition: all 0.2s linear; -o-transition: all 0.2s linear; -webkit-transition: all 0.2s linear; transition: all 0.2s linear; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0); opacity: 0; color: #000; background: #fff; background: rgba(255, 255, 255, 0.8); font-size: 25px; position: absolute; top: 50%; left: 50%; margin: -20px 0 0 -20px; }
+.vapp-video_item .vapp-video_item_hover .icon-play { margin: 0 0 0 4px; }
 
 .vapp-box { padding: 30px; font-size: 13px; line-height: 1.4em; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); display: inline-block; max-width: 700px; background: #fff; }
 .vapp-box .vapp-box_top { margin: 0 0 30px; }
@@ -79,16 +79,25 @@ body { overflow-y: scroll; background: #f0f2f5; }
 
 .popup-box.video-popup { position: absolute; left: 0; right: 0; top: 0; bottom: 0; margin: 0 !important; max-width: auto !important; overflow: hidden; }
 .popup-box.video-popup .popup-content { position: absolute; left: 0; right: 0; top: 0; bottom: 0; margin: 0 !important; max-width: auto !important; background: #000; padding: 0 !important; overflow: hidden; }
+.popup-box.video-popup .popup-close { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=5); opacity: 0.05; right: -5px; top: -5px; }
+.popup-box.video-popup:hover .popup-close { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20); opacity: 0.2; right: 0; top: 0; }
+.popup-box.video-popup:hover .popup-close:hover { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40); opacity: 0.4; right: 0; top: 0; }
 
 .popup-box.invisible { height: 0; overflow: hidden; }
 
 .popup-header { text-align: center; position: relative; }
 
-.popup-close { display: block; position: absolute; top: 10px; right: 10px; cursor: pointer; z-index: 5; font-size: 30px; height: 40px; width: 40px; line-height: 40px; text-align: center; color: #000; background: #fff; -moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20); opacity: 0.2; -moz-transition: opacity 0.2s linear; -o-transition: opacity 0.2s linear; -webkit-transition: opacity 0.2s linear; transition: opacity 0.2s linear; }
+.popup-close { display: block; position: absolute; top: 0; right: 0; cursor: pointer; z-index: 5; font-size: 30px; height: 50px; width: 50px; line-height: 50px; text-align: center; color: #000; background: #fff; -moz-border-radius: 2px 0 2px 50%; -webkit-border-radius: 2px; border-radius: 2px 0 2px 50%; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20); opacity: 0.2; -moz-transition: opacity 0.2s linear; -o-transition: opacity 0.2s linear; -webkit-transition: opacity 0.2s linear; transition: opacity 0.2s linear; }
 .popup-close:hover { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60); opacity: 0.6; }
-.popup-close .icon-cancel { margin: 0 0 0 -1px; }
+.popup-close .icon-cancel { margin: 0 0 0 1px; }
 
 .popup-content { padding: 40px 16px; background: #fff; background: rgba(255, 255, 255, 0.8); box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3); }
+
+.vapp-player_overlay { position: absolute; left: 0; top: 0; right: 0; bottom: 0; cursor: pointer; background: rgba(0, 0, 0, 0.2); }
+.vapp-player_overlay .vapp-player_inner { width: 50px; height: 50px; line-height: 50px; text-align: center; position: absolute; top: 50%; left: 50%; margin: -25px 0 0 -25px; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20); opacity: 0.2; background: #fff; color: #000; font-size: 30px; }
+.vapp-player_overlay .vapp-player_inner .icon-play { margin: 0 0 0 7px; }
+.vapp-player_overlay:hover .vapp-player_inner { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60); opacity: 0.6; }
+.vapp-player_overlay:active .vapp-player_inner { box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2) inset; background: rgba(255, 255, 255, 0.6); }
 
 @media (max-width: 720px) { .vapp-logo { width: 0; padding-right: 0; overflow: hidden; }
   .vapp-header_link { padding: 0 15px; }

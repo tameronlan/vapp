@@ -45,7 +45,9 @@
 
 <script type="text/template" id="vapp-friend-item">
     <div class="vapp-friend_item" data-id="{uid}" id="vapp-friend_item_{uid}" onclick="vapp.feed.choiceFriend({uid}, event)">
-        <div class="vapp-friend_item_img" style="background: url({photo_100})"><img src="/static/i/blank.gif" class="blank-helper"/></div>
+        <div class="vapp-friend_item_img" style="background: url({photo_100})">
+            <img src="/static/i/blank.gif" class="blank-helper"/>
+        </div>
         <div class="vapp-friend_item_name ellipsis">{first_name}</div>
     </div>
 </script>
@@ -53,10 +55,52 @@
 <script type="text/template" id="vapp-video-item">
     <div class="vapp-video_item" data-id="{vid}" id="vapp-friend_item_{vid}">
         <div class="vapp-video_item_img" style="background-image: url({image_medium})" onclick="vapp.player.open({vid});">
-            <img src="{image_medium}" class="vapp-video_item_poster"/>
+            <img src="/static/i/blank.gif" class="blank-helper"/>
             <div class="vapp-video_item_hover"><div class="icon-play"></div></div>
         </div>
         <div class="vapp-video_item_name ellipsis">{title}</div>
+    </div>
+</script>
+
+<script type="text/template" id="vapp-video-player">
+    <div class="vapp-player">
+        <video src="{src}" width="{width}" height="{height}" id="vapp-video"></video>
+        <div class="vapp-player_overlay" onclick="vapp.player.play();">
+            <div class="vapp-player_inner">
+                <div class="icon-play"></div>
+            </div>
+        </div>
+        <div class="vapp-player_controls">
+            <div class="vapp-player_control_play">
+                <div class="vapp-player_control_icn icon-play h"></div>
+                <div class="vapp-player_control_icn icon-pause h"></div>
+                <div class="vapp-player_control_icn icon-cw h"></div>
+            </div>
+            <div class="vapp-player_timing">
+                <div class="vapp-player_timing_line">
+                    <div class="vapp-player_timing_buffered"></div>
+                    <div class="vapp-player_timing_progress">
+                        <div class="vapp-player_timing_ttip">
+                            00:00
+                        </div>
+                    </div>
+                </div>
+                <div class="vapp-player_timing_duration">
+                    00:00:00
+                </div>
+            </div>
+            <div class="vapp-player_volume">
+                <div class="vapp-player_volume_icn icon-volume"></div>
+                <div class="vapp-player_volume_icn icon-volume-off"></div>
+
+                <div class="vapp-player_volume_line">
+                    <div class="vapp-player_volume_inner"></div>
+                </div>
+            </div>
+            <div class="vapp-player_fullscreener">
+                <div class="icon-resize-full"></div>
+            </div>
+        </div>
     </div>
 </script>
 
