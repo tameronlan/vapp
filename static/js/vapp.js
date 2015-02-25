@@ -421,7 +421,7 @@ vapp.player = new function(){
     };
 
     player.clear = function(){
-        $('body').unbind('resize.video_player');
+        $(window).unbind('resize.video_player');
 
         player.video = null;
         player.isExternal = true;
