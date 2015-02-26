@@ -382,8 +382,6 @@ vapp.player = new function(){
 
             player.initControls(popupContext);
             player.initBinds(popupContext);
-
-            player.video.play();
         }
     };
 
@@ -414,8 +412,6 @@ vapp.player = new function(){
         });
 
         player.video.addEventListener("canplay", function() {
-            player.video.pause();
-
             console.log(player.video.duration, player.video.volume)
         }, false);
 
