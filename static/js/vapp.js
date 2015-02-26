@@ -418,6 +418,7 @@ vapp.player = new function(){
         })
 
         player.video.addEventListener("canplay", function() {
+            console.log(11)
 //            console.log(player.video.duration, player.video.volume)
         }, false);
 
@@ -656,7 +657,7 @@ function timeSmall(sec){
         secs = Math.floor(sec - (mins * 60));
         if (secs < 10) secs = '0'+secs;
         if (mins < 10) mins = '0'+mins;
-        return  (hours < 10 && fullFormat ? '0' + hours : hours ) + ':' +mins+':'+secs;
+        return  (hours < 10 ? '0' + hours : hours ) + ':' +mins+':'+secs;
     } else {
         mins = Math.floor(sec / 60);
         secs = Math.floor(sec - (mins * 60));
