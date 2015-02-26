@@ -180,6 +180,53 @@ body{
     }
 }
 
+.vapp-player_control_play{
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    cursor: pointer;
+    z-index: 5;
+    font-size: 30px;
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: #000;
+    background: #fff;
+
+    @include border-radius(2px 50% 2px 0);
+    @include opacity(.2);
+    @include transition(opacity .2s linear);
+
+    &:hover{
+        @include opacity(.6);
+    }
+
+    &.played{
+        .icon-pause{ display: block; }
+    }
+
+    &.paused{
+        .icon-play{ display: block; }
+    }
+
+    &.ended{
+        .icon-cw{ display: block; }
+    }
+
+    .vapp-player_control_icn{
+        position: absolute;
+        height: 40px;
+        width: 40px;
+        top: 7px;
+        right: 7px;
+        line-height: 40px;
+        text-align: center;
+        display: none;
+    }
+}
+
 .vapp-player_controls{
     position: absolute;
     bottom: 0;

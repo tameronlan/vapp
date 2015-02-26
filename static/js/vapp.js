@@ -371,6 +371,7 @@ vapp.player = new function(){
             }
 
             var params = {
+                duration: timeSmall(currentVideo.duration),
                 poster: currentVideo.image_medium,
                 src: src,
                 width: popupContext.$content.width(),
@@ -412,23 +413,31 @@ vapp.player = new function(){
             player.video.height = popupContext.$box.height();
         });
 
+        $(player.video).click(function(){
+            player.pause();
+        })
+
         player.video.addEventListener("canplay", function() {
-            console.log(player.video.duration, player.video.volume)
+//            console.log(player.video.duration, player.video.volume)
         }, false);
 
         player.video.addEventListener("play", function() {
             player.controls.playOverlay.hide();
-            player.controls.playControls[0].class = 'vapp-player_control_play played';
+            player.controls.playControls.attr('class', 'vapp-player_control_play played');
         });
 
         player.video.addEventListener("pause", function() {
             player.controls.playOverlay.show();
-            player.controls.playControls[0].class = 'vapp-player_control_play paused';
+            player.controls.playControls.attr('class', 'vapp-player_control_play paused');
         });
 
         player.video.addEventListener("end", function() {
-            player.controls.playControls[0].class = 'vapp-player_control_play ended';
+            player.controls.playControls.attr('class', 'vapp-player_control_play ended');
         });
+
+        player.video.addEventListener("progress", function() {
+//            console.log('buddered', player.video.buffered.end(0));
+        }, false);
     };
 
     player.clear = function(){
@@ -444,6 +453,16 @@ vapp.player = new function(){
 
     player.play = function(){
         if ( player.video ) player.video.play();
+    };
+
+    player.playClick = function(el){
+        el = $(el);
+
+        if ( el.hasClass('paused') || el.hasClass('ended') ){
+            player.play();
+        } else {
+            player.pause();
+        }
     };
 };
 
@@ -623,6 +642,35 @@ function cancelEvent(e) {
     sp(e);
     pd(e);
 }
+
+/**
+ *
+ * @param sec
+ * @returns {*}
+ */
+function timeSmall(sec){
+    if (sec > 3599) {
+        hours = Math.floor(sec / 3600);
+        sec = sec - (3600 * hours);
+        mins = Math.floor(sec / 60);
+        secs = Math.floor(sec - (mins * 60));
+        if (secs < 10) secs = '0'+secs;
+        if (mins < 10) mins = '0'+mins;
+        return  (hours < 10 && fullFormat ? '0' + hours : hours ) + ':' +mins+':'+secs;
+    } else {
+        mins = Math.floor(sec / 60);
+        secs = Math.floor(sec - (mins * 60));
+        if (secs < 10) secs = '0'+secs;
+        if (mins < 10) mins = '0'+mins;
+        return mins+':'+secs;
+    }
+}
+
+/**
+ * Calculate length of object
+ * @param obj
+ * @returns {number}
+ */
 function objLength(obj) {
     if (typeof obj != 'object') return 0;
 
@@ -632,6 +680,14 @@ function objLength(obj) {
 
     return length;
 };
+
+/**
+ * get field by fieldname in object
+ * @param arr
+ * @param field
+ * @param val
+ * @returns {*}
+ */
 function getByField(arr, field, val) {
     if (!arr || !field || !val) return false;
 
@@ -720,8 +776,10 @@ String.prototype.supplant = function(o) {
         }
     );
 };
+
 // templates cache
 vapp.tplsCache = {};
+
 /**
  * search tpl in dom
  * @param {String} id - id of tpl���

@@ -71,7 +71,7 @@
             </div>
         </div>
         <div class="vapp-player_controls">
-            <div class="vapp-player_control_play">
+            <div class="vapp-player_control_play paused" onclick="vapp.player.playClick(this);">
                 <div class="vapp-player_control_icn icon-play h"></div>
                 <div class="vapp-player_control_icn icon-pause h"></div>
                 <div class="vapp-player_control_icn icon-cw h"></div>
@@ -86,7 +86,7 @@
                     </div>
                 </div>
                 <div class="vapp-player_timing_duration">
-                    00:00:00
+                    {duration}
                 </div>
             </div>
             <div class="vapp-player_volume">
