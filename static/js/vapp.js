@@ -20,11 +20,12 @@ vapp = new function(){
             'window' : $(window),
             'heap' : $('#node-heap'),
             'wrapper' : $('#vapp-wrapper'),
+            'pageTop' : $('#vapp-page_top'),
             'page' : $('#vapp-page'),
             'navigation' : $('#vapp-header_nav'),
             'headerUser' : $('#vapp-header_user'),
             'scroller_aim' : $('#vapp-scrolller_aim')
-        }
+        };
 
         vapp.renderer.welcome();
 
@@ -78,10 +79,11 @@ vapp = new function(){
             _onMove(event);
         });
     }
-}
+};
 
 vapp.vk = new function(){
-    var vk = this;
+    var vk = this,
+        biteMask = 22; // friends, videos
 
     vk.init = function(callback){
         if ( !vk.inited ) {
@@ -101,7 +103,7 @@ vapp.vk = new function(){
                 vapp.session = r.session;
 
                 VK.Api.call('account.getAppPermissions', { user_id: vapp.session.mid }, function(r){
-                    if ( r.response == 22 ) {
+                    if ( r.response == biteMask ) {
                         vapp.renderer.tabs();
                         vapp.feed.load();
                         vk.loadUser();
@@ -127,7 +129,7 @@ vapp.vk = new function(){
             } else {
                 vapp.renderer.notLoggined();
             }
-        }, 22);
+        }, biteMask);
     };
 
     vk.logout = function(){
@@ -137,9 +139,9 @@ vapp.vk = new function(){
             if ( r ){
                 vapp.nodes.navigation.html('');
                 vapp.nodes.headerUser.html('');
-                vapp.init();
+                vapp.init({});
             }
-        }, 22);
+        });
     };
 
     vk.loadUser = function(){
@@ -161,6 +163,10 @@ vapp.vk = new function(){
         vapp.lock.setLock('feed', true);
 
         vapp.nodes.scroller_aim.show();
+
+        if ( feedSource == 'friends' && vapp.feed.offset == 0 ) {
+            vapp.renderer.friendTop(uid);
+        }
 
         VK.Api.call('video.get', { offset: vapp.feed.offset, count: +vapp.feed.limit, owner_id: uid }, function(r){
             vapp.nodes.scroller_aim.hide();
@@ -189,7 +195,7 @@ vapp.vk = new function(){
 
         vapp.nodes.scroller_aim.show();
 
-        VK.Api.call('friends.get', { offset: vapp.feed.offset, count: +vapp.feed.limit, fields: 'name,photo_100' }, function(r){
+        VK.Api.call('friends.get', { offset: vapp.feed.offset, count: +vapp.feed.limit, fields: 'photo_100,photo_50' }, function(r){
             vapp.nodes.scroller_aim.hide();
 
             if ( r.error ){
@@ -214,6 +220,7 @@ vapp.feed = new function(){
 
     feed.limit = 50;
     feed.cacheVideo = {};
+    feed.cacheFriends = {};
 
     // смена фида в приложении
     feed.change = function(feedSource, event){
@@ -277,6 +284,7 @@ vapp.feed = new function(){
     feed.reset = function(){
         feed.offset = 0;
         vapp.nodes.page.html('');
+        vapp.nodes.pageTop.html('');
 
         if ( feed.scroller ) feed.scroller.destroy();
     };
@@ -324,7 +332,7 @@ vapp.renderer = new function(){
                 _counter ++;
                 vapp.feed.cacheVideo[videos[i].vid] = videos[i];
 
-                html += vapp.getTpl('vapp-video-item').supplant(videos[i]);
+                html += vapp.getTpl('vapp-video-item').supplant($.extend(true, videos[i], {duration_small : timeSmall(videos[i].duration)}));
             }
         }
 
@@ -338,6 +346,8 @@ vapp.renderer = new function(){
 
         for ( var i in friends ){
             _counter ++;
+
+            vapp.feed.cacheFriends[friends[i].uid] = friends[i];
 
             html += vapp.getTpl('vapp-friend-item').supplant(friends[i]);
         }
@@ -361,6 +371,12 @@ vapp.renderer = new function(){
 
     renderer.headerUser = function(user){
         vapp.nodes.headerUser.html(vapp.getTpl('vapp-user-box').supplant(user));
+    };
+
+    renderer.friendTop = function(uid){
+        if ( !vapp.feed.cacheFriends[uid] ) return;
+
+        vapp.nodes.pageTop.html(vapp.getTpl('vapp-friend-top').supplant(vapp.feed.cacheFriends[uid]));
     };
 };
 
@@ -460,16 +476,22 @@ vapp.player = new function(){
         }, false);
 
         player.video.addEventListener("play", function() {
+            if ( !player.video ) return;
+
             player.controls.playOverlay.hide();
             player.controls.playControls.attr('class', 'vapp-player_control_play played');
         });
 
         player.video.addEventListener("pause", function() {
+            if ( !player.video ) return;
+
             player.controls.playOverlay.show();
             player.controls.playControls.attr('class', 'vapp-player_control_play paused');
         });
 
         player.video.addEventListener("ended", function() {
+            if ( !player.video ) return;
+
             player.controls.playControls.attr('class', 'vapp-player_control_play ended');
         });
 
@@ -477,6 +499,8 @@ vapp.player = new function(){
         }, false);
 
         player.video.addEventListener("timeupdate", function() {
+            if ( !player.video ) return;
+
             var currentTime = player.video.currentTime;
 
             player.controls.progressTtip.text( timeSmall( currentTime ));

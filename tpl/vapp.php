@@ -1,6 +1,7 @@
 <?php require_once 'header.php'; ?>
 
 <div id="vapp-middle">
+    <div id="vapp-page_top"></div>
     <div class="vapp-content ta-c" id="vapp-page"></div>
     <div id="vapp-scrolller_aim" class="h ta-c" >
         <img src="/static/i/loader.gif"/>
@@ -57,6 +58,7 @@
         <div class="vapp-video_item_img" style="background-image: url({image_medium})" onclick="vapp.player.open({vid});">
             <img src="/static/i/blank.gif" class="blank-helper"/>
             <div class="vapp-video_item_hover"><div class="icon-play"></div></div>
+            <div class="vapp-video_item_duration">{duration_small}</div>
         </div>
         <div class="vapp-video_item_name ellipsis">{title}</div>
     </div>
@@ -118,18 +120,27 @@
     <a class="vapp-header_link unselectable {class}" id="vapp-header_link_{tabSource}" href="/?tab={tabSource}" onclick="vapp.feed.friendId = null; vapp.feed.change('{tabSource}', event);">{title}</a>
 </script>
 
+
+<script type="text/template" id="vapp-friend-top">
+    <div class="vapp-friend_top">
+        <div class="btn" onclick="vapp.feed.friendId = null; vapp.feed.change('friends', event);"><div class="icon-cancel"></div></div>
+        <div class="vapp-friend_top_img" style="background: url({photo_50})"></div>
+        Видео - {first_name}
+    </div>
+</script>
+
 <script type="text/javascript">
     $(function(){
         vapp.init({
             apiId: <?= VK_APP_ID?>,
             feeds: {
-                'friends' : {
-                    title: 'Видео друзей',
-                    tabSource: 'friends'
-                },
                 'mine' : {
                     title: 'Мои видео',
                     tabSource: 'mine'
+                },
+                'friends' : {
+                    title: 'Видео друзей',
+                    tabSource: 'friends'
                 }
             },
             currentFeed: 'mine'

@@ -82,9 +82,8 @@ body{
 .vapp-user_img_cover{
     width: 50px;
     height: 50px;
-    position: relative;
-    float: right;
-    margin: 0 0 0 20px;
+    position: absolute;
+    right: 0;
 
     .vapp-user_img{
         position: absolute;
@@ -193,6 +192,7 @@ body{
 }
 
 #vapp-header_nav{
+    margin: 0 60px 0 0;
     float: right;
     font-size: 0;
     text-align: center;
@@ -272,6 +272,17 @@ body{
         }
     }
 
+    .vapp-video_item_duration{
+        position: absolute;
+        padding: 3px 5px;
+        font-size: 13px;
+        font-weight: bold;
+        color: #fff;
+        background: rgba(#000, .4);
+        bottom: 10px;
+        right: 10px;
+    }
+
     .blank-helper{
         visibility: hidden;
         display: block;
@@ -298,6 +309,31 @@ body{
         .icon-play{
             margin: 0 0 0 4px;
         }
+    }
+}
+
+.vapp-friend_top{
+    padding: 10px;
+    line-height: 40px;
+    background: #fff;
+    @include box-shadow(0 1px 2px rgba(0,0,0,.2));
+    margin: 0 0 30px;
+    position: relative;
+
+    .btn{
+        float: right;
+        margin: 5px 0 0 10px;
+        font-size: 22px;
+        padding: 0;
+    }
+
+    .vapp-friend_top_img{
+        width: 40px;
+        height: 40px;
+        @include border-radius(50%);
+        float: left;
+        margin: 0 10px 0 0;
+        background-size: cover;
     }
 }
 
