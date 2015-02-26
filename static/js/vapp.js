@@ -371,6 +371,7 @@ vapp.player = new function(){
             }
 
             var params = {
+                poster: currentVideo.image_medium,
                 src: src,
                 width: popupContext.$content.width(),
                 height: popupContext.$content.height()

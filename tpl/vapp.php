@@ -64,7 +64,7 @@
 
 <script type="text/template" id="vapp-video-player">
     <div class="vapp-player">
-        <video src="{src}" width="{width}" height="{height}" id="vapp-video"></video>
+        <video src="{src}" width="{width}" height="{height}" id="vapp-video" poster="{poster}"></video>
         <div class="vapp-player_overlay" onclick="vapp.player.play();">
             <div class="vapp-player_inner">
                 <div class="icon-play"></div>
