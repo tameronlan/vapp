@@ -67,7 +67,7 @@
 <script type="text/template" id="vapp-user-box">
     <div class="vapp-user_img_cover">
         <div class="vapp-user_img" style="background-image: url({photo_50})">
-            <div class="vapp-user_top_exit" onclick="vapp.vk.logout();">
+            <div class="vapp-user_top_exit unselectable" onclick="vapp.vk.logout();">
                 <div class="icon-logout"></div>
             </div>
         </div>
@@ -77,19 +77,19 @@
 <script type="text/template" id="vapp-video-player">
     <div class="vapp-player">
         <video src="{src}" width="{width}" height="{height}" id="vapp-video" poster="{poster}"></video>
-        <div class="vapp-player_overlay" onclick="vapp.player.play();">
+        <div class="vapp-player_overlay unselectable" onclick="vapp.player.play();">
             <div class="vapp-player_inner">
                 <div class="icon-play"></div>
             </div>
         </div>
         <div class="vapp-player_controls">
-            <div class="vapp-player_control_play paused" onclick="vapp.player.playClick(this);">
+            <div class="unselectable vapp-player_control_play paused" onclick="vapp.player.playClick(this);">
                 <div class="vapp-player_control_icn icon-play h"></div>
                 <div class="vapp-player_control_icn icon-pause h"></div>
                 <div class="vapp-player_control_icn icon-cw h"></div>
             </div>
             <div class="vapp-player_timing">
-                <div class="vapp-player_timing_line">
+                <div class="unselectable vapp-player_timing_line">
                     <div class="vapp-player_timing_buffered"></div>
                     <div class="vapp-player_timing_progress">
                         <div class="vapp-player_timing_ttip">
@@ -101,7 +101,7 @@
                     {duration}
                 </div>
             </div>
-            <div class="vapp-player_volume {class_volume}" onclick="vapp.player.volumeClick(this);">
+            <div class="unselectable vapp-player_volume {class_volume}" onclick="vapp.player.volumeClick(this);">
                 <div class="vapp-player_volume_icn icon-volume"></div>
                 <div class="vapp-player_volume_icn icon-volume-off"></div>
 

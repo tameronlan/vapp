@@ -479,23 +479,24 @@ vapp.player = new function(){
             if ( !player.video ) return;
 
             player.controls.playOverlay.hide();
-            player.controls.playControls.attr('class', 'vapp-player_control_play played');
+            player.controls.playControls.attr('class', 'unselectable vapp-player_control_play played');
         });
 
         player.video.addEventListener("pause", function() {
             if ( !player.video ) return;
 
             player.controls.playOverlay.show();
-            player.controls.playControls.attr('class', 'vapp-player_control_play paused');
+            player.controls.playControls.attr('class', 'unselectable vapp-player_control_play paused');
         });
 
         player.video.addEventListener("ended", function() {
             if ( !player.video ) return;
 
-            player.controls.playControls.attr('class', 'vapp-player_control_play ended');
+            player.controls.playControls.attr('class', 'unselectable vapp-player_control_play ended');
         });
 
         player.video.addEventListener("progress", function() {
+
         }, false);
 
         player.video.addEventListener("timeupdate", function() {
