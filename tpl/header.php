@@ -24,6 +24,8 @@
                     Video Application
                 </div>
 
+                <div id="vapp-header_user"></div>
+
                 <div id="vapp-header_nav"></div>
             </div>
         </div>

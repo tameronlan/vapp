@@ -44,9 +44,17 @@ body { overflow-y: scroll; background: #f0f2f5; }
 
 .vapp-logo { background: url("http://st0.vk.me/images/dev_logo_vk.png") no-repeat scroll 10px 15px transparent; font-weight: bold; padding: 0 15px 0 51px; height: 50px; line-height: 48px; color: #fff; font-size: 13px; }
 
-.vapp-header_link { padding: 0 15px; height: 48px; line-height: 48px; color: #fff; font-size: 13px; text-decoration: none; border-top: 2px solid transparent; -moz-transition: all 0.2s linear; -o-transition: all 0.2s linear; -webkit-transition: all 0.2s linear; transition: all 0.2s linear; }
+.vapp-header_link { padding: 0 15px; height: 48px; line-height: 48px; color: #fff; font-size: 13px; text-decoration: none; border-top: 2px solid transparent; -moz-transition: all 0.2s linear; -o-transition: all 0.2s linear; -webkit-transition: all 0.2s linear; transition: all 0.2s linear; display: inline-block; vertical-align: top; }
 .vapp-header_link:hover { background: #51759B; border-color: #A9C4E4; }
 .vapp-header_link:active, .vapp-header_link.active { background: #4B6D94; border-color: #fff; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) inset; }
+
+.vapp-user_img_cover { width: 50px; height: 51px; position: relative; float: right; background: #567ca4; -moz-box-shadow: 0 1px 3px 2px rgba(0, 0, 0, 0.2); -webkit-box-shadow: 0 1px 3px 2px rgba(0, 0, 0, 0.2); box-shadow: 0 1px 3px 2px rgba(0, 0, 0, 0.2); }
+.vapp-user_img_cover .vapp-user_img { position: absolute; width: 40px; height: 40px; left: 50%; top: 50%; margin: -20px 0 0 -20px; -moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%; background-position: center center; background-repeat: no-repeat; }
+.vapp-user_img_cover .vapp-user_top_exit { width: 20px; height: 20px; background: #000; color: #fff; font-size: 13px; line-height: 20px; text-align: center; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50); opacity: 0.5; -moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%; cursor: pointer; position: absolute; bottom: -1px; right: -1px; }
+.vapp-user_img_cover .vapp-user_top_exit:hover { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80); opacity: 0.8; }
+.vapp-user_img_cover .icon-logout { margin: 0 0 0 2px; }
+
+#vapp-header_nav { float: right; font-size: 0; text-align: center; }
 
 #vapp-middle { padding: 80px 10px 20px; }
 

@@ -64,6 +64,8 @@ body{
     text-decoration: none;
     border-top: 2px solid transparent;
     @include transition(all .2s linear);
+    display: inline-block;
+    vertical-align: top;
 
     &:hover{
         background: #51759B;
@@ -75,6 +77,57 @@ body{
         border-color:#fff;
         box-shadow: 0 2px 5px rgba(#000, .1) inset;
     }
+}
+
+.vapp-user_img_cover{
+    width: 50px;
+    height: 51px;
+    position: relative;
+    float: right;
+    background: #567ca4;
+    @include box-shadow(0 1px 3px 2px rgba(0,0,0,.2));
+
+    .vapp-user_img{
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        left: 50%;
+        top: 50%;
+        margin: -20px 0 0 -20px;
+        @include border-radius(50%);
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
+    .vapp-user_top_exit{
+        width: 20px;
+        height: 20px;
+        background: #000;
+        color: #fff;
+        font-size: 13px;
+        line-height: 20px;
+        text-align: center;
+        @include opacity(.5);
+        @include border-radius(50%);
+        cursor: pointer;
+        position: absolute;
+        bottom: -1px;
+        right: -1px;
+
+        &:hover{
+            @include opacity(.8);
+        }
+    }
+
+    .icon-logout{
+        margin: 0 0 0 2px;
+    }
+}
+
+#vapp-header_nav{
+    float: right;
+    font-size: 0;
+    text-align: center;
 }
 
 #vapp-middle{

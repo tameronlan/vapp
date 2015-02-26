@@ -62,6 +62,16 @@
     </div>
 </script>
 
+<script type="text/template" id="vapp-user-box">
+    <div class="vapp-user_img_cover">
+        <div class="vapp-user_img" style="background-image: url({photo_50})">
+            <div class="vapp-user_top_exit" onclick="vapp.vk.logout();">
+                <div class="icon-logout"></div>
+            </div>
+        </div>
+    </div>
+</script>
+
 <script type="text/template" id="vapp-video-player">
     <div class="vapp-player">
         <video src="{src}" width="{width}" height="{height}" id="vapp-video" poster="{poster}"></video>
@@ -105,7 +115,7 @@
 </script>
 
 <script type="text/template" id="vapp-navigation-item">
-    <a class="vapp-header_link unselectable fl-r {class}" id="vapp-header_link_{tabSource}" href="/?tab={tabSource}" onclick="vapp.feed.friendId = null; vapp.feed.change('{tabSource}', event);">{title}</a>
+    <a class="vapp-header_link unselectable {class}" id="vapp-header_link_{tabSource}" href="/?tab={tabSource}" onclick="vapp.feed.friendId = null; vapp.feed.change('{tabSource}', event);">{title}</a>
 </script>
 
 <script type="text/javascript">

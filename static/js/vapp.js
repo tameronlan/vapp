@@ -11,9 +11,9 @@ vapp = new function(){
     vapp.init = function(opts){
         opts = opts || {};
 
-        vapp.currentFeed = opts.currentFeed || defaultFeed;
-        vapp.feeds = opts.feeds || defaultFeeds;
-        vapp.apiId = opts.apiId || apiId;
+        vapp.currentFeed = vapp.currentFeed || opts.currentFeed || defaultFeed;
+        vapp.feeds = vapp.feeds || opts.feeds || defaultFeeds;
+        vapp.apiId = vapp.apiId || opts.apiId || apiId;
 
         vapp.nodes = {
             'body' : $('body'),
@@ -22,6 +22,7 @@ vapp = new function(){
             'wrapper' : $('#vapp-wrapper'),
             'page' : $('#vapp-page'),
             'navigation' : $('#vapp-header_nav'),
+            'headerUser' : $('#vapp-header_user'),
             'scroller_aim' : $('#vapp-scrolller_aim')
         }
 
@@ -83,9 +84,11 @@ vapp.vk = new function(){
     var vk = this;
 
     vk.init = function(callback){
-        VK.init({ apiId: vapp.apiId });
+        if ( !vk.inited ) {
+            VK.init({ apiId: vapp.apiId });
 
-        vk.inited = true;
+            vk.inited = true;
+        }
 
         if ( callback ) callback();
     };
@@ -101,6 +104,7 @@ vapp.vk = new function(){
                     if ( r.response == 22 ) {
                         vapp.renderer.tabs();
                         vapp.feed.load();
+                        vk.loadUser();
                     } else {
                         vapp.renderer.noRights();
                     }
@@ -119,8 +123,31 @@ vapp.vk = new function(){
                 vapp.session = r.session;
                 vapp.renderer.tabs();
                 vapp.feed.load();
+                vk.loadUser();
             } else {
                 vapp.renderer.notLoggined();
+            }
+        }, 22);
+    };
+
+    vk.logout = function(){
+        if ( !vk.inited ) { vk.init( vk.logout ) }
+
+        VK.Auth.logout(function( r ){
+            if ( r ){
+                vapp.nodes.navigation.html('');
+                vapp.nodes.headerUser.html('');
+                vapp.init();
+            }
+        }, 22);
+    };
+
+    vk.loadUser = function(){
+        if ( !vk.inited ) { vk.init( vk.loadUser ) }
+
+        VK.Api.call('users.get', { fields: 'photo_50, photo_100'}, function( r ){
+            if ( r.response ){
+                vapp.renderer.headerUser(r.response[0]);
             }
         }, 22);
     };
@@ -330,6 +357,10 @@ vapp.renderer = new function(){
 
     renderer.videoNotSupported = function(){
         vapp.nodes.page.html(vapp.getTpl('vapp-not-supported-page'));
+    };
+
+    renderer.headerUser = function(user){
+        vapp.nodes.headerUser.html(vapp.getTpl('vapp-user-box').supplant(user));
     };
 };
 
