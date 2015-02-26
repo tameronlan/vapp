@@ -99,7 +99,7 @@
                     {duration}
                 </div>
             </div>
-            <div class="vapp-player_volume">
+            <div class="vapp-player_volume {class_volume}" onclick="vapp.player.volumeClick(this);">
                 <div class="vapp-player_volume_icn icon-volume"></div>
                 <div class="vapp-player_volume_icn icon-volume-off"></div>
 

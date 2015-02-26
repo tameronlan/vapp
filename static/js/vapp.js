@@ -402,6 +402,7 @@ vapp.player = new function(){
             }
 
             var params = {
+                class_volume: '',
                 duration: timeSmall(currentVideo.duration),
                 poster: currentVideo.image_medium,
                 src: src,
@@ -420,19 +421,20 @@ vapp.player = new function(){
 
     player.initControls = function(){
         player.controls = {
-            playOverlay: $('.vapp-player_overlay'),
-            playControls: $('.vapp-player_control_play'),
-            playControlGo: $('.vapp-player_control_icn.icon-play'),
-            playControlPause: $('.vapp-player_control_icn.icon-pause'),
-            playControlReload: $('.vapp-player_control_icn.icon-cw'),
-            bufferLine: $('.vapp-player_timing_buffered'),
-            progressLine: $('.vapp-player_timing_progress'),
-            progressTtip: $('.vapp-player_timing_ttip'),
-            duration: $('.vapp-player_timing_duration'),
-            volumeIcnOn: $('.vapp-player_volume_icn.icon-volume'),
-            volumeIcnOff: $('.vapp-player_volume_icn.icon-volume-off'),
-            volumeInner: $('.vapp-player_volume_inner'),
-            fullScreener: $('vapp-player_fullscreener')
+            playOverlay:        $('.vapp-player_overlay'),
+            playControls:       $('.vapp-player_control_play'),
+            playControlGo:      $('.vapp-player_control_icn.icon-play'),
+            playControlPause:   $('.vapp-player_control_icn.icon-pause'),
+            playControlReload:  $('.vapp-player_control_icn.icon-cw'),
+            bufferLine:         $('.vapp-player_timing_buffered'),
+            progress:           $('.vapp-player_timing_line'),
+            progressLine:       $('.vapp-player_timing_progress'),
+            progressTtip:       $('.vapp-player_timing_ttip'),
+            duration:           $('.vapp-player_timing_duration'),
+            volumeIcnOn:        $('.vapp-player_volume_icn.icon-volume'),
+            volumeIcnOff:       $('.vapp-player_volume_icn.icon-volume-off'),
+            volumeInner:        $('.vapp-player_volume_inner'),
+            fullScreener:       $('vapp-player_fullscreener')
         };
     };
 
@@ -446,10 +448,14 @@ vapp.player = new function(){
 
         $(player.video).click(function(){
             player.pause();
-        })
+        });
+
+        player.controls.progress.click(function(e) {
+            var x = (e.pageX - this.offsetLeft)/$(this).width();
+            player.video.currentTime = x * player.video.duration;
+        });
 
         player.video.addEventListener("canplay", function() {
-            console.log(11)
 //            console.log(player.video.duration, player.video.volume)
         }, false);
 
@@ -463,12 +469,20 @@ vapp.player = new function(){
             player.controls.playControls.attr('class', 'vapp-player_control_play paused');
         });
 
-        player.video.addEventListener("end", function() {
+        player.video.addEventListener("ended", function() {
             player.controls.playControls.attr('class', 'vapp-player_control_play ended');
         });
 
         player.video.addEventListener("progress", function() {
-//            console.log('buddered', player.video.buffered.end(0));
+        }, false);
+
+        player.video.addEventListener("timeupdate", function() {
+            var currentTime = player.video.currentTime;
+
+            player.controls.progressTtip.text( timeSmall( currentTime ));
+
+            var progress = Math.floor(currentTime) / Math.floor(player.video.duration);
+            player.controls.progressLine[0].style.width = Math.floor(progress * 100) + "%";
         }, false);
     };
 
@@ -495,6 +509,14 @@ vapp.player = new function(){
         } else {
             player.pause();
         }
+    };
+
+    player.volumeClick = function(el){
+        el = $(el);
+
+        el.toggleClass('muted');
+
+        player.video.muted = !player.video.muted;
     };
 };
 
