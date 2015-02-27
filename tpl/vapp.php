@@ -1,7 +1,7 @@
 <?php require_once 'header.php'; ?>
 
 <div id="vapp-middle">
-    <div id="vapp-page_top"></div>
+    <div id="vapp-page_top" class="vapp-content"></div>
     <div class="vapp-content ta-c" id="vapp-page"></div>
     <div id="vapp-scrolller_aim" class="h ta-c" >
         <img src="/static/i/loader.gif"/>
@@ -67,7 +67,7 @@
 <script type="text/template" id="vapp-user-box">
     <div class="vapp-user_img_cover">
         <div class="vapp-user_img" style="background-image: url({photo_50})">
-            <div class="vapp-user_top_exit unselectable" onclick="vapp.vk.logout();">
+            <div class="vapp-user_top_exit unselectable" onclick="vapp.vk.logout();" onmouseover="$(this).addClass('hover')" onmouseout="$(this).removeClass('hover')">
                 <div class="icon-logout"></div>
             </div>
         </div>

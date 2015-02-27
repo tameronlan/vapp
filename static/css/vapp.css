@@ -41,6 +41,7 @@ body { overflow-y: scroll; background: #f0f2f5; }
 #vapp-wrapper.fixed { left: 0; position: fixed; right: 0; top: 0; }
 
 #vapp-header { height: 50px; position: fixed; left: 0; top: 0; right: 0; background: #567ca4; z-index: 10; }
+#vapp-header .vapp-content { position: relative; }
 
 .vapp-logo { background: url("http://st0.vk.me/images/dev_logo_vk.png") no-repeat scroll 10px 15px transparent; font-weight: bold; padding: 0 15px 0 51px; height: 50px; line-height: 48px; color: #fff; font-size: 13px; }
 
@@ -51,7 +52,7 @@ body { overflow-y: scroll; background: #f0f2f5; }
 .vapp-user_img_cover { width: 50px; height: 50px; position: absolute; right: 0; }
 .vapp-user_img_cover .vapp-user_img { position: absolute; width: 40px; height: 40px; left: 50%; top: 50%; margin: -20px 0 0 -20px; -moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%; background-position: center center; background-repeat: no-repeat; }
 .vapp-user_img_cover .vapp-user_top_exit { width: 40px; height: 40px; background: #000; color: #fff; font-size: 13px; line-height: 40px; text-align: center; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0); opacity: 0; -moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%; cursor: pointer; position: absolute; top: 0; left: 0; }
-.vapp-user_img_cover .vapp-user_top_exit:hover { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80); opacity: 0.8; }
+.vapp-user_img_cover .vapp-user_top_exit:hover, .vapp-user_img_cover .vapp-user_top_exit.hover { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80); opacity: 0.8; }
 .vapp-user_img_cover .icon-logout { margin: 0 0 0 2px; }
 
 .vapp-player_timing_line { position: absolute; left: 80px; bottom: 23px; height: 6px; right: 80px; background: rgba(0, 0, 0, 0.3); -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; border: 2px solid rgba(255, 255, 255, 0.5); }
@@ -83,6 +84,8 @@ body { overflow-y: scroll; background: #f0f2f5; }
 .vapp-video_item .blank-helper { visibility: hidden; display: block; width: 75%; }
 .vapp-video_item .vapp-video_item_hover { width: 40px; height: 40px; line-height: 40px; text-align: center; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; -moz-transition: all 0.2s linear; -o-transition: all 0.2s linear; -webkit-transition: all 0.2s linear; transition: all 0.2s linear; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0); opacity: 0; color: #000; background: #fff; background: rgba(255, 255, 255, 0.8); font-size: 25px; position: absolute; top: 50%; left: 50%; margin: -20px 0 0 -20px; }
 .vapp-video_item .vapp-video_item_hover .icon-play { margin: 0 0 0 4px; }
+
+.vapp-page_title { font-size: 17px; color: #999; text-align: center; padding: 30px 0 0; }
 
 .vapp-friend_top { padding: 10px; line-height: 40px; background: #fff; -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); margin: 0 0 30px; position: relative; }
 .vapp-friend_top .btn { float: right; margin: 5px 0 0 10px; font-size: 22px; padding: 0; }

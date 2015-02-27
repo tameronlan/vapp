@@ -176,13 +176,14 @@ vapp.vk = new function(){
             } else {
                 if ( vapp.currentFeed != feedSource ) return;
 
-                vapp.feed.offset = vapp.feed.offset + vapp.feed.limit;
-
                 vapp.lock.setLock('feed', false);
 
                 var _counter = vapp.renderer.videos(r.response);
 
                 if ( !_counter && vapp.feed.scroller ) vapp.feed.scroller.destroy()
+                if ( !_counter && !vapp.feed.offset ) vapp.renderer.emptyVideos()
+
+                vapp.feed.offset = vapp.feed.offset + vapp.feed.limit;
             }
         })
     };
@@ -322,6 +323,11 @@ vapp.renderer = new function(){
 
     renderer.error = function(errorMSG){
         vapp.nodes.page.html(errorMSG);
+    };
+
+
+    renderer.emptyVideos = function(){
+        vapp.nodes.page.html('<div class="vapp-page_title">Список видео пуст</div>');
     };
 
     renderer.videos = function(videos){
@@ -506,7 +512,7 @@ vapp.player = new function(){
 
             player.controls.progressTtip.text( timeSmall( currentTime ));
 
-            var progress = Math.floor(currentTime) / Math.floor(player.video.duration);
+            var progress = currentTime / player.video.duration;
             player.controls.progressLine[0].style.width = Math.floor(progress * 100) + "%";
         }, false);
     };

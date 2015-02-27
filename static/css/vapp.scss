@@ -43,6 +43,10 @@ body{
     right: 0;
     background: #567ca4;
     z-index: 10;
+    
+    .vapp-content{
+        position: relative;
+    }
 }
 
 .vapp-logo{
@@ -112,7 +116,7 @@ body{
         top: 0;
         left: 0;
 
-        &:hover{
+        &:hover, &.hover{
             @include opacity(.8);
         }
     }
@@ -310,6 +314,13 @@ body{
             margin: 0 0 0 4px;
         }
     }
+}
+
+.vapp-page_title{
+    font-size: 17px;
+    color: #999;
+    text-align: center;
+    padding: 30px 0 0;
 }
 
 .vapp-friend_top{
