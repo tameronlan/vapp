@@ -75,13 +75,13 @@ body { overflow-y: scroll; background: #f0f2f5; }
 
 .vapp-friend_item { display: inline-block; vertical-align: top; width: 29%; margin: 0 1% 30px; max-width: 100px; }
 .vapp-friend_item .vapp-friend_item_img { max-width: 100px; background-position: center center; background-repeat: no-repeat; margin: 0 auto 10px; border-radius: 50%; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) inset; cursor: pointer; }
-.vapp-friend_item .blank-helper { display: block; width: 100%; visibility: hidden; }
+.vapp-friend_item .vapp-friend_item_img:before { width: 100%; padding-bottom: 100%; visibility: hidden; content: ''; display: block; }
 
 .vapp-video_item { display: inline-block; vertical-align: top; width: 29%; margin: 0 1% 30px; }
 .vapp-video_item .vapp-video_item_img { background-position: center center; background-repeat: no-repeat; background-size: cover; background-color: #000; margin: 0 0 10px; cursor: pointer; position: relative; }
+.vapp-video_item .vapp-video_item_img:before { visibility: hidden; width: 100%; padding-bottom: 75%; display: block; content: ''; }
 .vapp-video_item .vapp-video_item_img:hover .vapp-video_item_hover { filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false); opacity: 1; }
 .vapp-video_item .vapp-video_item_duration { position: absolute; padding: 3px 5px; font-size: 13px; font-weight: bold; color: #fff; background: rgba(0, 0, 0, 0.4); bottom: 10px; right: 10px; }
-.vapp-video_item .blank-helper { visibility: hidden; display: block; width: 75%; }
 .vapp-video_item .vapp-video_item_hover { width: 40px; height: 40px; line-height: 40px; text-align: center; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; -moz-transition: all 0.2s linear; -o-transition: all 0.2s linear; -webkit-transition: all 0.2s linear; transition: all 0.2s linear; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0); opacity: 0; color: #000; background: #fff; background: rgba(255, 255, 255, 0.8); font-size: 25px; position: absolute; top: 50%; left: 50%; margin: -20px 0 0 -20px; }
 .vapp-video_item .vapp-video_item_hover .icon-play { margin: 0 0 0 4px; }
 

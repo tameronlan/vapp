@@ -180,8 +180,8 @@ vapp.vk = new function(){
 
                 var _counter = vapp.renderer.videos(r.response);
 
-                if ( !_counter && vapp.feed.scroller ) vapp.feed.scroller.destroy()
-                if ( !_counter && !vapp.feed.offset ) vapp.renderer.emptyVideos()
+                if ( !_counter && vapp.feed.scroller ) vapp.feed.scroller.destroy();
+                if ( !_counter && !vapp.feed.offset ) vapp.renderer.emptyVideos();
 
                 vapp.feed.offset = vapp.feed.offset + vapp.feed.limit;
             }
@@ -204,13 +204,14 @@ vapp.vk = new function(){
             } else {
                 if ( vapp.currentFeed != 'friends' ) return;
 
-                vapp.feed.offset = vapp.feed.offset + vapp.feed.limit;
-
                 vapp.lock.setLock('feed', false);
 
                 var _counter = vapp.renderer.friends(r.response);
 
-                if ( !_counter && vapp.feed.scroller ) vapp.feed.scroller.destroy()
+                if ( !_counter && vapp.feed.scroller ) vapp.feed.scroller.destroy();
+                if ( !_counter && !vapp.feed.offset ) vapp.renderer.emptyFriends();
+
+                vapp.feed.offset = vapp.feed.offset + vapp.feed.limit;
             }
         })
     };
@@ -325,9 +326,12 @@ vapp.renderer = new function(){
         vapp.nodes.page.html(errorMSG);
     };
 
-
     renderer.emptyVideos = function(){
         vapp.nodes.page.html('<div class="vapp-page_title">Список видео пуст</div>');
+    };
+
+    renderer.emptyFriends = function(){
+        vapp.nodes.page.html('<div class="vapp-page_title">Список друзей пуст</div>');
     };
 
     renderer.videos = function(videos){

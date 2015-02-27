@@ -245,12 +245,14 @@ body{
         border-radius: 50%;
         box-shadow: 0 5px 10px rgba(0,0,0,.2) inset;
         cursor: pointer;
-    }
 
-    .blank-helper{
-        display: block;
-        width: 100%;
-        visibility: hidden;
+        &:before{
+            width: 100%;
+            padding-bottom: 100%;
+            visibility: hidden;
+            content: '';
+            display: block;
+        }
     }
 }
 
@@ -269,6 +271,14 @@ body{
         cursor: pointer;
         position: relative;
 
+        &:before{
+            visibility: hidden;
+            width: 100%;
+            padding-bottom: 75%;
+            display: block;
+            content:'';
+        }
+
         &:hover{
             .vapp-video_item_hover{
                 @include opacity(1);
@@ -285,12 +295,6 @@ body{
         background: rgba(#000, .4);
         bottom: 10px;
         right: 10px;
-    }
-
-    .blank-helper{
-        visibility: hidden;
-        display: block;
-        width: 75%;
     }
 
     .vapp-video_item_hover{
