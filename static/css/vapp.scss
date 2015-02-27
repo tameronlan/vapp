@@ -349,6 +349,7 @@ body{
         float: left;
         margin: 0 10px 0 0;
         background-size: cover;
+        background-position: center;
     }
 }
 
@@ -399,6 +400,39 @@ body{
     }
 }
 
+.vapp-player_fullscreener{
+    display: block;
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    cursor: pointer;
+    z-index: 5;
+    font-size: 20px;
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: #000;
+    background: #fff;
+
+    @include border-radius(50% 0 0 50%);
+    @include opacity(.2);
+    @include transition(opacity .2s linear);
+
+    &:hover{
+        @include opacity(.6);
+    }
+
+    .icon-resize-full{
+        position: absolute;
+        height: 40px;
+        width: 40px;
+        top: 5px;
+        left: 7px;
+        line-height: 40px;
+        text-align: center;
+    }
+}
 
 .vapp-player_volume{
     display: block;
@@ -432,7 +466,6 @@ body{
         line-height: 40px;
         text-align: center;
         display: none;
-
     }
 
     .icon-volume{ display: block; }

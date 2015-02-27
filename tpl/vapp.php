@@ -106,7 +106,7 @@
                     <div class="vapp-player_volume_inner"></div>
                 </div>
             </div>
-            <div class="vapp-player_fullscreener">
+            <div class="vapp-player_fullscreener" onclick="vapp.player.fullsceenClick(this);">
                 <div class="icon-resize-full"></div>
             </div>
         </div>
@@ -121,7 +121,7 @@
 <script type="text/template" id="vapp-friend-top">
     <div class="vapp-friend_top">
         <div class="btn" onclick="vapp.feed.friendId = null; vapp.feed.change('friends', event);"><div class="icon-cancel"></div></div>
-        <div class="vapp-friend_top_img" style="background: url({photo_50})"></div>
+        <div class="vapp-friend_top_img" style="background-image: url({photo_50})"></div>
         Видео - {first_name}
     </div>
 </script>
