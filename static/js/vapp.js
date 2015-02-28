@@ -431,8 +431,7 @@ vapp.player = new function(){
     player.video = null;
 
     player.open = function(vid){
-        var currentVideo = vapp.feed.cacheVideo[vid],
-            html = '';
+        var currentVideo = vapp.feed.cacheVideo[vid];
 
         if(vapp.player.popup) vapp.player.popup.close();
 
@@ -454,19 +453,19 @@ vapp.player = new function(){
         player.videoPlaying = currentVideo;
         player.popup = popupContext;
 
-        if(currentVideo.files.external){
+        var src;
+
+        for(var i in currentVideo.files){
+            src = currentVideo.files[i];
+        }
+
+        if(currentVideo.files.external || ( new RegExp('flv')).test(src) ){
             var isRutube = (new RegExp('rutube', 'gi')).test(currentVideo.player);
 
             popupContext.$content.html( '<iframe id="video-player" src="' + currentVideo.player + '" width="' + ( isRutube ? popupContext.$box.width() - 50 : popupContext.$box.width() ) + '" height="' + popupContext.$box.height() + '" type="text/html" frameborder="0" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" scrolling="no" preventhide="1"></iframe>' );
 
             player.video = ge('vapp-video');
         } else {
-            var src;
-
-            for(var i in currentVideo.files){
-                src = currentVideo.files[i];
-            }
-
             var params = {
                 class_fullscreen: vapp.fullscreen.supported() ? '' : 'h',
                 class_volume: '',
@@ -684,7 +683,9 @@ var popup = function () {};
     pop.on('close', function (event, data) {
         if (pop.stack.length == 0) {
             vapp.nodes.wrapper.removeClass('fixed');
-            $(window).scrollTop(-vapp.nodes.wrapper.css('top').replace('px', ''));
+
+            $(window).scrollTop( -vapp.nodes.wrapper.css('top').replace('px', '') );
+
             vapp.nodes.wrapper.css('top', 0);
         } else {
             pop.enableFirst();
@@ -723,7 +724,6 @@ var popup = function () {};
     pop.close = function (index) {
         if (typeof(index) === 'undefined') index = pop.stack.length - 1;
         if (pop.stack[index]) pop.stack[index].close();
-        pop.emit('close');
     };
 
     pop.closeAll = function () {
