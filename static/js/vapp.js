@@ -83,7 +83,7 @@ vapp = new function(){
 
 vapp.vk = new function(){
     var vk = this,
-        biteMask = 22; // friends, videos
+        biteMask = 16; // friends, videos
 
     vk.init = function(callback){
         if ( !vk.inited ) {
@@ -221,8 +221,6 @@ vapp.feed = new function(){
     var feed = this;
 
     feed.limit = 50;
-    feed.cacheVideo = {};
-    feed.cacheFriends = {};
 
     // смена фида в приложении
     feed.change = function(feedSource, event){
@@ -284,7 +282,11 @@ vapp.feed = new function(){
     };
 
     feed.reset = function(){
+        feed.cacheVids = [];
+        feed.cacheVideo = {};
+        feed.cacheFriends = {};
         feed.offset = 0;
+
         vapp.nodes.page.html('');
         vapp.nodes.pageTop.html('');
 
@@ -340,6 +342,8 @@ vapp.renderer = new function(){
         for ( var i in videos ){
             if ( typeof videos[i] == 'object' ) {
                 _counter ++;
+
+                vapp.feed.cacheVids.push(videos[i].vid);
                 vapp.feed.cacheVideo[videos[i].vid] = videos[i];
 
                 html += vapp.getTpl('vapp-video-item').supplant($.extend(true, videos[i], {duration_small : timeSmall(videos[i].duration)}));
@@ -388,6 +392,37 @@ vapp.renderer = new function(){
 
         vapp.nodes.pageTop.html(vapp.getTpl('vapp-friend-top').supplant(vapp.feed.cacheFriends[uid]));
     };
+
+    renderer.videoAfter = function(vid){
+        var index = indexOf(vapp.feed.cacheVids, vid);
+
+        if ( index < 0 ) return false;
+
+        var width = 240,
+            boxWidth = vapp.player.popup.$box.width(),
+            boxHeight = vapp.player.popup.$box.height(),
+            countCols = Math.floor(boxWidth / width),
+            widthCalculate = boxWidth / countCols,
+            heightCalculate = widthCalculate * 0.75,
+            countRows = Math.floor(boxHeight / heightCalculate) + 1,
+            count = countCols * countRows,
+            html = '',
+            displayHolder = false;
+
+        for(var i = 0; i < count; i++){
+            var currentIndex = index + i > vapp.feed.cacheVids.length - 1 ? 0 : index + i,
+                currentVideo = vapp.feed.cacheVids[currentIndex],
+                params = $.extend(true, {height: heightCalculate, width: widthCalculate}, vapp.feed.cacheVideo[currentVideo]);
+
+            html += vapp.getTpl('vapp-video-after').supplant(params);
+
+            displayHolder = true
+        }
+
+        vapp.player.controls.videosHolder.html(html);
+
+        return displayHolder;
+    };
 };
 
 vapp.player = new function(){
@@ -398,6 +433,8 @@ vapp.player = new function(){
     player.open = function(vid){
         var currentVideo = vapp.feed.cacheVideo[vid],
             html = '';
+
+        if(vapp.player.popup) vapp.player.popup.close();
 
         popup.open('<div class="ta-c"><div style="margin: 0 0 20px;">Загрузка видео</div><img src="/static/i/loader.gif"/></div>', {
             width: 9999,
@@ -413,6 +450,9 @@ vapp.player = new function(){
 
     player.init = function(popupContext, currentVideo){
         var html = "";
+
+        player.videoPlaying = currentVideo;
+        player.popup = popupContext;
 
         if(currentVideo.files.external){
             var isRutube = (new RegExp('rutube', 'gi')).test(currentVideo.player);
@@ -464,7 +504,8 @@ vapp.player = new function(){
             volumeIcnOn:        $('.vapp-player_volume_icn.icon-volume'),
             volumeIcnOff:       $('.vapp-player_volume_icn.icon-volume-off'),
             volumeInner:        $('.vapp-player_volume_inner'),
-            fullScreener:       $('vapp-player_fullscreener')
+            fullScreener:       $('.vapp-player_fullscreener'),
+            videosHolder:       $('.vapp-player_videos')
         };
     };
 
@@ -481,17 +522,17 @@ vapp.player = new function(){
         });
 
         player.controls.progress.click(function(e) {
+            if(!player.video.currentTime) return;
+
             var x = (e.pageX - this.offsetLeft)/$(this).width();
+
             player.video.currentTime = x * player.video.duration;
         });
-
-        player.video.addEventListener("canplay", function() {
-//            console.log(player.video.duration, player.video.volume)
-        }, false);
 
         player.video.addEventListener("play", function() {
             if ( !player.video ) return;
 
+            player.controls.videosHolder.html('').hide();
             player.controls.playOverlay.hide();
             player.controls.playControls.attr('class', 'unselectable vapp-player_control_play played');
         });
@@ -501,17 +542,19 @@ vapp.player = new function(){
 
             player.controls.playOverlay.show();
             player.controls.playControls.attr('class', 'unselectable vapp-player_control_play paused');
+
         });
 
         player.video.addEventListener("ended", function() {
             if ( !player.video ) return;
 
+            player.controls.playOverlay.hide();
             player.controls.playControls.attr('class', 'unselectable vapp-player_control_play ended');
+
+            var displayholder = vapp.renderer.videoAfter(player.videoPlaying.vid);
+
+            if(displayholder) player.controls.videosHolder.show();
         });
-
-        player.video.addEventListener("progress", function() {
-
-        }, false);
 
         player.video.addEventListener("timeupdate", function() {
             if ( !player.video ) return;
@@ -542,7 +585,9 @@ vapp.player = new function(){
     player.clear = function(){
         $(window).unbind('resize.video_player');
 
+        player.videoPlaying = null;
         player.video = null;
+        player.popup = null;
         player.isExternal = true;
     };
 
@@ -715,18 +760,16 @@ var popup = function () {};
         var context = this;
         context.$box.css({'marginTop': 0}).addClass('closed');
 
-        setTimeout(function () {
-            context.$wrapper.remove();
-            pop.stack.splice(context.index, 1);
+        context.$wrapper.remove();
+        pop.stack.splice(context.index, 1);
 
-            for (var i in pop.stack) {
-                pop.stack[i].index = i;
-            }
+        for (var i in pop.stack) {
+            pop.stack[i].index = i;
+        }
 
-            pop.emit('close');
+        pop.emit('close');
 
-            if (context.props.onClose) context.props.onClose(context);
-        }, 300);
+        if (context.props.onClose) context.props.onClose(context);
     };
 
     _proto.render = function () {
