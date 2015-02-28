@@ -546,6 +546,8 @@ body{
     left: 0;
     right: 0;
     z-index: 2;
+    height: 80px;
+    @include background-image(linear-gradient(rgba(#000, 0), rgba(#000, .7), #000));
 }
 
 .vapp-box{
