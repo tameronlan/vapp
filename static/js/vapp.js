@@ -776,7 +776,7 @@ vapp.fullscreen = new function(){
     };
 
     fs.supported = function(){
-        return !!document.body.mozRequestFullScreen || !!el.webkitRequestFullscreen || !!el.requestFullscreen;
+        return !!document.body.mozRequestFullScreen || !!document.body.webkitRequestFullscreen || !!document.body.requestFullscreen;
     };
 
 };
