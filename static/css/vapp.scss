@@ -126,6 +126,10 @@ body{
     }
 }
 
+.vapp-player{
+    background: #000;
+}
+
 .vapp-player_timing_line{
     position: absolute;
     left: 80px;
@@ -674,6 +678,16 @@ body{
     #vapp-middle{
         padding: 20px 20px 20px;
     }
+}
+
+:-webkit-full-screen #vapp-header{/*WebKit, Opera 15+*/
+    display: none;
+}
+:-moz-full-screen #vapp-header{/*FireFox*/
+    display: none;
+}
+:full-screen #vapp-header{/*Opera 12.15-, Blink, w3c standard*/
+    display: none;
 }
 
 /* helpers */

@@ -428,6 +428,7 @@ vapp.player = new function(){
             }
 
             var params = {
+                class_fullscreen: vapp.fullscreen.supported() ? '' : 'h',
                 class_volume: '',
                 duration: timeSmall(currentVideo.duration),
                 poster: currentVideo.image_medium,
@@ -574,13 +575,13 @@ vapp.player = new function(){
     player.fullsceenClick = function(el){
         el = $(el);
 
-        el.toggleClass('opened');
-
-        if ( el.hasClass('opened') ) {
-            fullscreen(player.controls.player[0]);
+        if ( !el.hasClass('opened') ) {
+            vapp.fullscreen.open(player.controls.player[0]);
         } else {
-            fullscreenCancel();
+            vapp.fullscreen.cancel();
         }
+
+        el.toggleClass('opened');
     }
 };
 
@@ -749,25 +750,36 @@ var popup = function () {};
     };
 }(popup, popup.prototype));
 
-function fullscreen(el){
-    if(el.requestFullscreen) {
-        el.requestFullscreen();
-    } else if(el.webkitrequestFullscreen) {
-        el.webkitRequestFullscreen();
-    } else if(el.mozRequestFullscreen) {
-        el.mozRequestFullScreen();
-    }
-}
+vapp.fullscreen = new function(){
+    var fs = this;
 
-function fullscreenCancel(){
-    if(document.requestFullscreen) {
-        document.requestFullscreen();
-    } else if(document.webkitRequestFullscreen ) {
-        document.webkitRequestFullscreen();
-    } else if(document.mozRequestFullscreen) {
-        document.mozRequestFullScreen();
-    }
-}
+    fs.open = function(el){
+        if (!el) el = document.body;
+
+        if ( !!el.mozRequestFullScreen ){
+            el.mozRequestFullScreen();
+        } else if(!!el.webkitRequestFullscreen){
+            el.webkitRequestFullscreen();
+        } else if(!!el.requestFullscreen){
+            el.requestFullscreen();
+        }
+    };
+
+    fs.cancel = function(){
+        if ( !!document.mozCancelFullScreen ){
+            document.mozCancelFullScreen();
+        } else if(!!document.webkitCancelFullScreen){
+            document.webkitCancelFullScreen();
+        } else if(!!document.cancelFullScreen){
+            document.cancelFullScreen();
+        }
+    };
+
+    fs.supported = function(){
+        return !!document.body.mozRequestFullScreen || !!el.webkitRequestFullscreen || !!el.requestFullscreen;
+    };
+
+};
 
 function plural(n,f){n%=100;if(n>10&&n<20)return f[2];n%=10;return f[n>1&&n<5?1:n==1?0:2]}
 function indexOf(arr, value, from) { for (var i = from || 0, l = (arr || []).length; i < l; i++) { if (arr[i] == value) return i; } return -1; };
