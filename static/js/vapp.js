@@ -750,11 +750,19 @@ var popup = function () {};
 }(popup, popup.prototype));
 
 function fullscreen(el){
+    console.log(el.mozRequestFullscreen, $('.vapp-player')[0].mozRequestFullscreen  )
+
     if(el.requestFullscreen) {
+        console.log(1)
+
         el.requestFullscreen();
     } else if(el.webkitrequestFullscreen) {
+        console.log(2)
+
         el.webkitRequestFullscreen();
     } else if(el.mozRequestFullscreen) {
+        console.log(3)
+
         el.mozRequestFullScreen();
     }
 }
