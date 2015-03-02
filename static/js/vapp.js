@@ -24,7 +24,8 @@ vapp = new function(){
             'page' : $('#vapp-page'),
             'navigation' : $('#vapp-header_nav'),
             'headerUser' : $('#vapp-header_user'),
-            'scroller_aim' : $('#vapp-scrolller_aim')
+            'scroller_aim' : $('#vapp-scrolller_aim'),
+            'scroll_top' : $('.vapp-scroll_top')
         };
 
         vapp.renderer.welcome();
@@ -68,7 +69,14 @@ vapp = new function(){
 
         vapp.mouseX = event.pageX;
         vapp.mouseY = event.pageY;
+    }
 
+    function _onScroll(event){
+        if(typeof event == 'undefined' ) return;
+
+        vapp.scrollTop = vapp.nodes.window.scrollTop();
+
+        vapp.nodes.scroll_top[(vapp.scrollTop > vapp.windowHeight ? 'remove' : 'add') + 'Class']('h');
     }
 
     vapp.initBinds = function(){
@@ -77,6 +85,9 @@ vapp = new function(){
         vapp.nodes.body.bind('resize', _onResize);
         vapp.nodes.body.bind('mousemove', function(event){
             _onMove(event);
+        });
+        vapp.nodes.window.bind('scroll', function(event){
+            _onScroll(event);
         });
     }
 };
@@ -388,8 +399,6 @@ vapp.renderer = new function(){
     };
 
     renderer.friendTop = function(uid){
-        console.log(vapp.feed.cacheFriends[+uid], uid)
-
         if ( !vapp.feed.cacheFriends[uid] ) return;
 
         vapp.nodes.pageTop.html(vapp.getTpl('vapp-friend-top').supplant(vapp.feed.cacheFriends[uid]));
@@ -725,8 +734,6 @@ vapp.boredManager = new function(){
         });
 
         $(window).bind('scroll.boredManager', function(){ bManager.activate(); });
-
-        console.log($(window), $('body'));
     };
 
     bManager.init();
@@ -887,9 +894,8 @@ vapp.fullscreen = new function(){
     fs.supported = function(){
         return !!document.body.mozRequestFullScreen || !!document.body.webkitRequestFullscreen || !!document.body.requestFullscreen;
     };
-
 };
-
+function scrollToTop(){ $('html, body').animate({'scrollTop' : 0}, 100); }
 function plural(n,f){n%=100;if(n>10&&n<20)return f[2];n%=10;return f[n>1&&n<5?1:n==1?0:2]}
 function indexOf(arr, value, from) { for (var i = from || 0, l = (arr || []).length; i < l; i++) { if (arr[i] == value) return i; } return -1; };
 function inArray(value, arr) { return indexOf(arr, value) != -1; };
