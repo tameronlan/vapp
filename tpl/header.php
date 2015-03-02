@@ -9,7 +9,7 @@
 	<link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
     <script type="text/javascript" src="/static/js/jquery.js"></script>
-    <script type="text/javascript" src="http://vk.com/js/api/openapi.js"></script>
+    <script type="text/javascript" src="/static/js/openapi.js"></script>
 	<script type="text/javascript" src="/static/js/vapp.js"></script>
 
     <link rel="stylesheet" href="/static/fontello/css/fontello.css">

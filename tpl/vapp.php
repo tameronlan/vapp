@@ -52,12 +52,21 @@
 </script>
 
 <script type="text/template" id="vapp-video-item">
-    <div class="vapp-video_item" data-id="{vid}" id="vapp-friend_item_{vid}">
+    <div class="vapp-video_item" data-id="{vid}" id="vapp-video_item_{vid}">
         <div class="vapp-video_item_img" style="background-image: url({image_medium})" onclick="vapp.player.open({vid});">
             <div class="vapp-video_item_hover"><div class="icon-play"></div></div>
             <div class="vapp-video_item_duration">{duration_small}</div>
         </div>
         <div class="vapp-video_item_name ellipsis">{title}</div>
+    </div>
+</script>
+
+<script type="text/template" id="vapp-video-after">
+    <div class="vapp-video_after_item vapp-video_item" data-id="{vid}" id="vapp-video_item_{vid}" style="height: {height}px; width: {width}px;" onclick="vapp.player.open({vid});">
+        <div class="vapp-video_item_img" style="background-image: url({image_medium})">
+            <div class="vapp-video_item_name ellipsis">{title}</div>
+            <div class="vapp-video_item_duration">{duration_small}</div>
+        </div>
     </div>
 </script>
 
@@ -79,6 +88,7 @@
                 <div class="icon-play"></div>
             </div>
         </div>
+        <div class="vapp-player_videos"></div>
         <div class="vapp-player_controls">
             <div class="unselectable vapp-player_control_play paused" onclick="vapp.player.playClick(this);">
                 <div class="vapp-player_control_icn icon-play h"></div>

@@ -126,6 +126,20 @@ body{
     }
 }
 
+.vapp-player_videos{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    background: #000;
+}
+
+.vapp-player{
+    background: #000;
+}
+
 .vapp-player_timing_line{
     position: absolute;
     left: 80px;
@@ -318,6 +332,56 @@ body{
             margin: 0 0 0 4px;
         }
     }
+
+    &.vapp-video_after_item{
+        margin: 0;
+        width: auto;
+        height: auto;
+        max-width: auto;
+        overflow: hidden;
+        float: left;
+        position: relative;
+
+        .vapp-video_item_img{
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+
+            &:before{
+                display: none;
+            }
+        }
+
+        &:hover{
+            .vapp-video_item_name,
+            .vapp-video_item_duration{
+                @include opacity(1);
+            }
+
+        }
+
+        .vapp-video_item_name{
+            position: absolute;
+            background: rgba(#000, .3);
+            padding: 5px 10px;
+            left: 10px;
+            top: 50%;
+            margin: -10px 0 0;
+            right: 10px;
+            color: #fff;
+            @include opacity(0);
+            @include transition(opacity .2s linear);
+        }
+
+        .vapp-video_item_duration{
+            font-weight: normal;
+            font-size: 10px;
+            @include opacity(0);
+            @include transition(opacity .2s linear);
+        }
+    }
 }
 
 .vapp-page_title{
@@ -482,6 +546,8 @@ body{
     left: 0;
     right: 0;
     z-index: 2;
+    height: 80px;
+    @include background-image(linear-gradient(rgba(#000, 0), rgba(#000, .7), #000));
 }
 
 .vapp-box{
@@ -674,6 +740,16 @@ body{
     #vapp-middle{
         padding: 20px 20px 20px;
     }
+}
+
+:-webkit-full-screen #vapp-header{/*WebKit, Opera 15+*/
+    display: none;
+}
+:-moz-full-screen #vapp-header{/*FireFox*/
+    display: none;
+}
+:full-screen #vapp-header{/*Opera 12.15-, Blink, w3c standard*/
+    display: none;
 }
 
 /* helpers */
