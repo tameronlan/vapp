@@ -548,6 +548,19 @@ body{
     z-index: 2;
     height: 80px;
     @include background-image(linear-gradient(rgba(#000, 0), rgba(#000, .7), #000));
+    @include transition(all .2s linear);
+
+    &.hide{
+        bottom: -80px;
+
+        .vapp-player_fullscreener, .vapp-player_volume{
+            right: -70px;
+        }
+
+        .vapp-player_control_play{
+            left: -70px;
+        }
+    }
 }
 
 .vapp-box{

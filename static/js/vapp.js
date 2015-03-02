@@ -493,6 +493,7 @@ vapp.player = new function(){
         player.controls = {
             player:             $('.vapp-player'),
             playOverlay:        $('.vapp-player_overlay'),
+            playerControls:     $('.vapp-player_controls'),
             playControls:       $('.vapp-player_control_play'),
             playControlGo:      $('.vapp-player_control_icn.icon-play'),
             playControlPause:   $('.vapp-player_control_icn.icon-pause'),
@@ -511,8 +512,8 @@ vapp.player = new function(){
     };
 
     player.initBinds = function(popupContext){
-        eventBus.emit('boredChanged', function(){
-            player.controls.playControls.addClass('hide')
+        eventBus.on('boredChanged', function(){
+            player.controls.playerControls[( vapp.boredManager.state == 'active' ? 'remove' : 'add' ) + 'Class']('hide');
         });
 
         $(window).bind('resize.video_player', function(){
@@ -589,6 +590,8 @@ vapp.player = new function(){
 
     player.clear = function(){
         $(window).unbind('resize.video_player');
+
+        eventBus.off('boredChanged');
 
         player.videoPlaying = null;
         player.video = null;
