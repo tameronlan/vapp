@@ -511,6 +511,10 @@ vapp.player = new function(){
     };
 
     player.initBinds = function(popupContext){
+        eventBus.emit('boredChanged', function(){
+            player.controls.playControls.addClass('hide')
+        });
+
         $(window).bind('resize.video_player', function(){
             if ( !player.video ) return;
 
@@ -667,6 +671,63 @@ var eventer = function (opts) {
 })(eventer.prototype);
 
 var eventBus = new eventer(); //additional for subscribe and emit global events
+
+/**
+ * менеджер пользовательского афк
+ */
+vapp.boredManager = new function(){
+    var bManager = this;
+
+    bManager.st = null;
+    bManager.state = 'active';
+    bManager.time = 3000;
+
+    bManager.activate = function(){
+        if(bManager.st) clearTimeout(bManager.st);
+
+        if(bManager.state != 'active'){
+            bManager.state = 'active';
+            eventBus.emit('boredChanged');
+        }
+
+        bManager.st = setTimeout(function(){
+            bManager.unactive();
+        }, bManager.time);
+    };
+
+    bManager.unactive = function(){
+        if ( bManager.state != 'unactive'){
+            bManager.state = 'unactive';
+            eventBus.emit('boredChanged');
+        }
+    };
+
+    bManager.init = function(){
+        bManager.activate();
+
+        $(window).bind('click.boredManager', function(){
+            bManager.activate();
+        });
+
+        $(window).bind('mousemove.boredManager', function(){
+            bManager.activate();
+        });
+
+        $(window).bind('focus.boredManager', function(){
+            bManager.activate();
+        });
+
+        $(window).bind('keydown.boredManager', function(){
+            bManager.activate();
+        });
+
+        $(window).bind('scroll.boredManager', function(){ bManager.activate(); });
+
+        console.log($(window), $('body'));
+    };
+
+    bManager.init();
+};
 
 /* popup */
 var popup = function () {};
