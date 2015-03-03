@@ -143,12 +143,12 @@ body{
 .vapp-player_timing_line{
     position: absolute;
     left: 80px;
-    bottom: 23px;
+    bottom: 12px;
     height: 6px;
     right: 80px;
     background: rgba(#000, .3);
     @include border-radius(5px);
-    border: 2px solid rgba(#fff, .5);
+    border: 1px solid rgba(#fff, .5);
 
     .vapp-player_timing_buffered{
         max-width: 100%;
@@ -168,7 +168,7 @@ body{
         bottom: 0;
         background: rgba(#fff, .5);
         @include border-radius(3px);
-        @include transition(width .1s linear);
+        @include transition(width .2s linear);
     }
 
     .vapp-player_timing_ttip{
@@ -205,8 +205,12 @@ body{
     position: absolute;
     left: 60px;
     right: 60px;
-    bottom: 5px;
-    font-size: 10px;
+    bottom: 27px;
+    font-size: 12px;
+
+    .vapp-player_timing_ttip{
+        color: #fff;
+    }
 }
 
 #vapp-header_nav{

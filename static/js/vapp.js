@@ -199,6 +199,40 @@ vapp.vk = new function(){
         })
     };
 
+    // получение видео от вк
+    vk.searchVideos = function(){
+        if ( vapp.lock.checkLock('feed') ) return;
+
+        vapp.lock.setLock('feed', true);
+
+        vapp.nodes.scroller_aim.show();
+
+        if ( vapp.feed.offset == 0 ) {
+            vapp.renderer.searchTop();
+        }
+
+        var q = ge('vapp-input_video').value;
+
+        VK.Api.call('video.search', { offset: vapp.feed.offset, count: +vapp.feed.limit, q: q }, function(r){
+            vapp.nodes.scroller_aim.hide();
+
+            if ( r.error ){
+                vapp.renderer.error(r.error.error_msg);
+            } else {
+                if ( vapp.currentFeed != 'search' ) return;
+
+                vapp.lock.setLock('feed', false);
+
+                var _counter = vapp.renderer.videos(r.response);
+
+                if ( !_counter && vapp.feed.scroller ) vapp.feed.scroller.destroy();
+                if ( !_counter && !vapp.feed.offset ) vapp.renderer.emptyVideos();
+
+                vapp.feed.offset = vapp.feed.offset + vapp.feed.limit;
+            }
+        })
+    };
+
     // получение друзей из вк
     vk.getFriends = function(feedSource){
         if ( vapp.lock.checkLock('feed') ) return;
@@ -241,7 +275,6 @@ vapp.feed = new function(){
         if ( feedSource != 'friends' ) feed.friendId = null;
 
         feed.setCurrent(feedSource);
-
         feed.load();
 
         cancelEvent(event);
@@ -284,7 +317,7 @@ vapp.feed = new function(){
     };
 
     feed.load.search = function(){
-        console.log('search');
+        vapp.vk.searchVideos();
     };
 
     feed.choiceFriend = function(id, ev){
@@ -402,6 +435,10 @@ vapp.renderer = new function(){
         if ( !vapp.feed.cacheFriends[uid] ) return;
 
         vapp.nodes.pageTop.html(vapp.getTpl('vapp-friend-top').supplant(vapp.feed.cacheFriends[uid]));
+    };
+
+    renderer.searchTop = function(){
+        vapp.nodes.pageTop.html(vapp.getTpl('vapp-search-top'));
     };
 
     renderer.videoAfter = function(vid){
@@ -580,7 +617,7 @@ vapp.player = new function(){
 
             var progress = currentTime / player.video.duration;
 
-            player.controls.progressLine[0].style.width = Math.floor(progress * 100) + "%";
+            player.controls.progressLine[0].style.width = (progress * 100) + "%";
 
             if ( !player.viewed ) {
                 var summaryTime = 0;
@@ -895,6 +932,43 @@ vapp.fullscreen = new function(){
         return !!document.body.mozRequestFullScreen || !!document.body.webkitRequestFullscreen || !!document.body.requestFullscreen;
     };
 };
+
+
+vapp.searcher = function (opts) {
+    var self = this;
+    self.intervalId = 0;
+    self.minLenght = 2;
+    self.beforeAjax = null;
+    self.onSuccess = null;
+    self.onCancel = null;
+    self.onError = null;
+
+    self.construct = function() {
+        if(!opts.element) { console.log('Add selector on element to options'); return; }
+        if(!opts.ajaxUrl) { console.log('Add URL on ajaxUrl to options'); return; }
+
+        $.extend(self, opts);
+        self.wrapper = $(self.element);
+
+        if(self.wrapper.length == 0 || !self.wrapper.is('input')) {
+            console.log("Wrapper not found or is not input field, check selector in options");
+            return;
+        }
+    };
+
+    self.search = function() {
+        clearTimeout(self.intervalId);
+
+        var text = $.trim(self.wrapper.val())
+
+        self.intervalId = setTimeout(function(){
+
+        }, 350);
+    };
+
+    self.construct();
+}
+
 function scrollToTop(){ $('html, body').animate({'scrollTop' : 0}, 100); }
 function plural(n,f){n%=100;if(n>10&&n<20)return f[2];n%=10;return f[n>1&&n<5?1:n==1?0:2]}
 function indexOf(arr, value, from) { for (var i = from || 0, l = (arr || []).length; i < l; i++) { if (arr[i] == value) return i; } return -1; };
@@ -927,7 +1001,6 @@ function timeSmall(sec){
         mins = Math.floor(sec / 60);
         secs = Math.floor(sec - (mins * 60));
         if (secs < 10) secs = '0'+secs;
-        if (mins < 10) mins = '0'+mins;
         return mins+':'+secs;
     }
 }

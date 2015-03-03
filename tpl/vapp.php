@@ -82,7 +82,7 @@
 
 <script type="text/template" id="vapp-video-player">
     <div class="vapp-player">
-        <video src="{src}" width="{width}" height="{height}" id="vapp-video" poster="{poster}"></video>
+        <video src="{src}" width="{width}" height="{height}" id="vapp-video" poster="{poster}" type="video/mp4"></video>
         <div class="vapp-player_overlay unselectable" onclick="vapp.player.play();">
             <div class="vapp-player_inner">
                 <div class="icon-play"></div>
@@ -99,13 +99,10 @@
                 <div class="unselectable vapp-player_timing_line">
                     <div class="vapp-player_timing_buffered"></div>
                     <div class="vapp-player_timing_progress">
-                        <div class="vapp-player_timing_ttip">
-                            00:00
-                        </div>
                     </div>
                 </div>
                 <div class="vapp-player_timing_duration">
-                    {duration}
+                    <span class="vapp-player_timing_ttip">0:00</span> &nbsp; {duration}
                 </div>
             </div>
             <div class="unselectable vapp-player_volume {class_volume}" onclick="vapp.player.volumeClick(this);">
@@ -124,15 +121,21 @@
 </script>
 
 <script type="text/template" id="vapp-navigation-item">
-    <a class="vapp-header_link unselectable {class}" id="vapp-header_link_{tabSource}" href="/?tab={tabSource}" onclick="vapp.feed.friendId = null; vapp.feed.change('{tabSource}', event);">{title}</a>
+    <a class="vapp-header_link unselectable {class}" id="vapp-header_link_{tabSource}" href="/?tab={tabSource}" onclick="vapp.feed.change('{tabSource}', event);">{title}</a>
 </script>
-
 
 <script type="text/template" id="vapp-friend-top">
     <div class="vapp-friend_top">
         <div class="btn" onclick="vapp.feed.friendId = null; vapp.feed.change('friends', event);"><div class="icon-cancel"></div></div>
         <div class="vapp-friend_top_img" style="background-image: url({photo_50})"></div>
         Видео - {first_name}
+    </div>
+</script>
+
+<script type="text/template" id="vapp-search-top">
+    <div class="vapp-search_top">
+        <input type="text" class="vapp-input" id="vapp-input_video" value="1" placeholder="Введите название видео"/>
+        <div class="btn" onclick="">Поиск</div>
     </div>
 </script>
 

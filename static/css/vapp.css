@@ -59,13 +59,14 @@ body { overflow-y: scroll; background: #f0f2f5; }
 
 .vapp-player { background: #000; }
 
-.vapp-player_timing_line { position: absolute; left: 80px; bottom: 23px; height: 6px; right: 80px; background: rgba(0, 0, 0, 0.3); -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; border: 2px solid rgba(255, 255, 255, 0.5); }
+.vapp-player_timing_line { position: absolute; left: 80px; bottom: 12px; height: 6px; right: 80px; background: rgba(0, 0, 0, 0.3); -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; border: 1px solid rgba(255, 255, 255, 0.5); }
 .vapp-player_timing_line .vapp-player_timing_buffered { max-width: 100%; position: absolute; left: 0; top: 0; bottom: 0; background: rgba(255, 255, 255, 0.1); -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; }
-.vapp-player_timing_line .vapp-player_timing_progress { max-width: 100%; position: absolute; left: 0; top: 0; bottom: 0; background: rgba(255, 255, 255, 0.5); -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; -moz-transition: width 0.1s linear; -o-transition: width 0.1s linear; -webkit-transition: width 0.1s linear; transition: width 0.1s linear; }
+.vapp-player_timing_line .vapp-player_timing_progress { max-width: 100%; position: absolute; left: 0; top: 0; bottom: 0; background: rgba(255, 255, 255, 0.5); -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; -moz-transition: width 0.2s linear; -o-transition: width 0.2s linear; -webkit-transition: width 0.2s linear; transition: width 0.2s linear; }
 .vapp-player_timing_line .vapp-player_timing_ttip { position: absolute; min-width: 26px; font-size: 10px; font-weight: bold; color: #fff; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; text-align: center; padding: 3px 5px; background: rgba(0, 0, 0, 0.5); left: 100%; bottom: 100%; margin: 0 0 5px -20px; border: 1px solid rgba(255, 255, 255, 0.3); }
 .vapp-player_timing_line .vapp-player_timing_ttip:before { content: ''; position: absolute; border-style: solid; border-width: 4px 4px 0 4px; border-color: rgba(255, 255, 255, 0.5) transparent transparent transparent; top: 100%; margin: 1px 0 0 0; left: 14px; }
 
-.vapp-player_timing_duration { text-align: center; color: #999; position: absolute; left: 60px; right: 60px; bottom: 5px; font-size: 10px; }
+.vapp-player_timing_duration { text-align: center; color: #999; position: absolute; left: 60px; right: 60px; bottom: 27px; font-size: 12px; }
+.vapp-player_timing_duration .vapp-player_timing_ttip { color: #fff; }
 
 #vapp-header_nav { margin: 0 60px 0 0; float: right; font-size: 0; text-align: center; }
 
