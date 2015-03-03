@@ -996,7 +996,7 @@ function timeSmall(sec){
         secs = Math.floor(sec - (mins * 60));
         if (secs < 10) secs = '0'+secs;
         if (mins < 10) mins = '0'+mins;
-        return  (hours < 10 ? '0' + hours : hours ) + ':' +mins+':'+secs;
+        return  hours + ':' +mins+':'+secs;
     } else {
         mins = Math.floor(sec / 60);
         secs = Math.floor(sec - (mins * 60));
