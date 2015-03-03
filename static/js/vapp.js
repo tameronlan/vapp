@@ -471,6 +471,17 @@ vapp.renderer = new function(){
 
         return displayHolder;
     };
+
+    renderer.qualityChanger = function(currentKey, files){
+        var html = '';
+
+        for(var i in files){
+            var quality = i.split('_')[1];
+            html += '<div class="' + (currentKey == i ? 'active' : '' ) + '" onclick="vapp.player.changeQuality(\'' + i + '\')">' + quality + '</div>';
+        }
+
+        return html;
+    };
 };
 
 vapp.player = new function(){
@@ -501,25 +512,28 @@ vapp.player = new function(){
         player.videoPlaying = currentVideo;
         player.popup = popupContext;
 
-        var src;
+        var currentFileKey;
 
         for(var i in currentVideo.files){
-            src = currentVideo.files[i];
+            currentFileKey = i;
         }
 
-        if(currentVideo.files.external || ( new RegExp('flv')).test(src) ){
+        if(currentVideo.files.external || ( new RegExp('flv')).test(currentVideo.files[currentFileKey]) ){
             var isRutube = (new RegExp('rutube', 'gi')).test(currentVideo.player);
 
             popupContext.$content.html( '<iframe id="video-player" src="' + currentVideo.player + '" width="' + ( isRutube ? popupContext.$box.width() - 50 : popupContext.$box.width() ) + '" height="' + popupContext.$box.height() + '" type="text/html" frameborder="0" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" scrolling="no" preventhide="1"></iframe>' );
 
             player.video = ge('vapp-video');
         } else {
+            console.log(vapp.renderer.qualityChanger(currentFileKey, currentVideo.files));
+
             var params = {
                 class_fullscreen: vapp.fullscreen.supported() ? '' : 'h',
                 class_volume: '',
                 duration: timeSmall(currentVideo.duration),
                 poster: currentVideo.image_medium,
-                src: src,
+                src: currentVideo.files[currentFileKey],
+                quality_changer: objLength(currentVideo.files) ? vapp.renderer.qualityChanger(currentFileKey, currentVideo.files) : '',
                 width: popupContext.$content.width(),
                 height: popupContext.$content.height()
             };
@@ -553,7 +567,8 @@ vapp.player = new function(){
             volumeIcnOff:       $('.vapp-player_volume_icn.icon-volume-off'),
             volumeInner:        $('.vapp-player_volume_inner'),
             fullScreener:       $('.vapp-player_fullscreener'),
-            videosHolder:       $('.vapp-player_videos')
+            videosHolder:       $('.vapp-player_videos'),
+            qualityChanger:     $('.vapp-player_quality_changer')
         };
     };
 
@@ -681,6 +696,20 @@ vapp.player = new function(){
         }
 
         el.toggleClass('opened');
+    }
+
+    player.changeQuality = function(key){
+        var needStart = !player.video.paused && !player.video.ended;
+
+        player.pause();
+
+        player.video.src = player.videoPlaying.files[key];
+
+        if(needStart) {
+            player.play();
+        }
+
+        player.controls.qualityChanger.html(vapp.renderer.qualityChanger(key, player.videoPlaying.files));
     }
 };
 

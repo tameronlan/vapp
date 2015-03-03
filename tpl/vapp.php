@@ -105,6 +105,9 @@
                     <span class="vapp-player_timing_ttip">0:00</span> &nbsp; {duration}
                 </div>
             </div>
+            <div class="vapp-player_quality_changer">
+                {quality_changer}
+            </div>
             <div class="unselectable vapp-player_volume {class_volume}" onclick="vapp.player.volumeClick(this);">
                 <div class="vapp-player_volume_icn icon-volume"></div>
                 <div class="vapp-player_volume_icn icon-volume-off"></div>

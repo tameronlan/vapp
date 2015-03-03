@@ -140,6 +140,32 @@ body{
     background: #000;
 }
 
+.vapp-player_quality_changer{
+    position: absolute;
+    right: 0;
+    bottom: 150px;
+    background: rgba(#000, .3);
+
+    div{
+        padding: 5px 10px;
+        cursor: pointer;
+        color: #999;
+
+        &:hover{
+            color: #aaa;
+        }
+    }
+
+    .active{
+        color: #fff;
+        cursor: default;
+
+        &:hover{
+            color: #fff;
+        }
+    }
+}
+
 .vapp-player_timing_line{
     position: absolute;
     left: 80px;
