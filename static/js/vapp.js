@@ -518,35 +518,34 @@ vapp.player = new function(){
             currentFileKey = i;
         }
 
-        if(currentVideo.files.external || ( new RegExp('flv')).test(currentVideo.files[currentFileKey]) ){
-            var isRutube = (new RegExp('rutube', 'gi')).test(currentVideo.player);
+//        if(currentVideo.player || ( new RegExp('flv')).test(currentVideo.files[currentFileKey]) ){
+//            var isRutube = (new RegExp('rutube', 'gi')).test(currentVideo.player);
 
-            popupContext.$content.html( '<iframe id="video-player" src="' + currentVideo.player + '" width="' + ( isRutube ? popupContext.$box.width() - 50 : popupContext.$box.width() ) + '" height="' + popupContext.$box.height() + '" type="text/html" frameborder="0" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" scrolling="no" preventhide="1"></iframe>' );
+            popupContext.$content.html( '<iframe id="video-player" src="' + currentVideo.player + '" width="' + ( popupContext.$box.width() - 50 ) + '" height="' + popupContext.$box.height() + '" type="text/html" frameborder="0" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" scrolling="no" preventhide="1"></iframe>' );
 
             player.video = ge('vapp-video');
-        } else {
-            console.log(vapp.renderer.qualityChanger(currentFileKey, currentVideo.files));
-
-            var params = {
-                class_fullscreen: vapp.fullscreen.supported() ? '' : 'h',
-                class_volume: '',
-                duration: timeSmall(currentVideo.duration),
-                poster: currentVideo.image_medium,
-                src: currentVideo.files[currentFileKey],
-                quality_changer: objLength(currentVideo.files) ? vapp.renderer.qualityChanger(currentFileKey, currentVideo.files) : '',
-                width: popupContext.$content.width(),
-                height: popupContext.$content.height()
-            };
-
-            popupContext.$content.html(vapp.getTpl('vapp-video-player').supplant(params));
-
-            player.viewed = false;
-            player.viewedSeconds = 5;
-            player.video = ge('vapp-video');
-
-            player.initControls(popupContext);
-            player.initBinds(popupContext);
-        }
+            /*deprecated*/
+//        } else {
+//            var params = {
+//                class_fullscreen: vapp.fullscreen.supported() ? '' : 'h',
+//                class_volume: '',
+//                duration: timeSmall(currentVideo.duration),
+//                poster: currentVideo.image_medium,
+//                src: currentVideo.files[currentFileKey],
+//                quality_changer: objLength(currentVideo.files) ? vapp.renderer.qualityChanger(currentFileKey, currentVideo.files) : '',
+//                width: popupContext.$content.width(),
+//                height: popupContext.$content.height()
+//            };
+//
+//            popupContext.$content.html(vapp.getTpl('vapp-video-player').supplant(params));
+//
+//            player.viewed = false;
+//            player.viewedSeconds = 5;
+//            player.video = ge('vapp-video');
+//
+//            player.initControls(popupContext);
+//            player.initBinds(popupContext);
+//        }
     };
 
     player.initControls = function(){
